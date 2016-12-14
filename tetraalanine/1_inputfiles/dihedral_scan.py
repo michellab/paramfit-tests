@@ -245,38 +245,35 @@ def move_dihedral(system,phi,psi,fold_numb,top_file,step,phi_atoms,psi_atoms):
     #First evaluate the starting value of phi and psi of your molecule
     phi_start,psi_start = evaluate_phipsi(solute,dihedral_phi,dihedral_psi)
 
+    #set psi to 0
+    dihbond_psi=BondID(dihedral_psi.atom1(),dihedral_psi.atom2())
+    solute = solute.move().change(dihbond_psi,-psi_start*degrees).commit()
+    #phi_now,psi_now = evaluate_phipsi(solute,dihedral_phi,dihedral_psi)
+
     for val_phi in range(0,360,step):
         #the new value will be the sum of start + modification due to val_phi
         phi_new = phi_start + val_phi
-        if phi_new>=360 : #and if it s greater then 360 rename it
+        if phi_new >= 360:
             phi_new = phi_new - 360
         #Create a new folder with the value of phi
         #thus the final folder scheme will be:
-        #PhiPsi_X  /  Phi_Angle /  Psi_Angle / Files_PsiAngle.something
+        #PhiPsi_X  /  Phi_Angle / Files with Psi scan
         phi_dir = "PhiPsi_" + str(fold_numb) +"/" + str(phi_new)
         if not os.path.exists(phi_dir):
             os.makedirs(phi_dir)
         #Select the central bond of Phi dihedral and fix it to the starting Phi value
         dihbond_phi = BondID(dihedral_phi.atom1(),dihedral_phi.atom2())
         solute = solute.move().change(dihbond_phi,val_phi*degrees).commit()
-
-        #Now SCAN all the psi:
-        for val_psi in range(0,360,step):
-            psi_new = psi_start + val_psi
-            if psi_new >= 360 :
-                psi_new = psi_new - 360
-
-            dihbond_psi = BondID(dihedral_psi.atom1(),dihedral_psi.atom2())
-            solute = solute.move().change(dihbond_psi,val_psi*degrees).commit()
-            #now save the coordinate under PhiPsi_X/0/
-            #the new angles psi will be = psi_start + val_psi
-            crd_file = generateCoordFiles(solute.property("coordinates"),psi_new,phi_dir,natoms)
-            #now let's call antechamber and generate the gcrt
-            generateGcrt(crd_file,top_file,phi_new,psi_new,fold_numb,phi_atoms,psi_atoms)
-
-
-
-    #print("Generated coordiantes files")
+        #phi_now,psi_now = evaluate_phipsi(solute,dihedral_phi,dihedral_psi)
+        #Since the freeze scan does not work it is better divide in file with scan
+        crd_file = generateCoordFiles(solute.property("coordinates"),phi_dir,natoms)
+        generateGcrt(crd_file,top_file,fold_numb,phi_atoms,psi_atoms,step)
+        #now reset the dihedral to the original one
+        #otherwise you will add the wrong val_phi each time
+        #FIXME: fix this wired method
+        solute = solute.move().change(dihbond_phi,-val_phi*degrees).commit()
+        #in the end the folder will be:
+        #PhiPsi_X / Phi_fixed/ file with scan
 
 
 
@@ -331,14 +328,13 @@ def evaluate_phipsi(solute,dihedral_phi,dihedral_psi):
     return phi_val,psi_val
 
 
-def generateCoordFiles(coordinates,idx,folder,natoms):
+def generateCoordFiles(coordinates,folder,natoms):
     r"""Creation of mdcrd-coordinate files to be used by antechamber
     Parameters
     ----------
     coordiantes:    Sire coordinates
                     Coordiantes for the entire system passed by Sire
-    idx:            int
-                    value of psi angle after modification
+
     folder:         folder
                     folder to save all the data
     natoms:         int
@@ -353,20 +349,14 @@ def generateCoordFiles(coordinates,idx,folder,natoms):
     string_rev   = re.sub("[^0-9.e-]", " ", string_coord)
     string_split = string_rev.split()
 
-
-    single_idx = idx
     #here create the final coordinate structure in mdcrd
     #at the moment this files will be given as a input to antechamber
     #to create gaussian input files
     #it is useful to save in mdcrd  since in the next step of parametrization
     #Paramfit will claim mdcrd files , so we have a function for it
-    folder_name = folder +"/" + str(single_idx)
-    #print(folder_name)
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-    file_name = folder_name + "/structure_" + str(single_idx) + ".mdcrd"
+    file_name = folder +"/structure.mdcrd"
     #now the structure will be:
-    #PhiPsi_X/PhiAngle/PsiAngle/files
+    #PhiPsi_X/PhiAngle/File
     singlecoord = open(file_name, "w")
     singlecoord.write("LIG\n")
     singlecoord.write("    %s\n" %natoms)
@@ -388,23 +378,21 @@ def generateCoordFiles(coordinates,idx,folder,natoms):
 
     return file_name
 
-def generateGcrt(coord_file,top_file,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
+def generateGcrt(coord_file,top_file,fold_numb,phi_atoms,psi_atoms,step):
     r"""Creation of Gaussian Cartesian input files
     Parameters
     ----------
     coord_file:     mdcrd file
                     Coordiantes of the system with modified phi and psi
     top_file:       Topology
-    phi_val:        int
-                    Current value for phi
-    psi_val:        int
-                    Current value for psi
     fold_numb:      int
                     Number of the folder/of the phi-psi pair
     phi_atoms:      list
                     Indexes of phi Atoms
     psi_atoms:      list
                     Indexes of psi Atoms
+    step:           int
+                    step angles for the scan
 
 
     Returns
@@ -429,26 +417,23 @@ def generateGcrt(coord_file,top_file,phi_val,psi_val,fold_numb,phi_atoms,psi_ato
     cmd = "rm %s %s "%(file_mol2,coord_file)#"%s" %(file_mol2,coord_file,test)
     os.system(cmd)
     #fix the input for gaussian
-    getReady_gcrt(file_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms)
+    getReady_gcrt(file_name,fold_numb,phi_atoms,psi_atoms,step)
 
 
-def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
+def getReady_gcrt(gcrt_name,fold_numb,phi_atoms,psi_atoms,step):
     r"""Final creation of gcrt file with correct header and dihedral to study
     Parameters
     ----------
     gcrt_name:      string
                     name of the gcrt inputfile
-    phi_val:        int
-                    Current value for phi
-    psi_val:        int
-                    Current value for psi
     fold_numb:      int
                     Number of the folder/of the phi-psi pair
     phi_atoms:      list
                     Indexes of phi Atoms
     psi_atoms:      list
                     Indexes of psi Atoms
-
+    step:           int
+                    step angles for the scan
 
     Returns
     ----------
@@ -465,16 +450,19 @@ def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
     #25-27-29-35 Phi3
     #27-29-35-37 Psi3
     gcrt = open(gcrt_name,"r").readlines()
-    #print(gcrt_name)
     folder = gcrt_name.split(".")[0]
-    name = gcrt_name.split("/")[2].split(".")[0]
     tmp_gcrt = folder + "tmp_gcrt"
     new_gcrt = open(tmp_gcrt,"w")
-    new_gcrt.write("%%chk=%s.chk\n" % name)
+    #checkpoint structure file
+    new_gcrt.write("%%chk=%s.chk\n" % "structure")
+    #parallel job with 8 processors
     new_gcrt.write("NProcShared=8\n")
-    new_gcrt.write("#P b3lyp/6-31G* Opt=(AddRedundant, Tight) Freq SCF(Conver=6)\n")
+    #verbose output with b3lpy/6-31G*, AddRedundant to calculate internal coordinates
+    #Tight level of calculation, Frequency calculation to see if  we are at a minimum for real
+    #SCF with convergence 10^-6 and nocrowd to avoid error due to minimal atoms distance
+    new_gcrt.write("#P b3lyp/6-31G* Opt=(AddRedundant, Tight) Freq SCF(Conver=6)  geom=nocrowd\n")
     new_gcrt.write("\n")
-    new_gcrt.write("Phi Psi scan for tetralanine: Phi: %.2f Psi: %.2f\n" % (phi_val,psi_val))
+    new_gcrt.write("Phi Psi scan\n")
     new_gcrt.write("\n")
     #here is hard coded
     end_idx = len(gcrt)-1
@@ -494,6 +482,8 @@ def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
     new_gcrt.write("\n")
     #FIXME: if fold_numb goes up to 4? Create a dihedral counter from the input dihedral.dat
     #file, from there use the len of dihedral as counter limit and cycle
+
+    moves = 360.0/step
     if fold_numb==1:
         for i in range(0,len(phi_atoms)):
             if i==len(phi_atoms)-1:
@@ -503,9 +493,9 @@ def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
 
         for j in range(0,len(psi_atoms)):
             if j==len(psi_atoms)-1:
-                new_gcrt.write("%d F\n" % psi_atoms[i])
+                new_gcrt.write("%d 0.0 S %d %.1f\n" % (psi_atoms[j],moves,step))
             else:
-                new_gcrt.write("%d " % psi_atoms[i])
+                new_gcrt.write("%d " % psi_atoms[j])
     elif fold_numb==2:
         for i in range(0,len(phi_atoms)):
             if i==len(phi_atoms)-1:
@@ -515,9 +505,9 @@ def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
 
         for j in range(0,len(psi_atoms)):
             if j==len(psi_atoms)-1:
-                new_gcrt.write("%d F\n" % psi_atoms[i])
+                new_gcrt.write("%d 0.0 S %d %.1f\n" % (psi_atoms[j],moves,step))
             else:
-                new_gcrt.write("%d " % psi_atoms[i])
+                new_gcrt.write("%d " % psi_atoms[j])
     elif fold_numb==3:
         for i in range(0,len(phi_atoms)):
             if i==len(phi_atoms)-1:
@@ -527,9 +517,9 @@ def getReady_gcrt(gcrt_name,phi_val,psi_val,fold_numb,phi_atoms,psi_atoms):
 
         for j in range(0,len(psi_atoms)):
             if j==len(psi_atoms)-1:
-                new_gcrt.write("%d F\n" % psi_atoms[i])
+                new_gcrt.write("%d 0.0 S %d %.1f\n" % (psi_atoms[j],moves,step))
             else:
-                new_gcrt.write("%d " % psi_atoms[i])
+                new_gcrt.write("%d " % psi_atoms[j])
     else:
         pass
 
@@ -555,8 +545,9 @@ def write_submit(gcrt_name):
 
 
     script_name = gcrt_name.split(".")[0] + ".sh"
-    file_name = gcrt_name.split("/")[3]
-    file_output = file_name.split(".")[0] + ".gout"
+    file_name = gcrt_name.split("/")[2]
+    #print(file_name)
+    file_output = "structure.out"
     script = open(script_name,"w")
     script.write("#!/bin/bash\n")
     script.write("#SBATCH -o output-%A-%a.out\n")
