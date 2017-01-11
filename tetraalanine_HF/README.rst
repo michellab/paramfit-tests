@@ -6,22 +6,26 @@ capped trialanine, starting with a quantum scan at HF level of theory.
 
 To replicate ff99SB and study the stability/consistency of Paramfit I made 4 tests:
 
-- original: all the folders under this name has a starting topology with the
+- original:
+            all the folders under this name has a starting topology with the
             correct ff99SB amplitude for phi and psi dihedral angles.
             In this way, when Paramfit tries to fit quantum and molecular
             mechanical energies the starting point for phi and psi is exactly
             the same as in the forcefield
 
-- multiplicity_3 : rather than having 4 multiplicities as in ff99SB we try to have
+- multiplicity_3 :
+            rather than having 4 multiplicities as in ff99SB we try to have
             only 3 multiplicities. This may sound wrong, but it seems to be what
             Paramfit authors have done in the paper.
             The initial amplitude for phi and psi is set to 0.0 kcal/mol
 
-- multiplicity_3_amplitude_1 : as above but the initial amplitude is set to 1.0
+- multiplicity_3_amplitude_1 :
+            as above but the initial amplitude is set to 1.0
             kcal/mol . This is what authors of Paramfit papars have done, but the
             initial value of the amplitude SHOULD NOT influence the final fit
 
-- multiplicity_3_amplitude_2 : as above but with initial amplitude of 2.0 kcal/mol
+- multiplicity_3_amplitude_2 :
+            as above but with initial amplitude of 2.0 kcal/mol
             In this way we can check  the consistency of Paramfit
 
 If the initial choice does not influence the final results ( and it should since
