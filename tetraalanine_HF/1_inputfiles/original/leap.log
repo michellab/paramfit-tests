@@ -1,9 +1,9 @@
-log started: Tue Jan 10 10:55:39 2017
+log started: Thu Jan 12 12:53:18 2017
 
 Log file: ./leap.log
 >> #
->> # ----- leaprc for loading the ff99SB (Hornak & Simmerling) force field
->> # -----  this file is updated for PDB format 3
+>> # ----- leaprc for loading the parm99 additive force field, no lone pairs
+>> #       assumes that any unspecified nucleic acids are DNA 
 >> #
 >> #	load atom type hybridizations
 >> #
@@ -41,6 +41,7 @@ Log file: ./leap.log
 >> 	{ "CD"  "C" "sp2" }
 >> 	{ "CE"  "C" "sp2" }
 >> 	{ "CF"  "C" "sp2" }
+>> 	{ "CG"  "C" "sp2" }
 >> 	{ "CP"  "C" "sp2" }
 >> 	{ "CI"  "C" "sp2" }
 >> 	{ "CJ"  "C" "sp2" }
@@ -49,7 +50,7 @@ Log file: ./leap.log
 >> 	{ "CR"  "C" "sp2" }
 >> 	{ "CA"  "C" "sp2" }
 >> 	{ "CY"  "C" "sp2" }
->> 	{ "C0"  "Ca" "sp2" }
+>> 	{ "C0"  "C" "sp2" }
 >> 	{ "MG"  "Mg" "sp3" }
 >> 	{ "N"   "N" "sp2" }
 >> 	{ "NA"  "N" "sp2" }
@@ -94,11 +95,6 @@ PARM99 for DNA,RNA,AA, organic molecules, TIP3P wat. Polariz.& LP incl.02/04/99
 (UNKNOWN ATOM TYPE: Zn)
 (UNKNOWN ATOM TYPE: IB)
 (UNKNOWN ATOM TYPE: LP)
->> frcmod99SB = loadamberparams frcmod.ff99SB
-Loading parameters: /home/steboss/Software/amber14/dat/leap/parm/frcmod.ff99SB
-Reading force field modification type file (frcmod)
-Reading title:
-Modification/update of parm99.dat (Hornak & Simmerling)
 >> #
 >> #	Load DNA/RNA libraries
 >> #
@@ -138,7 +134,7 @@ Loading: RU5
 Loading: RUN
 >> #
 >> #	Load main chain and terminating 
->> #	amino acid libraries (i.e. ff94 libs)
+>> #	amino acid libraries.
 >> #
 >> loadOff all_amino94.lib
 Loading library: /home/steboss/Software/amber14/dat/leap/lib/all_amino94.lib
@@ -222,9 +218,7 @@ Loading: NTHR
 Loading: NTRP
 Loading: NTYR
 Loading: NVAL
->> #
->> #       Load water and ions
->> # 
+>> 
 >> loadOff ions94.lib
 Loading library: /home/steboss/Software/amber14/dat/leap/lib/ions94.lib
 Loading: CIO
@@ -297,14 +291,18 @@ Loading: TPF
 >>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
 >>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
 >>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
->>   { 0 "G" "RG5"  } { 1 "G" "RG3"  } { "G" "RG" } { "GN" "RGN" }
->>   { 0 "A" "RA5"  } { 1 "A" "RA3"  } { "A" "RA" } { "AN" "RAN" }
->>   { 0 "C" "RC5"  } { 1 "C" "RC3"  } { "C" "RC" } { "CN" "RCN" }
->>   { 0 "U" "RU5"  } { 1 "U" "RU3"  } { "U" "RU" } { "UN" "RUN" }
->>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
->>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
->>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
->>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }
+>>   { 0 "G" "DG5"  } { 1 "G" "DG3"  } { "G" "DG" } { "GN" "DGN" }
+>>   { 0 "A" "DA5"  } { 1 "A" "DA3"  } { "A" "DA" } { "AN" "DAN" }
+>>   { 0 "C" "DC5"  } { 1 "C" "DC3"  } { "C" "DC" } { "CN" "DCN" }
+>>   { 0 "T" "DT5"  } { 1 "T" "DT3"  } { "T" "DT" } { "TN" "DTN" }
+>>   { 0 "C5" "DC5" }
+>>   { 0 "G5" "DG5" }
+>>   { 0 "A5" "DA5" }
+>>   { 0 "T5" "DT5" }
+>>   { 1 "C3" "DC3" }
+>>   { 1 "G3" "DG3" }
+>>   { 1 "A3" "DA3" }
+>>   { 1 "T3" "DT3" }
 >> 
 >> }
 >> 
@@ -318,26 +316,17 @@ Loading: TPF
 >>   { "C2*" "C2'" }
 >>   { "C1*" "C1'" }
 >>   { "C5M" "C7"  }
->>   { "O2*" "O2'" }
 >>   { "H1*" "H1'" }
 >>   { "H2*1" "H2'1" }
 >>   { "H2*2" "H2'2" }
->>   { "H2'"  "H2'1" }
->>   { "H2''" "H2'2" }
 >>   { "H3*" "H3'" }
 >>   { "H4*" "H4'" }
 >>   { "H5*1" "H5'1" }
 >>   { "H5*2" "H5'2" }
->>   { "H5'"  "H5'1" }
->>   { "H5''" "H5'2" }
->>   { "HO2'" "HO'2" }
->>   { "HO5'" "H5T" }
->>   { "HO3'" "H3T" }
+>> # old ff atom names -> new
 >>   { "O1'" "O4'" }
 >>   { "OA"  "O1P" }
 >>   { "OB"  "O2P" }
->>   { "OP1" "O1P" }
->>   { "OP2" "O2P" }
 >> }
 >> 
 >> 
@@ -348,8 +337,37 @@ Loading: TPF
 >> HIS = HIE
 >> CHIS = CHIE
 > 
-> quit()
-ERROR: syntax error
+> mol = sequence {ACE ALA ALA ALA NME}
+Sequence: ACE
+Sequence: ALA
+Joining ACE - ALA
+Sequence: ALA
+Joining ALA - ALA
+Sequence: ALA
+Joining ALA - ALA
+Sequence: NME
+Joining ALA - NME
+> saveamberparm mol fit.prmtop fit.rst7
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 8 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
 
+	res	total affected
+
+	ACE	1
+	NME	1
+  )
+ (no restraints)
 > quit
 	Quit

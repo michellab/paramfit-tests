@@ -588,7 +588,7 @@ def getReady_gcrt(gcrt_name,fold_numb,phi_atoms,psi_atoms,step):
     #SCF with convergence 10^-6 and nocrowd to avoid error due to minimal atoms distance
     #WARNING: I decided not to do a frequency calculation, to do that add to the following
     #line Freq keyword
-    new_gcrt.write("# HF/6-31G* Opt=(ModRedundant, maxcycles=1000, calcfc) geom=nocrowd\n")
+    new_gcrt.write("# b3lyp/6-31G* Opt=(ModRedundant, maxcycles=1000, calcfc) geom=nocrowd\n")
     new_gcrt.write("\n")
     new_gcrt.write("Phi Psi fixed scan\n")
     new_gcrt.write("\n")
