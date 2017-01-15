@@ -1,0 +1,35 @@
+ABOUT
+=====
+
+Here I create the scanned trialanine structures (from 0 to 330 every 30 deg)
+
+
+HOW TO
+======
+
+To create the scanned structure:
+
+```
+cd input_scan/
+
+~/sire.app/bin/python dihedral_scan.py ff99_trialanine/fit.prmtop ff99_trialanine/fit.rst7 dihedral.dat 30
+
+```
+
+the used prmtop does not matter at this stage
+
+Then we retrieve the ff99SB energies and the mdcrd to use in Paramfit
+
+```
+cd  ../
+cd energies
+bash ff99SB_energies.sh
+
+```
+At the end we will have:
+
+all_structures.mdcrd : all the valid structure ( whose energy < 25 kcal/mol) to use in Paramfit
+energies_ff99SB.dat  : energies for each structure, to use for the fit
+
+to visualize the f99 vs ff99SB energies use the ipython notebook script:
+ff99vsff99SB.ipynb
