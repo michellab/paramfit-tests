@@ -1,0 +1,79 @@
+Content
+=======
+amber_quantum_fit.dat  f99_f99SB_fit.dat  fit_K_amber.ipynb  fit_K.in  fit_K.out  README
+
+fit_K.in  : input file for Paramfit to execute a fit between f99 and ff99SB energies
+fit_K.out : output file with offset between ff99 and ff99SB energies
+f99_f99SB_fit.dat : comparison between amber f99 and amber ff99SB energies
+
+
+Usage
+=======
+
+
+Between amber ff99 and amber ff99SB there is an offset which must be calcualted (as an average)
+with Paramfit. In this way we will be able to perform a LLS calculation in order to minimize
+a merit function
+
+
+```
+paramfit -i fit_K.in -p ../1_inputfiles/input_scan/new_topology/fit.prmtop -c ../1_inputfiles/energies/all_structures.mdcrd -q ../1_inputfiles/energies/energies_ff99SB.dat > fit_K.out
+```
+Here I create a new topology, which will be used as a scaffold for our calcualtion. 
+This topology  "../1_inputfiles/energies/all_structures.mdcrd" has the ff99 parametrization
+except for the dihedrals to fit. In that case I extended the multiplicity to 3 and (rather than
+2 as default in ff99). The final value for Phi and Psi in this topology are:
+
+value of Phi
+C -N -CT-C     1     1.00000000    0.000  -1.0    SCEE=1.2 SCNB=2.0
+
+value of Phi
+C -N -CT-C     1     1.00000000    0.000  -2.0    SCEE=1.2 SCNB=2.0
+
+value of Phi
+C -N -CT-C     1     1.00000000    0.000   3.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     1.00000000  180.000  -1.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     1.00000000  180.000  -2.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     1.00000000  180.000   3.0    SCEE=1.2 SCNB=2.0
+
+
+From these amplitudes Paramfit will try to make a fit and hopefully the ff99SB terms should be recovered.
+ff99SB terms are:
+
+value of Phi
+C -N -CT-C     1     0.00000000    0.000  -1.0    SCEE=1.2 SCNB=2.0
+
+value of Phi
+C -N -CT-C     1     0.27000000    0.000  -2.0    SCEE=1.2 SCNB=2.0
+
+value of Phi
+C -N -CT-C     1     0.42000000    0.000  -3.0    SCEE=1.2 SCNB=2.0
+
+value of Phi
+C -N -CT-C     1     0.00000000    0.000   4.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     0.45000000  180.000  -1.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     1.58000000  180.000  -2.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     0.55000000  180.000  -3.0    SCEE=1.2 SCNB=2.0
+
+value of Psi
+N -CT-C -N     1     0.00000000    0.000   4.0    SCEE=1.2 SCNB=2.0
+
+
+In ff99SB we have 4 multiplicities, but since the amplitudes are 0.0 as in the paper
+I selected to fit only 3 multiplicities
+
+
+Finally, the total number of structures that we are processing is 46
+and the offset K is 0.275079 kcal/mol
