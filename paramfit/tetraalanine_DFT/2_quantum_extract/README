@@ -1,0 +1,31 @@
+#Usage:
+
+1) Copy all the output folder  from gaussian simulation to quantum_outputs
+2) mkdir crd_outputs   where all the output coordinates file will be written
+3) in quanutm_output run_crd.sh:  bash run_crd.sh
+run_crd.sh will execute extract_crd.py  from all the output of gaussian
+In output you will have:
+-crd_outputs:  folders with rst7 files
+-all.mdcrd  :  all the coordinates files from guassian merge onto one single mdcrdfile
+               (necessary for Paramfit)
+-amber_energies.dat: the molecular mechanics energies evaluated for each rst7 file
+              with fit.prmtop topology
+              For the evaluation we use paramfit
+-quantum_energies.dat: all the quantum mechanical energies extract from gaussian output
+              The units of the energies are Hartree (=627.59 kcal/mol)
+
+-problem.dat: dat file with problematic output from Gaussian (i.e. not terminated normally)
+
+
+Here we think to take all the structure except Phi=0 Psi=0 (since it's too high  in energy)
+To see the adiabatic plot run:
+ipython notebook Adiabatic_plot.ipynb
+We are using 143 points, thus not so many points
+later I will run a test to see the energy landscape from quanutm output with more structure
+
+
+I take out from amber_energies, quantum_energies and all.mdcrd the first structure (phi=0 psi=0)
+which is incorrect
+
+I skipped structure 0 
+I am testing initial amplitude and multiplicity and original parameters

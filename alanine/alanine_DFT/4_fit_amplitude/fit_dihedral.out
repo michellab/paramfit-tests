@@ -1,0 +1,329 @@
+
+                *****************************************************
+                * AMBER Bond Angle and Dihedral Parameter Optimiser *
+                *                                                   *
+                *                      v3.0.0                       *
+                *                                                   *
+                *                    Written by:                    *
+                *                 Robin Betz (2011)                 *
+                *                 Ross Walker (2004)                *
+                *          The Walker Molecular Dynamics Lab        *
+                *         University of California, San Diego       *
+                *            La Jolla, California, 92092            *
+                *                       USA                         *
+                *****************************************************
+
+*************************************************************************************
+                                Execution started at:
+|                             Tue Feb 14 12:48:13 2017
+
+|
+| Random seed = 1487076493
+ Reading job control file: fit_dihedral.in
+ Job Control: Read a total of 30 lines from job_control file. 29 options set.
+
+  Reading prmtop file    : topology/fit.prmtop
+   Prmtop     (info): Successfully read in saved parameter information
+   Prmtop   (unique): Found 8 unique bonds.
+   Prmtop   (unique): Found 16 unique angles.
+   Prmtop   (unique): Found 23 unique dihedrals.
+   Prmtop   (unique): Found 40 unique dihedral terms.
+ Reading mdcrd file: ../2_quantum_extract/all.mdcrd
+  Reading mdcrd file    : ../2_quantum_extract/all.mdcrd
+    Coordinate file passed format check
+  Reading energy file or directory  : ../2_quantum_extract/quantum_energy.dat
+        ---------------------------------------------------------------------
+        |                          OPTIONS SUMMARY                         |
+        |                          ---------------                          |
+        | Summary of Run Type Options:                                      |
+        |   Run Mode = FIT, Minimiser = GENETIC THEN SIMPLEX                |
+        |   Function to be Fit = SUM_SQUARES_AMBER_STANDARD                 |
+        |                                                                   |
+        | Terms to be fit:                                                  |
+        |   UNIQUE_BONDS = 8, UNIQUE ANGLES = 16, UNIQUE DIHEDRALS = 23     |
+        |   NBONDS = 21, NANGLES = 36, NDIHEDRALS = 67                      |
+        |                                 Total dimensions of fit = 8       |
+        |                                                                   |
+        | Sample structures for least squares fit = 573                     |
+        |                                                                   |
+        |                                                                   |
+        | Energy Correction Term (K) = -311136.26464800                     |
+        |                                                                   |
+        |                                                                   |
+        | Estimate Memory Usage (per cpu):                                  |
+        |  Coordinate info will be read from disk as required.              |
+        |                OPTION STORAGE = 149 bytes                         |
+        |                PRMTOP STORAGE = 500714 bytes                      |
+        |            COORDINATE STORAGE = 339256 bytes                      |
+        |                                                                   |
+        |  TOTAL ESTIMATED MEMORY USAGE = 840119 bytes                      |
+        |                                                                   |
+        ---------------------------------------------------------------------
+
+ * Input structures passed dihedral span check.
+
+   ------------------------------- INITIAL PARAMETERS --------------------------------
+   Parameters for force field equation: AMBER_STANDARD:
+   (* means parameter is NOT constant during fit)
+                         K = -311136.264648 kcal/mol
+             (CT-HC) Kr = 340.0000 kcal/(mol A)^2, r_eq =   1.0900 A 
+             (CT-H1) Kr = 340.0000 kcal/(mol A)^2, r_eq =   1.0900 A 
+             (N -H ) Kr = 434.0000 kcal/(mol A)^2, r_eq =   1.0100 A 
+             (C -O ) Kr = 570.0000 kcal/(mol A)^2, r_eq =   1.2290 A 
+             (C -N ) Kr = 490.0000 kcal/(mol A)^2, r_eq =   1.3350 A 
+             (CT-C ) Kr = 317.0000 kcal/(mol A)^2, r_eq =   1.5220 A 
+             (CT-CT) Kr = 310.0000 kcal/(mol A)^2, r_eq =   1.5260 A 
+             (N -CT) Kr = 337.0000 kcal/(mol A)^2, r_eq =   1.4490 A 
+        (C -N -H ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 120.0001 deg 
+        (HC-CT-C ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (HC-CT-HC) Kt =  35.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-C ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (CT-CT-HC) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H -N -CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 118.0401 deg 
+        (N -CT-H1) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-H1) Kt =  35.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (O -C -N ) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 122.9001 deg 
+        (C -N -CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 121.9001 deg 
+        (CT-C -O ) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 120.4001 deg 
+        (CT-C -N ) Kt =  70.0000 kcal/(mol rad)^2,  th_eq = 116.6000 deg 
+        (CT-CT-C ) Kt =  63.0000 kcal/(mol rad)^2,  th_eq = 111.1000 deg 
+        (N -CT-CT) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 109.7000 deg 
+        (N -CT-C ) Kt =  63.0000 kcal/(mol rad)^2,  th_eq = 110.1000 deg 
+       (O -C -N -H ) Kp =   2.0000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (O -C -N -H ) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (C -N -CT-H1) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.8000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.0800 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (HC-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-C -N -H ) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (HC-CT-CT-C ) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (H1-CT-CT-HC) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.8000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.0800 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (H1-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-H1) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-CT) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-C ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (N -CT-CT-HC) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+   IMP (C -CT-N -H ) Kp =   1.1000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (O -C -N -CT) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (C -N -CT-CT) Kp =   2.0000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   2.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   0.4000 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =   0.0000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =   0.0000 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (CT-C -N -CT) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (CT-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.2000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.2000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.4000 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (N -CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (N -CT-C -N )*Kp =   0.0000 kcal/mol,  Np = 1.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =   0.0000 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+   IMP (CT-N -C -O ) Kp =  10.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+   -----------------------------------------------------------------------------------
+   Sum of squares for initial parameters = 5768.3453838065 kcal^2/mol^2
+   R^2 value for initial parameters      =   0.729850
+   Calculated energy with initial parameters for structure 1 = -311144.153971 KCal/mol
+   Actual energy for structure 1 should be                   = -311143.850643 KCal/mol
+
+   --------------------------GENETIC ALGORITHM MINIMISATION ---------------------------
+   Minimising function SUM_SQUARES_AMBER_STANDARD, using the GENETIC ALGORITHM
+   Running SIMPLEX REFINEMENT every 5 converged gen, then break for 5
+   -------------------------------------------------------------------------------------
+   GENERATIONS_TO_CONVERGE = 25    MAX_GENERATIONS = 10000    CONV_LIMIT = 1.00E+01
+   OPTIMIZATIONS = 50    PARENT_PERCENT = 0.25
+   SEARCH_SPACE = -1.00    MAX_GENERATIONS = 10000
+   ------------------------------------ CONVERGENCE ------------------------------------
+   Gen    0:  Best= 154684.87324  	Mean= 8.6574e+05 Elapsed=         0/3
+   Gen    1:  Best= 92185.25954  	Mean= 4.9749e+05 Elapsed=         1/3
+   Gen    2:  Best= 71798.23279  	Mean= 2.5538e+05 Elapsed=         2/3
+   Gen    3:  Best= 44631.00381  	Mean=  1.257e+05 Conv=            0/25
+   Gen    4:  Best= 23976.03602  	Mean=      91235 Conv=            0/25
+   Gen    5:  Best= 21063.04941  	Mean=      57026 Conv=            0/25
+   Gen    6:  Best= 15365.45633  	Mean=      37863 Conv=            0/25
+   Gen    7:  Best= 11824.71289  	Mean=      27233 Conv=            0/25
+   Gen    8:  Best= 10316.04092  	Mean=      19081 Conv=            0/25
+   Gen    9:  Best= 8645.27140  	Mean=      14206 Conv=            0/25
+   Gen   10:  Best= 8469.20846  	Mean=      10832 Conv=            0/25
+   Gen   11:  Best= 8091.28245  	Mean=     9632.3 Conv=            0/25
+   Gen   12:  Best= 7837.58435  	Mean=     9065.3 Conv=            0/25
+   Gen   13:  Best= 7837.58435  	Mean=     8374.3 Conv=            1/25
+   Gen   14:  Best= 7776.00487  	Mean=     8046.5 Conv=            0/25
+   Gen   15:  Best= 7743.20374  	Mean=     7909.3 Conv=            0/25
+   Gen   16:  Best= 7719.30873  	Mean=       7865 Conv=            0/25
+   Gen   17:  Best= 7683.00495  	Mean=     7779.8 Conv=            0/25
+   Gen   18:  Best= 7668.39053  	Mean=     7726.6 Conv=            0/25
+   Gen   19:  Best= 7651.14838  	Mean=     7694.6 Conv=            0/25
+   Gen   20:  Best= 7650.45797  	Mean=       7678 Conv=            0/25
+   Gen   21:  Best= 7641.92507  	Mean=       7663 Conv=            0/25
+   Gen   22:  Best= 7641.92507  	Mean=     7655.6 Conv=            1/25
+   Gen   23:  Best= 7641.92507  	Mean=     7652.5 Conv=            2/25
+   Gen   24:  Best= 7641.92507  	Mean=     7648.8 Conv=            3/25
+   Gen   25:  Best= 7640.18145  	Mean=     7646.2 Conv=            0/25
+   Gen   26:  Best= 7639.62029  	Mean=     7643.9 Conv=            0/25
+   Gen   27:  Best= 7639.51908  	Mean=       7645 Conv=            0/25
+   Gen   28:  Best= 7639.51908  	Mean=     7643.5 Conv=            1/25
+   Gen   29:  Best= 7639.35068  	Mean=     7646.2 Conv=            0/25
+   Gen   30:  Best= 7639.35068  	Mean=     7647.7 Conv=            1/25
+   Gen   31:  Best= 7639.31142  	Mean=     7646.2 Conv=            0/25
+   Gen   32:  Best= 7639.29954  	Mean=     7642.2 Conv=            0/25
+   Gen   33:  Best= 7639.27259  	Mean=       7643 Conv=            0/25
+   Gen   34:  Best= 7639.27259  	Mean=     7643.9 Conv=            1/25
+   Gen   35:  Best= 7639.26956  	Mean=     7647.8 Conv=            0/25
+   Gen   36:  Best= 7639.26841  	Mean=       7645 Conv=            0/25
+   Gen   37:  Best= 7639.26727  	Mean=     7643.7 Conv=            0/25
+   Gen   38:  Best= 7639.26636  	Mean=     7645.9 Conv=            0/25
+   Gen   39:  Best= 7639.26566  	Mean=     7645.9 Conv=            0/25
+   Gen   40:  Best= 7639.26505  	Mean=     7643.2 Conv=            0/25
+   Gen   41:  Best= 7639.26487  	Mean=       7644 Conv=            0/25
+   Gen   42:  Best= 7639.26487  	Mean=     7644.6 Conv=            1/25
+   Gen   43:  Best= 7639.26459  	Mean=     7643.5 Conv=            0/25
+   Gen   44:  Best= 7639.26459  	Mean=     7645.2 Conv=            1/25
+   Gen   45:  Best= 7639.26453  	Mean=     7645.4 Conv=            0/25
+   Gen   46:  Best= 7639.26453  	Mean=     7645.5 Conv=            1/25
+   Gen   47:  Best= 7639.26451  	Mean=     7643.9 Conv=            0/25
+   Gen   48:  Best= 7639.26450  	Mean=     7643.6 Conv=            0/25
+   Gen   49:  Best= 7639.26449  	Mean=     7643.5 Conv=            1/25
+   Gen   50:  Best= 7639.26448  	Mean=     7650.5 Conv=            2/25
+   Gen   51:  Best= 7639.26448  	Mean=     7646.2 Conv=            3/25
+   Gen   52:  Best= 7639.26448  	Mean=     7645.3 Conv=            4/25
+   Gen   53:  Best= 7639.26448  	Mean=     7644.5 Conv=            5/25
+   Gen   54:  Best= 4371.12266  	Mean=     7445.7 Conv=            0/25
+   Gen   55:  Best= 4371.12266  	Mean=     7656.3 Conv=            1/25
+   Gen   56:  Best= 4371.12266  	Mean=       7215 Conv=            2/25
+   Gen   57:  Best= 4371.12266  	Mean=     5444.8 Conv=            3/25
+   Gen   58:  Best= 4371.12266  	Mean=     4639.1 Conv=            4/25
+   Gen   59:  Best= 4371.12266  	Mean=     4423.2 Conv=            5/25
+   Gen   60:  Best= 4371.12266  	Mean=       4377 Conv=            6/25
+   Gen   61:  Best= 4371.12024  	Mean=     4375.7 Conv=            0/25
+   Gen   62:  Best= 4371.12024  	Mean=     4377.3 Conv=            1/25
+   Gen   63:  Best= 4371.12024  	Mean=     4378.4 Conv=            2/25
+   Gen   64:  Best= 4371.12024  	Mean=     4375.7 Conv=            3/25
+   Gen   65:  Best= 4371.12024  	Mean=     4379.3 Conv=            4/25
+   Gen   66:  Best= 4371.12024  	Mean=     4374.3 Conv=            5/25
+   Gen   67:  Best= 4371.12024  	Mean=     4375.9 Conv=            6/25
+   Gen   68:  Best= 4371.12024  	Mean=     4374.9 Conv=            7/25
+   Gen   69:  Best= 4371.12024  	Mean=     4375.8 Conv=            8/25
+   Gen   70:  Best= 4371.12024  	Mean=       4374 Conv=            9/25
+   Gen   71:  Best= 4371.12024  	Mean=     4377.3 Conv=           10/25
+   Gen   72:  Best= 4371.12024  	Mean=       4377 Conv=           11/25
+   Gen   73:  Best= 4371.12024  	Mean=     4375.8 Conv=           12/25
+   Gen   74:  Best= 4371.12024  	Mean=     4378.9 Conv=           13/25
+   Gen   75:  Best= 4371.12024  	Mean=     4374.7 Conv=           14/25
+   Gen   76:  Best= 4371.12024  	Mean=     4373.5 Conv=           15/25
+   Gen   77:  Best= 4371.12024  	Mean=     4378.4 Conv=           16/25
+   Gen   78:  Best= 4371.12024  	Mean=     4378.4 Conv=           17/25
+   Gen   79:  Best= 4371.12024  	Mean=     4377.5 Conv=           18/25
+   Gen   80:  Best= 4371.12024  	Mean=     4377.8 Conv=           19/25
+   Gen   81:  Best= 4371.12024  	Mean=     4376.6 Conv=           20/25
+   Gen   82:  Best= 4371.12024  	Mean=     4377.5 Conv=           21/25
+   Gen   83:  Best= 4371.12024  	Mean=     4374.7 Conv=           22/25
+   Gen   84:  Best= 4371.12024  	Mean=     4375.6 Conv=           23/25
+   Gen   85:  Best= 4371.12024  	Mean=     4374.7 Conv=           24/25
+   Gen   86:  Best= 4371.12024  	Mean=     4376.1 Conv=           25/25
+| Took    87 generations to converge.
+   --------------------------------- SIMPLEX MINIMISATION ----------------------------
+   Minimising function SUM_SQUARES_AMBER_STANDARD, using the SIMPLEX METHOD
+   -------------------------------------- CONVERGENCE --------------------------------
+   Step     0: Conv=  3.5403E-02 min=   4371.1202,max=   4528.6588 avg   4449.1478
+   Step     1: Conv=  4.9880E-09 min=   4371.1202 max=   4371.1203 avg=   4371.1203
+   -----------------------------------------------------------------------------------
+
+   Convergence ratio of   4.9880E-09 is better than
+   convergence criteria of   1.0000E-08.
+   Function Converged - Total function evaluations = 294
+
+   Convergence to 1.0000E-08 in Simplex routine achieved after 200 cycles.
+   (200 INNER x 1 OUTER CYCLES)
+
+   ------------------------------- FINAL PARAMETERS ---------------------------------
+   Parameters for force field equation: AMBER_STANDARD:
+   (* means parameter is NOT constant during fit)
+                         K = -311136.264648 kcal/mol
+             (CT-HC) Kr = 340.0000 kcal/(mol A)^2, r_eq =   1.0900 A 
+             (CT-H1) Kr = 340.0000 kcal/(mol A)^2, r_eq =   1.0900 A 
+             (N -H ) Kr = 434.0000 kcal/(mol A)^2, r_eq =   1.0100 A 
+             (C -O ) Kr = 570.0000 kcal/(mol A)^2, r_eq =   1.2290 A 
+             (C -N ) Kr = 490.0000 kcal/(mol A)^2, r_eq =   1.3350 A 
+             (CT-C ) Kr = 317.0000 kcal/(mol A)^2, r_eq =   1.5220 A 
+             (CT-CT) Kr = 310.0000 kcal/(mol A)^2, r_eq =   1.5260 A 
+             (N -CT) Kr = 337.0000 kcal/(mol A)^2, r_eq =   1.4490 A 
+        (C -N -H ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 120.0001 deg 
+        (HC-CT-C ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (HC-CT-HC) Kt =  35.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-C ) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (CT-CT-HC) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H -N -CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 118.0401 deg 
+        (N -CT-H1) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (H1-CT-H1) Kt =  35.0000 kcal/(mol rad)^2,  th_eq = 109.5000 deg 
+        (O -C -N ) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 122.9001 deg 
+        (C -N -CT) Kt =  50.0000 kcal/(mol rad)^2,  th_eq = 121.9001 deg 
+        (CT-C -O ) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 120.4001 deg 
+        (CT-C -N ) Kt =  70.0000 kcal/(mol rad)^2,  th_eq = 116.6000 deg 
+        (CT-CT-C ) Kt =  63.0000 kcal/(mol rad)^2,  th_eq = 111.1000 deg 
+        (N -CT-CT) Kt =  80.0000 kcal/(mol rad)^2,  th_eq = 109.7000 deg 
+        (N -CT-C ) Kt =  63.0000 kcal/(mol rad)^2,  th_eq = 110.1000 deg 
+       (O -C -N -H ) Kp =   2.0000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (O -C -N -H ) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (C -N -CT-H1) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.8000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (HC-CT-C -O ) Kp =   0.0800 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (HC-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-C -N -H ) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (HC-CT-CT-C ) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (H1-CT-CT-HC) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.8000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H1-CT-C -O ) Kp =   0.0800 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (H1-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-H1) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-CT) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (H -N -CT-C ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (N -CT-CT-HC) Kp =   0.1556 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+   IMP (C -CT-N -H ) Kp =   1.1000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (O -C -N -CT) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (C -N -CT-CT) Kp =   2.0000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   2.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   0.4000 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-CT) Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =   1.2610 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =  -0.2780 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =  -0.9452 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (C -N -CT-C )*Kp =  -0.5283 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (CT-C -N -CT) Kp =   2.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (CT-CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.2000 kcal/mol,  Np = 1.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.2000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.4000 kcal/mol,  Np = 3.0000,  Phase =   0.0000 Deg 
+       (CT-CT-C -N ) Kp =   0.0000 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+       (N -CT-C -O ) Kp =   0.0000 kcal/mol,  Np = 2.0000,  Phase =   0.0000 Deg 
+       (N -CT-C -N )*Kp =  -0.6528 kcal/mol,  Np = 1.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =   1.1584 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =   0.2518 kcal/mol,  Np = 3.0000,  Phase = 180.0001 Deg 
+       (N -CT-C -N )*Kp =  -0.3982 kcal/mol,  Np = 4.0000,  Phase =   0.0000 Deg 
+   IMP (CT-N -C -O ) Kp =  10.5000 kcal/mol,  Np = 2.0000,  Phase = 180.0001 Deg 
+   ----------------------------------------------------------------------------------
+|   Called the fitness function 9363 times.
+   Function value with fitted parameters  =     4371.1203, R^2 =       0.7985
+   Calculated energy with fitted parameters for structure 1 =     -8.0534 KCal/mol
+
+ * Saving ffrcmod file to frcmod.frcmod
+ * Saving energy file with 573 structures to amber_quantum_fit.dat
+ * Result passed angle validity check.
+ * Result passed bond validity check.
+
+|             Program Execution Completed at: Tue Feb 14 12:50:56 2017
+|                            Elapsed Time = 163.00 seconds
+*************************************************************************************

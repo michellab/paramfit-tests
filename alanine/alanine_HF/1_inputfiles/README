@@ -1,0 +1,52 @@
+How to use the folders:
+
+- dihedral_scan.py : python script to create the inputfiles + submission script
+                     for Gaussian calculations
+- dihedral.dat : dat file with the phi and psi angles we want to modify
+
+
+1) Create the input file for quantum calculation:
+
+~/sire.app/bin/python dihedral_scan.py  topology/fit.prmtop topology/fit.rst7 dihedral.dat 15
+
+
+2) The script will create a directory  called PhiPsi_1 (TODO) : 
+-PhiPsi_1 : pair of phi and psi (given in dihedral.dat), subdivided as:
+
+PhiPsi_1/Phi_angle/files_Psiangle
+
+Where Phi_angle folder has the name of the Phi angle, kept fixed during the
+calculation and Psiangle is  the value of Psi for each particular .gcrt file
+Basides gcrt files we have also a submission bash script for slurm, in order
+to run all the calculations on section6
+The script create a local temporary directory for each file, thus be aware of the 
+quota you have an make space ( for HF or DFT is ok, for MP2 you need  at least 200 
+GB of space to comput eall the 576 structures)
+
+e.g.
+
+PhiPsi_1/180/structure_60.gcrt + stucture_60.sh
+
+The logic here is to give Gaussian structure which are already scanned (so we
+don't have to perform scan in Gaussian)
+Thus I pass Gaussian coordiante file with Phi and Psi fixed and I convert them
+into suitable gcrt files for quantum optimization
+
+3) To submit all the simulations with a runme.sh or simple bash script
+
+
+-------------------------------------------------------------------------------
+
+Content
+
+topology/fit.prmtop 
+topology/fit.rst7
+This are capped alanine topology and coordiantes files with ff99SB parametrization
+created by using tleap
+
+-------------------------------------------------------------------------------
+Dihedral to fit:
+
+Psi_1 : ACE1:C - ALA2:N - ALA2:CA -ALA2:CA
+Phi_1 : ALA2:N - ALA2:CA- ALA2:C  -ALA3:N
+
