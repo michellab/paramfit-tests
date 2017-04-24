@@ -1,0 +1,35 @@
+&files
+  -p Conf90.top
+  -c Conf90.rst
+  -o ipolq.out
+&end
+
+&cntrl
+  DoSETTLE = 1,
+  ntpr = 100,  nstlim = 100,  nfistep = 0,
+  dt = 0.003,
+  ntt = 3,  tempi = 300.0,  temp0 = 300.0,  gamma_ln = 3.0,
+&end
+
+&ipolq
+  ntqs        50,    nqframe    50,    nsteqlim  1000,
+  qshell1     3.0,   qshell2    4.0,   qshell3    5.0,
+  nqphpt      200,
+  minqwt      0.1,
+  solute      ':1-3',
+  qmlev       'MP2',
+  basis       'cc-pvTZ',
+  modq        ':WAT & @O'     -1.0106,
+  modq        ':WAT & @H1,H2'  0.5053,
+  verbose     0,    checkex   0,
+  rqminp      1,    rqmout    1,    rqmchk    1,
+  qmprog "gaussian",
+  fmpath "/home/e280/e280/steboss/local/g09/formchk",
+  qmpath "/home/e280/e280/steboss/local/g09/g09",
+  maxcore = 4096,
+
+  uvpath "/home/e280/e280/steboss/local/g09/cubegen",
+  unx 21,  uny 21,  unz 21,
+  uhx 1.2, uhy 1.2, uhz 1.2,
+  GridFile 'IPolQgrd90',
+&end

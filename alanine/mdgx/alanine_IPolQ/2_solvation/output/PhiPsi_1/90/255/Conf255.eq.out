@@ -1,0 +1,431 @@
+
+          -------------------------------------------------------
+          Amber 16 SANDER                              2016
+          -------------------------------------------------------
+
+| Run on 03/14/2017 at 15:43:13
+
+|   Executable path: sander.MPI
+| Working directory: /home/steboss/projects/mdgx-tests/alanine/IPOLQ/input/PhiPsi_1/90/255
+|          Hostname: node002
+
+  [-O]verwriting output
+
+File Assignments:
+|  MDIN: equil.in                                                              
+| MDOUT: Conf255.eq.out                                                        
+|INPCRD: Conf255.min                                                           
+|  PARM: Conf255.top                                                           
+|RESTRT: Conf255.rst                                                           
+|  REFC: Conf255.crd                                                           
+| MDVEL: mdvel                                                                 
+| MDFRC: mdfrc                                                                 
+|  MDEN: mden                                                                  
+| MDCRD: mdcrd                                                                 
+|MDINFO: mdinfo                                                                
+|  MTMD: mtmd                                                                  
+|INPDIP: inpdip                                                                
+|RSTDIP: rstdip                                                                
+|INPTRA: inptraj                                                               
+
+|    REMLOG: rem.log
+|   REMTYPE: rem.type
+|  REMSTRIP: 
+|   SAVEENE: saveene
+|CLUSTERINF: cluster.info
+| RESERVOIR: reserv/frame
+|   REMDDIM: 
+
+
+ Here is the input file:
+
+Equilibrate water in NPT                                                       
+ &cntrl                                                                        
+                                                                               
+  nmropt = 0,                                                                  
+  ntx    = 1,       irest  = 0,       ntrx   = 1,      ntxo   = 1,             
+  ntpr   = 1000,    ntwx   = 1000,    ntwv   = 0,      ntwe   = 1000,          
+  iwrap  = 0,       ioutfm = 1,                                                
+                                                                               
+  ntf    = 2,       ntb    = 2,                                                
+  cut = 9.0,                                                                   
+                                                                               
+  ibelly = 0,       ntr    = 1,                                                
+  restraintmask = ':1',                                                        
+  restraint_wt = 100.0,                                                        
+                                                                               
+  imin   = 0,                                                                  
+  nstlim = 10000,                                                              
+  nscm   = 1000,                                                               
+  t      = 0.0,     dt     = 0.002,                                            
+                                                                               
+  temp0     = 298.0,   tempi  = 0.0,                                           
+  ig        = -1,                                                              
+  ntt       = 3,                                                               
+  gamma_ln  = 3.0,                                                             
+                                                                               
+  ntp    = 1,       pres0  = 1.0,     comp   = 44.6,                           
+  taup   = 1.0,                                                                
+                                                                               
+  ntc    = 2,       tol    = 0.000001, watnam = 'WAT ',                        
+                                                                               
+ &end                                                                          
+
+--------------------------------------------------------------------------------
+   1.  RESOURCE   USE: 
+--------------------------------------------------------------------------------
+
+| Flags: MPI                                                                    
+ getting new box info from bottom of inpcrd
+|  INFO: Old style inpcrd file read
+
+| peek_ewald_inpcrd: Box info found
+|Largest sphere to fit in unit cell has radius =    14.666
+| New format PARM file being parsed.
+| Version =    1.000 Date = 03/14/17 Time = 13:40:45
+ NATOM  =    2950 NTYPES =       9 NBONH =    2940 MBONA  =       9
+ NTHETH =      25 MTHETA =      11 NPHIH =      43 MPHIA  =      24
+ NHPARM =       0 NPARM  =       0 NNB   =    4003 NRES   =     979
+ NBONA  =       9 NTHETA =      11 NPHIA =      24 NUMBND =      10
+ NUMANG =      16 NPTRA  =      19 NATYP =       9 NPHB   =       1
+ IFBOX  =       2 NMXRS  =      10 IFCAP =       0 NEXTRA =       0
+ NCOPY  =       0
+
+
+|     Memory Use     Allocated
+|     Real              302134
+|     Hollerith           9831
+|     Integer            90248
+|     Max Pairs         327204
+|     nblistReal         35400
+|     nblist Int         89241
+|       Total             4654 kbytes
+
+| Note: 1-4 EEL scale factors are being read from the topology file.
+
+| Note: 1-4 VDW scale factors are being read from the topology file.
+| Duplicated    0 dihedrals
+| Duplicated    0 dihedrals
+
+     BOX TYPE: TRUNCATED OCTAHEDRON
+Note: ig = -1. Setting random seed to   276014 based on wallclock time in microseconds
+      and disabling the synchronization of random numbers between tasks
+      to improve performance.
+
+--------------------------------------------------------------------------------
+   2.  CONTROL  DATA  FOR  THE  RUN
+--------------------------------------------------------------------------------
+
+default_name                                                                    
+
+General flags:
+     imin    =       0, nmropt  =       0
+
+Nature and format of input:
+     ntx     =       1, irest   =       0, ntrx    =       1
+
+Nature and format of output:
+     ntxo    =       1, ntpr    =    1000, ntrx    =       1, ntwr    =   10000
+     iwrap   =       0, ntwx    =    1000, ntwv    =       0, ntwe    =    1000
+     ioutfm  =       1, ntwprt  =       0, idecomp =       0, rbornstat=      0
+
+Potential function:
+     ntf     =       2, ntb     =       2, igb     =       0, nsnb    =      25
+     ipol    =       0, gbsa    =       0, iesp    =       0
+     dielc   =   1.00000, cut     =   9.00000, intdiel =   1.00000
+
+Frozen or restrained atoms:
+     ibelly  =       0, ntr     =       1
+     restraint_wt = 100.00000
+
+Molecular dynamics:
+     nstlim  =     10000, nscm    =         0, nrespa  =         1
+     t       =   0.00000, dt      =   0.00200, vlimit  =  20.00000
+
+Langevin dynamics temperature regulation:
+     ig      =  276014
+     temp0   = 298.00000, tempi   =   0.00000, gamma_ln=   3.00000
+
+Pressure regulation:
+     ntp     =       1
+     pres0   =   1.00000, comp    =  44.60000, taup    =   1.00000
+
+SHAKE:
+     ntc     =       2, jfastw  =       0
+     tol     =   0.00000
+
+Ewald parameters:
+     verbose =       0, ew_type =       0, nbflag  =       1, use_pme =       1
+     vdwmeth =       1, eedmeth =       1, netfrc  =       1
+     Box X =   35.923   Box Y =   35.923   Box Z =   35.923
+     Alpha =  109.471   Beta  =  109.471   Gamma =  109.471
+     NFFT1 =   36       NFFT2 =   36       NFFT3 =   36
+     Cutoff=    9.000   Tol   =0.100E-04
+     Ewald Coefficient =  0.30768
+     Interpolation order =    4
+
+| MPI Timing options:
+|      profile_mpi =        0
+
+    LOADING THE CONSTRAINED ATOMS AS GROUPS
+
+
+   5.  REFERENCE ATOM COORDINATES
+
+  defa
+     Mask :1; matches     6 atoms
+
+--------------------------------------------------------------------------------
+   3.  ATOMIC COORDINATES AND VELOCITIES
+--------------------------------------------------------------------------------
+
+defa                                                                            
+ begin time read from input coords =     0.000 ps
+
+ Number of triangulated 3-point waters found:      976
+|  Atom division among processors:
+|         0     370     739    1108    1477    1846    2215    2584
+|      2950
+
+     Sum of charges from parm topology file =  -0.00000000
+     Forcing neutrality...
+|  Running AMBER/MPI version on    8 nodes
+
+
+--------------------------------------------------------------------------------
+   4.  RESULTS
+--------------------------------------------------------------------------------
+
+|  # of SOLUTE  degrees of freedom (RNDFP):    5910.
+|  # of SOLVENT degrees of freedom (RNDFS):       0.
+|  NDFMIN =    5910.     NUM_NOSHAKE =      0     CORRECTED RNDFP =    5910.
+|  TOTAL # of degrees of freedom (RNDF) =    5910.
+ ---------------------------------------------------
+ APPROXIMATING switch and d/dx switch using CUBIC SPLINE INTERPOLATION
+ using   5000.0 points per unit in tabled values
+ TESTING RELATIVE ERROR over r ranging from 0.0 to cutoff
+| CHECK switch(x): max rel err =   0.2738E-14   at   2.422500
+| CHECK d/dx switch(x): max rel err =   0.8314E-11   at   2.736960
+ ---------------------------------------------------
+| Local SIZE OF NONBOND LIST =      99807
+| TOTAL SIZE OF NONBOND LIST =     681529
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =     0.00  PRESS = -5479.3
+ Etot   =    -12871.2763  EKtot   =         0.0000  EPtot      =    -12871.2763
+ BOND   =         0.4481  ANGLE   =         2.5807  DIHED      =        11.4379
+ 1-4 NB =         3.1269  1-4 EEL =        46.5948  VDWAALS    =      2245.2023
+ EELEC  =    -15181.0958  EHBOND  =         0.0000  RESTRAINT  =         0.4290
+ EAMBER (non-restraint)  =    -12871.7054
+ EKCMT  =         0.0000  VIRIAL  =      4221.8715  VOLUME     =     35686.2482
+                                                    Density    =         0.8249
+ Ewald error estimate:   0.4968E-05
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     1000   TIME(PS) =       2.000  TEMP(K) =   303.59  PRESS =  -406.8
+ Etot   =     -7489.8946  EKtot   =      1782.7080  EPtot      =     -9272.6025
+ BOND   =         2.5443  ANGLE   =         9.6152  DIHED      =        10.3578
+ 1-4 NB =         3.6499  1-4 EEL =        43.4730  VDWAALS    =      1444.8316
+ EELEC  =    -10789.9745  EHBOND  =         0.0000  RESTRAINT  =         2.9001
+ EAMBER (non-restraint)  =     -9275.5026
+ EKCMT  =       859.1323  VIRIAL  =      1143.8603  VOLUME     =     32418.8342
+                                                    Density    =         0.9081
+ Ewald error estimate:   0.5294E-04
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     2000   TIME(PS) =       4.000  TEMP(K) =   289.44  PRESS =  -408.0
+ Etot   =     -7530.6682  EKtot   =      1699.6428  EPtot      =     -9230.3110
+ BOND   =         2.7021  ANGLE   =        11.6201  DIHED      =        10.6626
+ 1-4 NB =         2.4503  1-4 EEL =        46.0782  VDWAALS    =      1343.9671
+ EELEC  =    -10650.2468  EHBOND  =         0.0000  RESTRAINT  =         2.4556
+ EAMBER (non-restraint)  =     -9232.7665
+ EKCMT  =       860.2973  VIRIAL  =      1131.8570  VOLUME     =     30826.9122
+                                                    Density    =         0.9550
+ Ewald error estimate:   0.1188E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     3000   TIME(PS) =       6.000  TEMP(K) =   305.38  PRESS =  -140.4
+ Etot   =     -7545.7452  EKtot   =      1793.2308  EPtot      =     -9338.9760
+ BOND   =         1.7529  ANGLE   =         8.3670  DIHED      =        10.2814
+ 1-4 NB =         3.2719  1-4 EEL =        46.9044  VDWAALS    =      1382.2931
+ EELEC  =    -10793.5378  EHBOND  =         0.0000  RESTRAINT  =         1.6912
+ EAMBER (non-restraint)  =     -9340.6672
+ EKCMT  =       912.6291  VIRIAL  =      1003.8605  VOLUME     =     30101.3951
+                                                    Density    =         0.9780
+ Ewald error estimate:   0.3755E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     4000   TIME(PS) =       8.000  TEMP(K) =   302.51  PRESS =  -401.2
+ Etot   =     -7617.3542  EKtot   =      1776.3573  EPtot      =     -9393.7115
+ BOND   =         2.5644  ANGLE   =        10.8549  DIHED      =        12.7316
+ 1-4 NB =         4.3226  1-4 EEL =        46.7019  VDWAALS    =      1361.8339
+ EELEC  =    -10837.5920  EHBOND  =         0.0000  RESTRAINT  =         4.8712
+ EAMBER (non-restraint)  =     -9398.5827
+ EKCMT  =       888.7118  VIRIAL  =      1148.9843  VOLUME     =     30046.5640
+                                                    Density    =         0.9798
+ Ewald error estimate:   0.1822E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     5000   TIME(PS) =      10.000  TEMP(K) =   306.61  PRESS =   119.4
+ Etot   =     -7591.5336  EKtot   =      1800.4546  EPtot      =     -9391.9882
+ BOND   =         1.6893  ANGLE   =        10.0669  DIHED      =        10.0569
+ 1-4 NB =         2.7592  1-4 EEL =        46.3981  VDWAALS    =      1418.2351
+ EELEC  =    -10884.5150  EHBOND  =         0.0000  RESTRAINT  =         3.3213
+ EAMBER (non-restraint)  =     -9395.3095
+ EKCMT  =       901.0892  VIRIAL  =       823.7808  VOLUME     =     29993.7591
+                                                    Density    =         0.9815
+ Ewald error estimate:   0.1752E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     6000   TIME(PS) =      12.000  TEMP(K) =   304.02  PRESS =   185.6
+ Etot   =     -7532.0515  EKtot   =      1785.2528  EPtot      =     -9317.3043
+ BOND   =         2.0902  ANGLE   =        10.5685  DIHED      =        12.3152
+ 1-4 NB =         2.9303  1-4 EEL =        48.9627  VDWAALS    =      1389.8840
+ EELEC  =    -10788.3402  EHBOND  =         0.0000  RESTRAINT  =         4.2848
+ EAMBER (non-restraint)  =     -9321.5891
+ EKCMT  =       885.5462  VIRIAL  =       765.8172  VOLUME     =     29871.4638
+                                                    Density    =         0.9855
+ Ewald error estimate:   0.3954E-04
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     7000   TIME(PS) =      14.000  TEMP(K) =   294.31  PRESS =   529.7
+ Etot   =     -7627.3799  EKtot   =      1728.2619  EPtot      =     -9355.6418
+ BOND   =         3.5453  ANGLE   =        11.1717  DIHED      =        10.8778
+ 1-4 NB =         4.0265  1-4 EEL =        44.8177  VDWAALS    =      1472.7767
+ EELEC  =    -10904.2827  EHBOND  =         0.0000  RESTRAINT  =         1.4251
+ EAMBER (non-restraint)  =     -9357.0669
+ EKCMT  =       877.9805  VIRIAL  =       534.4688  VOLUME     =     30035.7562
+                                                    Density    =         0.9801
+ Ewald error estimate:   0.1584E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     8000   TIME(PS) =      16.000  TEMP(K) =   304.54  PRESS =   -35.1
+ Etot   =     -7569.3382  EKtot   =      1788.2994  EPtot      =     -9357.6377
+ BOND   =         0.8667  ANGLE   =         9.1739  DIHED      =        10.3972
+ 1-4 NB =         2.9258  1-4 EEL =        46.4280  VDWAALS    =      1371.9914
+ EELEC  =    -10802.0772  EHBOND  =         0.0000  RESTRAINT  =         2.6564
+ EAMBER (non-restraint)  =     -9360.2941
+ EKCMT  =       884.0388  VIRIAL  =       906.5110  VOLUME     =     29666.0811
+                                                    Density    =         0.9923
+ Ewald error estimate:   0.3148E-03
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =     9000   TIME(PS) =      18.000  TEMP(K) =   293.57  PRESS =   -34.6
+ Etot   =     -7706.5695  EKtot   =      1723.9022  EPtot      =     -9430.4717
+ BOND   =         1.8467  ANGLE   =        10.6915  DIHED      =        10.4090
+ 1-4 NB =         3.8393  1-4 EEL =        47.9346  VDWAALS    =      1430.0927
+ EELEC  =    -10939.3841  EHBOND  =         0.0000  RESTRAINT  =         4.0986
+ EAMBER (non-restraint)  =     -9434.5703
+ EKCMT  =       878.3629  VIRIAL  =       900.8076  VOLUME     =     30017.0882
+                                                    Density    =         0.9807
+ Ewald error estimate:   0.9332E-04
+ ------------------------------------------------------------------------------
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   286.29  PRESS =   134.6
+ Etot   =     -7696.8511  EKtot   =      1681.1615  EPtot      =     -9378.0125
+ BOND   =         3.0826  ANGLE   =         9.8381  DIHED      =         9.7449
+ 1-4 NB =         2.5542  1-4 EEL =        46.4631  VDWAALS    =      1423.4403
+ EELEC  =    -10879.5871  EHBOND  =         0.0000  RESTRAINT  =         6.4514
+ EAMBER (non-restraint)  =     -9384.4640
+ EKCMT  =       832.8924  VIRIAL  =       745.9379  VOLUME     =     29913.4676
+                                                    Density    =         0.9841
+ Ewald error estimate:   0.1130E-03
+ ------------------------------------------------------------------------------
+
+
+      A V E R A G E S   O V E R   10000 S T E P S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =   293.74  PRESS =  -196.8
+ Etot   =     -7645.3907  EKtot   =      1724.8610  EPtot      =     -9370.2517
+ BOND   =         3.3083  ANGLE   =        10.0059  DIHED      =        11.2286
+ 1-4 NB =         2.8733  1-4 EEL =        45.1850  VDWAALS    =      1401.3972
+ EELEC  =    -10847.3833  EHBOND  =         0.0000  RESTRAINT  =         3.1333
+ EAMBER (non-restraint)  =     -9373.3850
+ EKCMT  =       859.6718  VIRIAL  =       998.7371  VOLUME     =     30513.5288
+                                                    Density    =         0.9662
+ Ewald error estimate:   0.2047E-03
+ ------------------------------------------------------------------------------
+
+
+      R M S  F L U C T U A T I O N S
+
+
+ NSTEP =    10000   TIME(PS) =      20.000  TEMP(K) =    26.63  PRESS =   475.2
+ Etot   =       327.7803  EKtot   =       156.3945  EPtot      =       178.2721
+ BOND   =         1.5289  ANGLE   =         2.5144  DIHED      =         1.2580
+ 1-4 NB =         0.6564  1-4 EEL =         1.9083  VDWAALS    =        86.9239
+ EELEC  =       256.1234  EHBOND  =         0.0000  RESTRAINT  =         1.3039
+ EAMBER (non-restraint)  =       176.9683
+ EKCMT  =        75.8119  VIRIAL  =       295.7084  VOLUME     =      1227.7193
+                                                    Density    =         0.0357
+ Ewald error estimate:   0.1561E-03
+ ------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+   5.  TIMINGS
+--------------------------------------------------------------------------------
+
+|>>>>>>>>PROFILE of Average TIMES>>>>>>>>> 
+|                Build the list            14.00 (96.53% of List )
+|                Other                      0.50 ( 3.47% of List )
+|             List time                 14.50 (10.39% of Nonbo)
+|                   Short_ene time            82.39 (95.96% of Direc)
+|                   Other                      3.47 ( 4.04% of Direc)
+|                Direct Ewald time         85.86 (68.62% of Ewald)
+|                Adjust Ewald time          0.52 ( 0.41% of Ewald)
+|                Self Ewald time            0.01 ( 0.01% of Ewald)
+|                   Fill Bspline coeffs        1.98 ( 6.73% of Recip)
+|                   Fill charge grid           2.07 ( 7.01% of Recip)
+|                   Scalar sum                 7.67 (26.02% of Recip)
+|                   Grad sum                   3.61 (12.24% of Recip)
+|                      FFT back comm time         4.15 (31.48% of FFT t)
+|                      Other                      9.04 (68.52% of FFT t)
+|                   FFT time                  13.19 (44.72% of Recip)
+|                   Other                      0.97 ( 3.28% of Recip)
+|                Recip Ewald time          29.48 (23.56% of Ewald)
+|                Force Adjust               8.44 ( 6.74% of Ewald)
+|                Virial junk                0.74 ( 0.59% of Ewald)
+|                Other                      0.07 ( 0.06% of Ewald)
+|             Ewald time               125.11 (89.60% of Nonbo)
+|             Other                      0.01 ( 0.01% of Nonbo)
+|          Nonbond force            139.63 (97.78% of Force)
+|          Bond/Angle/Dihedral        0.24 ( 0.17% of Force)
+|          FRC Collect time           2.48 ( 1.73% of Force)
+|          Other                      0.46 ( 0.32% of Force)
+|       Force time               142.81 (91.88% of Runmd)
+|       Shake time                 0.60 ( 0.38% of Runmd)
+|       Verlet update time         5.87 ( 3.77% of Runmd)
+|       Ekcmr time                 1.49 ( 0.96% of Runmd)
+|       CRD distribute time        1.90 ( 1.22% of Runmd)
+|       Other                      2.77 ( 1.78% of Runmd)
+|    Runmd Time               155.43 (100.0% of Total)
+|    Other                      0.12 ( 0.08% of Total)
+| Total time               155.56 (100.0% of ALL  )
+
+| Number of list builds   :        906
+
+| Highest rstack allocated:      40396
+| Highest istack allocated:        874
+
+| Final Performance Info:
+| -----------------------------------------------------
+| Average timings for all steps:
+|     Elapsed(s) =     155.69 Per Step(ms) =      15.57
+|         ns/day =      11.10   seconds/ns =    7784.29
+| -----------------------------------------------------
+
+|           Job began  at 15:43:13.221  on 03/14/2017
+|           Setup done at 15:43:13.352  on 03/14/2017
+|           Run   done at 15:45:48.978  on 03/14/2017
+|     wallclock() was called  571879 times

@@ -1,0 +1,486 @@
+<++>-----------------------------------------------------------------------<++>
+<++> mdgx: A molecular dynamics engine in the AMBER suite of programs      <++>
+<++>                                                                       <++>
+<++> Written by David S. Cerutti, Case Group (2009)                        <++>
+<++>-----------------------------------------------------------------------<++>
+
+Run on Sat Mar 18 10:27:00 2017
+
+INPUT FILE ASSIGNMENTS:
+ Designation         Base name                                       Suffix
+ -----------------   ---------------------------------------------   ----------
+ Input File          mdgxQM.in                                       NONE
+ Input Coordinates   Conf90.rst                                      NONE
+ Topology            Conf90.top                                      NONE
+
+OUTPUT FILE ASSIGNMENTS:
+ Designation         Base name                                       Suffix
+ -----------------   ---------------------------------------------   ----------
+ State Information   ipolq.out                                               
+
+!!! Output overwriting is ENABLED !!!
+<++>-----------------------------------------------------------------------<++>
+
+INPUT LINE TEXT:
+
+mdgx.MPI -O -i mdgxQM.in 
+
+
+INPUT FILE TEXT:
+
+&files
+  -p Conf90.top
+  -c Conf90.rst
+  -o ipolq.out
+&end
+
+&cntrl
+  DoSETTLE = 1,
+  ntpr = 100,  nstlim = 100,  nfistep = 0,
+  dt = 0.003,
+  ntt = 3,  tempi = 300.0,  temp0 = 300.0,  gamma_ln = 3.0,
+&end
+
+&ipolq
+  ntqs        50,    nqframe    50,    nsteqlim  1000,
+  qshell1     3.0,   qshell2    4.0,   qshell3    5.0,
+  nqphpt      200,
+  minqwt      0.1,
+  solute      ':1-3',
+  qmlev       'MP2',
+  basis       'cc-pvTZ',
+  modq        ':WAT & @O'     -1.0106,
+  modq        ':WAT & @H1,H2'  0.5053,
+  verbose     0,    checkex   0,
+  rqminp      1,    rqmout    1,    rqmchk    1,
+  qmprog "gaussian",
+  fmpath "/home/steboss/Software/g09/formchk",
+  qmpath "/home/steboss/Software/g09/g09",
+  maxcore = 4096,
+
+  uvpath "/home/steboss/Software/g09/cubegen",
+  unx 21,  uny 21,  unz 21,
+  uhx 1.2, uhy 1.2, uhz 1.2,
+  GridFile 'IPolQgrd90',
+&end<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(1.) SYSTEM SPECIFICATIONS
+
+ Number of atoms:              2800     Number of residues:             929
+ Number of rigid waters:        926     Number of extra points:           0
+
+ Bonds with hydrogen:          2790     Bonds without hydrogen:           9
+ Number of bond types:           10
+
+ Number of angles:               36     Number of angle types:           16
+ Number of dihedrals:            67     Number of dihedral types:        19
+
+ Total system charge:     -0.000000     Number of vdW types:              9
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(2.) CONTROL DATA FOR THE RUN
+
+Mode of operation: ENERGY MINIMIZATION
+
+Nature and format of input:
+ - Dynamics are beginning from input coordinates.
+
+Nature and format of output:
+ - State information / diagnostics:     100 steps
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+(3.) NONBONDED INTERACTIONS
+
+The direct space sum is computed on a grid of linked cells, each at least
+8.00A thick in all dimensions.  Cell grid details:
+
+ - Cell count:            3      3      3
+ - Cell atom limit:            313
+ - Cell max atoms, pairs:      124  39924
+ - Cell min atoms, pairs:       91  29016
+
+The reciprocal space sum is computed by traditional Smooth Particle Mesh Ewald.
+ - Mesh grid size:           35     35     36
+ - Interpolation order:       4      4      4
+ - Direct Sum Tolerance:  6.0000000000000e-06
+ - Ewald coefficient:     3.5931256986225e-01
+ - Gaussian width:        1.3915460853253e+00
+
+The direct space electrostatic force is approximated using cubic spline 
+interpolation. Accuracy of the interpolation table is not tested for r < 1.0 
+Angstroms; the statistics below reflect the inaccuracy that is likely to be 
+encountered in a typical nonbonded force calculation.  The lookup table is 
+indexed by the square of the distance r_ij between charges i and j.
+
+ - Spline fitting method: BEST POSSIBLE FIT
+ - Spline discretization:   6.25000e-02
+ - Maximum relative error:  4.13858e-07 at r_ij =   1.028
+ - Maximum absolute error:  1.28865e-04 at r_ij =   1.003
+
+The direct space electrostatic energy is also approximated using cubic spline 
+interpolation. Note that, because there are separate tables for force and 
+energy, the electrostatic force is not exactly the derivative of the energy. 
+However, this approach maximizes the accuracy of the lookup table for a given 
+amount of storage, which leads to acceptable energy conservation nonetheless.
+
+ - Spline fitting method: BEST POSSIBLE FIT
+ - Spline discretization:   6.25000e-02
+ - Maximum relative error:  7.27091e-08 at r_ij =   1.003
+ - Maximum absolute error:  1.46873e-05 at r_ij =   1.003
+
+Other direct space parameters:
+ - Electrostatic cutoff:  8.0000
+ - van der Waals cutoff:  8.0000
+ - Long-ranged vdW interactions approximated by homogeneity approximation.
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+ (4.) SYSTEM TOPOLOGY AND CONFORMATION
+
+ - Checking chirality of standard amino acids.
+ - Checking for omitted disulfides.
+ - Checking for (nonstandard) Lennard-Jones combining rules.
+ - Lorentz-Berthelot combining rules are in effect.
+ - No problems with the topology detected.
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+ (5.) RESULTS
+
+\\\
+ Step:                 0   Time:            0.0000
+ Temperature:   303.2812   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7267.2237   EKtot:        1673.3554   EPtot:       -8940.5791
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10306.9036   vdW:          1336.3278   Virial:          0.0000
+\\\
+ Step:               100   Time:            0.3000
+ Temperature:   296.2826   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7313.0371   EKtot:        1634.7407   EPtot:       -8947.7778
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10237.7390   vdW:          1259.9646   Virial:          0.0000
+\\\
+ Step:               200   Time:            0.6000
+ Temperature:   295.1664   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7259.0865   EKtot:        1628.5819   EPtot:       -8887.6684
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10299.6624   vdW:          1381.9973   Virial:          0.0000
+\\\
+ Step:               300   Time:            0.9000
+ Temperature:   301.6624   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7219.2478   EKtot:        1664.4239   EPtot:       -8883.6717
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10175.9720   vdW:          1262.3037   Virial:          0.0000
+\\\
+ Step:               400   Time:            1.2000
+ Temperature:   295.7505   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7208.8052   EKtot:        1631.8047   EPtot:       -8840.6100
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10138.7725   vdW:          1268.1659   Virial:          0.0000
+\\\
+ Step:               500   Time:            1.5000
+ Temperature:   322.7071   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7066.5088   EKtot:        1780.5381   EPtot:       -8847.0469
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10197.2674   vdW:          1320.2239   Virial:          0.0000
+\\\
+ Step:               600   Time:            1.8000
+ Temperature:   306.5275   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7093.1514   EKtot:        1691.2673   EPtot:       -8784.4187
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10135.0460   vdW:          1320.6306   Virial:          0.0000
+\\\
+ Step:               700   Time:            2.1000
+ Temperature:   303.9703   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7100.0828   EKtot:        1677.1577   EPtot:       -8777.2405
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10063.4266   vdW:          1256.1894   Virial:          0.0000
+\\\
+ Step:               800   Time:            2.4000
+ Temperature:   300.0205   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7172.4662   EKtot:        1655.3647   EPtot:       -8827.8309
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10159.0671   vdW:          1301.2396   Virial:          0.0000
+\\\
+ Step:               900   Time:            2.7000
+ Temperature:   308.8557   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7149.2548   EKtot:        1704.1131   EPtot:       -8853.3678
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10282.4083   vdW:          1399.0438   Virial:          0.0000
+\\\
+ Step:              1000   Time:            3.0000
+ Temperature:   309.2130   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7136.1452   EKtot:        1706.0845   EPtot:       -8842.2297
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10152.0523   vdW:          1279.8259   Virial:          0.0000
+\\\
+ Step:              1100   Time:            3.3000
+ Temperature:   295.5077   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7185.8611   EKtot:        1630.4655   EPtot:       -8816.3266
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10130.8629   vdW:          1284.5397   Virial:          0.0000
+\\\
+ Step:              1200   Time:            3.6000
+ Temperature:   298.1977   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7144.9731   EKtot:        1645.3073   EPtot:       -8790.2804
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10164.6136   vdW:          1344.3365   Virial:          0.0000
+\\\
+ Step:              1300   Time:            3.9000
+ Temperature:   299.5188   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7223.8965   EKtot:        1652.5967   EPtot:       -8876.4932
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10198.1397   vdW:          1291.6498   Virial:          0.0000
+\\\
+ Step:              1400   Time:            4.2000
+ Temperature:   305.2072   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7175.5421   EKtot:        1683.9826   EPtot:       -8859.5247
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10227.1210   vdW:          1337.5997   Virial:          0.0000
+\\\
+ Step:              1500   Time:            4.5000
+ Temperature:   304.2018   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7191.0098   EKtot:        1678.4353   EPtot:       -8869.4451
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10170.8666   vdW:          1271.4248   Virial:          0.0000
+\\\
+ Step:              1600   Time:            4.8000
+ Temperature:   298.0083   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7211.4512   EKtot:        1644.2621   EPtot:       -8855.7133
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10268.0288   vdW:          1382.3188   Virial:          0.0000
+\\\
+ Step:              1700   Time:            5.1000
+ Temperature:   296.3296   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7188.1604   EKtot:        1635.0001   EPtot:       -8823.1605
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10163.7528   vdW:          1310.5957   Virial:          0.0000
+\\\
+ Step:              1800   Time:            5.4000
+ Temperature:   311.7465   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7100.6506   EKtot:        1720.0629   EPtot:       -8820.7135
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10035.7076   vdW:          1184.9975   Virial:          0.0000
+\\\
+ Step:              1900   Time:            5.7000
+ Temperature:   299.9370   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7136.8728   EKtot:        1654.9040   EPtot:       -8791.7768
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10151.0148   vdW:          1329.2414   Virial:          0.0000
+\\\
+ Step:              2000   Time:            6.0000
+ Temperature:   300.7206   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7120.1327   EKtot:        1659.2272   EPtot:       -8779.3600
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10170.5436   vdW:          1361.1870   Virial:          0.0000
+\\\
+ Step:              2100   Time:            6.3000
+ Temperature:   305.7662   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7155.0343   EKtot:        1687.0666   EPtot:       -8842.1009
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10205.2323   vdW:          1333.1347   Virial:          0.0000
+\\\
+ Step:              2200   Time:            6.6000
+ Temperature:   296.7565   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7254.1144   EKtot:        1637.3557   EPtot:       -8891.4701
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10251.9516   vdW:          1330.4848   Virial:          0.0000
+\\\
+ Step:              2300   Time:            6.9000
+ Temperature:   296.9559   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7264.4998   EKtot:        1638.4558   EPtot:       -8902.9556
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10234.2922   vdW:          1301.3399   Virial:          0.0000
+\\\
+ Step:              2400   Time:            7.2000
+ Temperature:   296.0221   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7236.7215   EKtot:        1633.3035   EPtot:       -8870.0250
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10212.7513   vdW:          1312.7296   Virial:          0.0000
+\\\
+ Step:              2500   Time:            7.5000
+ Temperature:   308.7492   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7118.0407   EKtot:        1703.5251   EPtot:       -8821.5658
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10125.5981   vdW:          1274.0357   Virial:          0.0000
+\\\
+ Step:              2600   Time:            7.8000
+ Temperature:   293.4148   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7177.0707   EKtot:        1618.9179   EPtot:       -8795.9887
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10093.8752   vdW:          1267.8899   Virial:          0.0000
+\\\
+ Step:              2700   Time:            8.1000
+ Temperature:   299.9343   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7242.4492   EKtot:        1654.8892   EPtot:       -8897.3383
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10215.6477   vdW:          1288.3127   Virial:          0.0000
+\\\
+ Step:              2800   Time:            8.4000
+ Temperature:   296.2172   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7225.6140   EKtot:        1634.3800   EPtot:       -8859.9940
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10223.9445   vdW:          1333.9538   Virial:          0.0000
+\\\
+ Step:              2900   Time:            8.7000
+ Temperature:   301.2086   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7261.0359   EKtot:        1661.9201   EPtot:       -8922.9561
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10254.5037   vdW:          1301.5510   Virial:          0.0000
+\\\
+ Step:              3000   Time:            9.0000
+ Temperature:   293.8573   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7216.1642   EKtot:        1621.3594   EPtot:       -8837.5236
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10290.7845   vdW:          1423.2642   Virial:          0.0000
+\\\
+ Step:              3100   Time:            9.3000
+ Temperature:   301.0898   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7224.1699   EKtot:        1661.2645   EPtot:       -8885.4344
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10229.1483   vdW:          1313.7173   Virial:          0.0000
+\\\
+ Step:              3200   Time:            9.6000
+ Temperature:   294.7523   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7211.1089   EKtot:        1626.2976   EPtot:       -8837.4065
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10177.8670   vdW:          1310.4638   Virial:          0.0000
+\\\
+ Step:              3300   Time:            9.9000
+ Temperature:   305.3685   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7188.6094   EKtot:        1684.8721   EPtot:       -8873.4814
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10196.4330   vdW:          1292.9549   Virial:          0.0000
+\\\
+ Step:              3400   Time:           10.2000
+ Temperature:   301.5098   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7167.3870   EKtot:        1663.5816   EPtot:       -8830.9687
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10157.3421   vdW:          1296.3767   Virial:          0.0000
+\\\
+ Step:              3500   Time:           10.5000
+ Temperature:   291.7626   Pressure:        0.0000   Volume:      28187.2354
+ Etot:        -7203.9830   EKtot:        1609.8016   EPtot:       -8813.7846
+ Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+ Elec:       -10168.1723   vdW:          1324.3911   Virial:          0.0000
+
+
+% Averages over 3500 steps sampled at 35 points:
+%
+% Temperature:   300.9399   Pressure:        0.0000   Volume:      28187.2354
+% Etot:        -7186.9240   EKtot:        1660.4375   EPtot:       -8847.3614
+% Bond:            6.1207   Angle:          10.2501   Dihedral:       13.6258
+% Elec:       -10187.4174   vdW:          1310.0593   Virial:          0.0000
+% Density:         0.9913
+
+% Root mean squared deviations over 3500 steps sampled at 35 points:
+%
+% Temperature:     6.3215   Pressure:        0.0000   Volume:          0.0009
+% Etot:           56.4670   EKtot:          34.8792   EPtot:          41.3584
+% Bond:            0.0000   Angle:           0.0000   Dihedral:        0.0000
+% Elec:           60.5576   vdW:            45.6157   Virial:          0.0000
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+ (6.) Timings for dynamics
+
+ Dynamics completed on Sat Mar 18 10:27:37 2017
+
+ Timings are expressed as a percentage of total tracked CPU execution time.
+
+ Segment                 Time / Percentage   Min Time  CPU  Max Time  CPU
+ ----------------------  ---------  ------  --------- ---- --------- ----
+ Setup                        0.00    0.00       0.00    0      0.00    4
+ Bonded Interactions          0.55    1.43       0.16    0      0.79    1
+ Cell Communication           4.04   10.60       3.96    7      4.18    0
+ Nonbonded Interactions       7.03   18.43       2.20    0      8.70    6
+ B-Spline Computation         0.34    0.90       0.10    0      0.42    5
+ Particle -> Mesh             0.58    1.52       0.31    0      0.70    5
+ Mesh Transmission I          2.98    7.81       2.76    0      3.32    4
+ Mesh Transmission II         4.38   11.49       3.68    2      5.71    4
+ Mesh Packaging               0.40    1.04       0.16    4      1.54    0
+ Convolution Kernel           0.18    0.48       0.00    1      1.46    0
+ Fast Fourier Transform       0.76    1.98       0.00    1      6.05    0
+ Mesh -> Particle             3.30    8.65       0.45    0      4.38    3
+ Integration                  4.30   11.28       3.37    0      4.58    6
+ Constraints                  8.91   23.36       8.59    6      9.56    0
+ Thermostat                   0.22    0.58       0.22    2      0.22    6
+ Barostat                     0.00    0.00       0.00    2      0.00    0
+ Output Printing              0.17    0.45       0.00    7      1.35    0
+ Total CPU Time              38.15  100.00
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+ (7.) Solvent Reaction Field (Potential) (SRF(P))
+
+ SRF evaluated at 1275 points, averaged over 51 frames
+ SRFP was approximated by:    2200 scaled simulation charges
+                              1759 shell charges
+
+ Closest explicit charge penetration to SRFP evaluation point:   0.9020 A
+
+ Total charge-charge interaction energy in the cloud:     528.9558 kcal/mol
+ Total nuclear interaction energy with the cloud:        2182.8348 kcal/mol
+ SRF approximated to   0.0050 kcal/(mol-A-e) RMS error (correlation  1.0000)
+
+ SRF at solute atom sites:
+     Sim. X    Sim. Y    Sim. Z     Appr. X   Appr. Y   Appr. Z
+   --------- --------- ---------   --------- --------- ---------
+      3.2246  -10.8630  -11.4832      3.2250  -10.8700  -11.4919
+      3.2222  -14.6994   -5.9397      3.2239  -14.6960   -5.9482
+      2.6584  -12.2119   -5.0990      2.6577  -12.2079   -5.1046
+      2.6507  -12.5573   -0.9462      2.6544  -12.5528   -0.9331
+      5.1000  -23.0955   -3.4074      5.0975  -23.1041   -3.4156
+     10.6916  -28.4288   -4.0265     10.6868  -28.4407   -4.0538
+      1.0467  -20.9953   -0.0673      1.0476  -20.9970   -0.0696
+      6.5311  -31.1982   -9.0703      6.5351  -31.2008   -9.0668
+     -4.2934  -12.1120    8.6946     -4.2922  -12.1152    8.6985
+     -3.2280  -10.1418   15.7232     -3.2295  -10.1392   15.7174
+     -2.3705   -5.0139    2.7619     -2.3707   -5.0153    2.7616
+     -3.5786   -7.5873   -2.5806     -3.5783   -7.5795   -2.5751
+     -3.0453    1.6350    6.2612     -3.0447    1.6345    6.2615
+      0.2868   -1.2591    0.3847      0.2854   -1.2602    0.3852
+     -9.8769   -9.6168   16.7134     -9.8778   -9.6151   16.7168
+    -20.8208  -14.1038   16.6975    -20.8138  -14.1078   16.7105
+     -7.2313   -5.1253   16.2360     -7.2333   -5.1239   16.2349
+     -9.6136   -6.9447   15.5375     -9.6136   -6.9429   15.5436
+     -3.2291   -0.4323   12.9510     -3.2285   -0.4276   12.9521
+     -0.7843   -1.7295    9.4079     -0.7835   -1.7296    9.4113
+     -1.1336   -0.7831    9.4481     -1.1318   -0.7794    9.4530
+     -3.2848    3.8717   15.7680     -3.2841    3.8764   15.7658
+
+Convergence of the SRF at solute atom sites:
+     Sim. X    Sim. Y    Sim. Z     Conv. X   Conv. Y   Conv. Z
+   --------- --------- ---------   --------- --------- ---------
+      3.2246  -10.8630  -11.4832      2.4563    4.0348    3.0346
+      3.2222  -14.6994   -5.9397      0.7138    0.7877    1.3913
+      2.6584  -12.2119   -5.0990      2.2668    1.8815    0.4304
+      2.6507  -12.5573   -0.9462      1.9783    2.0477    3.6441
+      5.1000  -23.0955   -3.4074      2.3268    1.0612    2.7933
+     10.6916  -28.4288   -4.0265      2.1867    3.6566    9.5014
+      1.0467  -20.9953   -0.0673      3.6388    1.3439    1.8699
+      6.5311  -31.1982   -9.0703      8.3084    3.0824    2.7588
+     -4.2934  -12.1120    8.6946      2.3505    1.2160    1.5141
+     -3.2280  -10.1418   15.7232      1.1589    1.5323    2.2612
+     -2.3705   -5.0139    2.7619      1.6445    1.3364    1.5013
+     -3.5786   -7.5873   -2.5806      1.7343    1.2037    2.7671
+     -3.0453    1.6350    6.2612      1.2896    1.0335    1.0915
+      0.2868   -1.2591    0.3847      2.0697    3.4113    1.2529
+     -9.8769   -9.6168   16.7134      1.8709    2.9773    1.0293
+    -20.8208  -14.1038   16.6975      2.1906    8.2077    2.5167
+     -7.2313   -5.1253   16.2360      1.3556    1.9405    0.9421
+     -9.6136   -6.9447   15.5375      1.3094    0.7146    2.6698
+     -3.2291   -0.4323   12.9510      2.4049    2.8438    1.9908
+     -0.7843   -1.7295    9.4079      1.9103    3.1366    3.6514
+     -1.1336   -0.7831    9.4481      2.7935    3.1833    2.0669
+     -3.2848    3.8717   15.7680      3.8882    3.6921    2.6616
+
+ Potential energy of solvent charges in the QM field: -4317.719847 kcal/mol
+<++>-----------------------------------------------------------------------<++>

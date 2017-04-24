@@ -1,0 +1,67 @@
+How to use the folders:
+
+- original : folder with tetralanine topology and coordinates create with tleap
+             oldff/ff99SB
+- dihedral_scan.py : python script to create the inputfiles + submission script
+            for Gaussian calculations
+- dihedral.dat : dat file with the phi and psi angles we want to modify
+
+
+1) Create the input file for quantum calculation:
+
+~/sire.app/bin/python dihedral_scan.py  original/mol.prmtop original/mol.rst7 dihedral.dat 60
+
+2) Once the script has created the file you will have three directories:
+-PhiPsi_1 :  first pair of phi and psi (see below for details), subdivided as:
+
+PhiPsi_1/Phi_angle/Psi_angle/files
+
+Where Phi_angle folder has the name of the Phi angle, kept fixed during the
+calculation;
+Psi_angle folder has the name of the Psi angle, kept fixed during the calculation;
+files are: input Gaussian Cartesian (gcrt) file
+           submission script (.sh)  for section6
+e.g.
+PhiPsi_1/180/60/structure_60.gcrt + stucture_60.sh
+
+The logic here is to give Gaussian structure which are already scanned (so we
+don't have to perform scan in Gaussian)
+Thus I pass Gaussian coordiante file with Phi and Psi fixed and I convert them
+into suitable gcrt files for quantum optimization
+3) To submit all the simulations:
+
+for f in PhiPsi_*/*/* ; do
+cd $f
+sbatch structure_*.sh
+cd ../../../
+
+done
+
+4) Next step will be extract coordinate (mdcrd) file from gaussian output
+   merge all these coordiantes into one file (as Paramfit does)
+   and start the real Param-fit
+
+
+-------------------------------------------------------------------------------
+
+Content
+original/  : folder with tetraalanine created via tleap :
+- mol.prmtop
+- mol.rst7
+- mol.frcmod (original forcefield values I want to reproduce)
+- mol.mol2
+- mol.pdb
+
+Dihedrals to fit:
+
+PhiPsi_1 (first pair):
+Psi_1 : ACE1:C - ALA2:N - ALA2:CA -ALA2:CA
+Phi_1 : ALA2:N - ALA2:CA- ALA2:C  -ALA3:N
+
+PhiPsi_2 (second pair):
+Psi_2 : ALA2:C - ALA3:N - ALA3:CA -ALA3:C
+Phi_2 : ALA3:N - ALA3:CA- ALA3:C  -ALA4:N
+
+PhiPsi_3 (third pair):
+Psi_3 : ALA3:C - ALA4:N - ALA4:CA -ALA4:C
+Phi_3 : ALA4:N - ALA4:CA- ALA4:C  -NME5:N

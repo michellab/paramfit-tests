@@ -1,0 +1,34 @@
+#Usage:
+
+1) Copy all the output folder  from gaussian simulation to quantum_outputs
+2) mkdir crd_outputs   where all the output coordinates file will be written
+3) in quanutm_output convert_gcrt.sh
+
+```
+bash convert_gcrt.sh
+```
+convert_gcrt.sh  will execute extract_crd.py  from all the output of gaussian
+
+In output you will have:
+-crd_outputs:  folders with rst7 files
+-all.mdcrd  :  all the coordinates files from guassian merge onto one single mdcrdfile
+               (necessary for Paramfit)
+-amber_energies.dat: the molecular mechanics energies evaluated for each rst7 file
+              with fit.prmtop topology
+              For the evaluation we use paramfit
+-quantum_energies.dat: all the quantum mechanical energies extract from gaussian output
+              The units of the energies are Hartree (=627.59 kcal/mol)
+
+-problem.dat: dat file with problematic output from Gaussian (i.e. not terminated normally)
+
+
+
+For mgdx we need to convert all the crd output in netcdf format  thus:
+
+bash netcdf_creator.sh
+
+Actually is a draft so it needs to  be improved in order to be more general
+(just  make  something like for f in  */ ; do cd $f for g in structure*  blablabla)
+To see a linear interpolated adiabatic plot run:
+ipython notebook Adiabatic_plot.ipynb
+

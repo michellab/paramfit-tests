@@ -1,0 +1,38 @@
+Here we generate conformers
+
+The conofmrations are generated with mdgx through the input file:
+genconf.in
+
+Here we have:
+
+&files section : we declare top crd and the output file
+
+&configs: here we tell mdgx what to do:
+
+- GridSample  : A grid is defined and used to move desired dihedrals
+IN this case 1@O1 1@C1 1@C2 1@O2  
+             1@C1 1@C2 1@O2 1@HO2
+The atom names are written in the top file
+The 1 means the numbe rof the molecule, in this case we have just glycerol
+Considering an aminoacide sequence we would have had 1, 2, 3, different  chains
+The dihedrals can move between -180 to 180 
+Check why we need to apply a restraint of 32.0 kcal/mol with a flat bottom half width of 10.0 and 30.0 deg
+ 
+- Set: Set apply a restraint to the angles. In this way we are preventing to have
+hydroxil groups pointing one another, which means having dipoles opposite one another (not a good conformation)
+to do that a flat bottom restraint is applied :  the angles can move freely
+between 120.0 - 60.0 = 60.0  
+        120.0 + 60.0 = 180.0
+otherwise the restraint kkicks in with a constant 32.0 kcal/mol
+
+-Combine: combine reads the GridSample lines
+If it is not present then the dihedral are scan one after the other
+if we combine, this mean that we are scanning all together
+For example: Phi = 0.0  Psi = 0.0, 10.0, 20.0, 30.0 ....
+             Phi = 10.0 Psi = 0.0, 10.0, 20.0, 30.0 ....
+
+-Count : how many conformations  you want ( 9 here ) 
+
+
+
+to run everything: mdgx -O -i genconf.in

@@ -1,0 +1,19 @@
+&files
+  -p ../../topology/alanine.prmtop
+  -c ../../topology/alanine.rst7
+  -o GenConformers.out
+&end
+
+&configs
+  GridSample :1@C :2@N :2@CA :2@C  { -180.0 180.0 }   Krst 32.0 fbhw 10.0
+  GridSample :2@N :2@CA :2@C :3@N  { -180.0 180.0 }   Krst 32.0 fbhw 30.0
+  Set        :1@CH3 :1@C :2@N       value 120.0   Krst 32.0 fbhw 60.0
+  Set        :2@N   :2@CA :2@C       value 120.0   Krst 32.0 fbhw 60.0
+  combine 1 2
+  count 500
+  verbose 1
+
+  write   'pdb', 'inpcrd'
+  outbase 'Conf', 'Conf'
+  outsuff 'pdb', 'crd'
+&end

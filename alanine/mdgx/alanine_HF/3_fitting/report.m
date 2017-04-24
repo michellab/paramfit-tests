@@ -1,0 +1,1174 @@
+% Model accuracy report for fitting ordered by
+% fit_input.in.
+% Written on Wed Mar  1 16:07:16 2017
+
+% System topology/fit.prmtop
+data0 = [
+% Target  Original    Model     Error
+  -2.5481   -8.5337  -10.1889    7.6408   % all_structures.nc, Frame 1
+  -3.9259   -7.6075   -9.2795    5.3535   % all_structures.nc, Frame 2
+  -2.2419   -6.3368   -8.1194    5.8776   % all_structures.nc, Frame 3
+   0.2665   -5.3853   -7.4884    7.7550   % all_structures.nc, Frame 4
+   3.5550   -4.7643   -7.4344   10.9893   % all_structures.nc, Frame 5
+  -2.2478   -5.2744   -8.6312    6.3834   % all_structures.nc, Frame 6
+   7.6073   -4.4383   -8.3593   15.9666   % all_structures.nc, Frame 7
+  11.8889   -3.1895   -7.3343   19.2232   % all_structures.nc, Frame 8
+   9.0161   -2.0622   -6.0270   15.0431   % all_structures.nc, Frame 9
+   5.6335   -0.2547   -3.7500    9.3835   % all_structures.nc, Frame 10
+   2.5457    2.7968   -0.1529    2.6986   % all_structures.nc, Frame 11
+  -0.0600    6.6351    4.1005   -4.1605   % all_structures.nc, Frame 12
+  -2.0484   10.3586    7.9768  -10.0252   % all_structures.nc, Frame 13
+  -3.2602    9.6620    7.1274  -10.3876   % all_structures.nc, Frame 14
+  -3.5633    6.6044    3.6547   -7.2180   % all_structures.nc, Frame 15
+  -3.2486    3.3212   -0.1741   -3.0745   % all_structures.nc, Frame 16
+  -2.0567    0.8982   -3.0666    1.0099   % all_structures.nc, Frame 17
+  -3.1835   -1.0014   -5.1461    1.9626   % all_structures.nc, Frame 18
+  -3.0820   -3.2656   -7.1866    4.1046   % all_structures.nc, Frame 19
+  -2.8482   -5.3309   -8.6877    5.8395   % all_structures.nc, Frame 20
+  -2.1353   -6.1218   -8.7918    6.6566   % all_structures.nc, Frame 21
+  -2.1713   -6.8146   -8.9178    6.7465   % all_structures.nc, Frame 22
+  -4.0781   -7.8391   -9.6216    5.5436   % all_structures.nc, Frame 23
+  -4.5644   -8.5842  -10.2562    5.6918   % all_structures.nc, Frame 24
+  -7.1204   -9.3979  -10.3144    3.1940   % all_structures.nc, Frame 25
+  -3.0463   -8.2728   -9.2061    6.1597   % all_structures.nc, Frame 26
+  -3.5784   -6.8719   -7.9159    4.3374   % all_structures.nc, Frame 27
+  -4.3152   -6.3084   -7.6729    3.3576   % all_structures.nc, Frame 28
+  -5.0247   -6.2962   -8.2276    3.2028   % all_structures.nc, Frame 29
+  -6.4812   -4.7518   -7.3699    0.8888   % all_structures.nc, Frame 30
+  -5.4833   -3.1603   -6.3425    0.8592   % all_structures.nc, Frame 31
+  -5.8041   -1.8077   -5.2138   -0.5903   % all_structures.nc, Frame 32
+  -6.1802   -0.0645   -3.2906   -2.8896   % all_structures.nc, Frame 33
+  -6.3832    2.6029   -0.1537   -6.2295   % all_structures.nc, Frame 34
+  -6.3392    5.8759    3.6649  -10.0040   % all_structures.nc, Frame 35
+  -6.1855    7.1585    5.3626  -11.5480   % all_structures.nc, Frame 36
+  -6.2309    6.8591    5.2160  -11.4469   % all_structures.nc, Frame 37
+  -6.9187    4.9261    3.1303  -10.0490   % all_structures.nc, Frame 38
+  -7.8189    1.9633   -0.2477   -7.5712   % all_structures.nc, Frame 39
+  -8.1720   -0.4418   -3.1983   -4.9737   % all_structures.nc, Frame 40
+  -5.4231   -2.1986   -5.4247    0.0015   % all_structures.nc, Frame 41
+  -8.1206   -4.1602   -7.5662   -0.5544   % all_structures.nc, Frame 42
+  -7.8063   -6.0255   -9.2077    1.4014   % all_structures.nc, Frame 43
+  -7.4782   -7.1517   -9.7698    2.2916   % all_structures.nc, Frame 44
+  -3.9743   -7.9715   -9.9029    5.9286   % all_structures.nc, Frame 45
+  -2.5451   -8.9619  -10.3264    7.7812   % all_structures.nc, Frame 46
+  -2.4212   -9.8613  -10.9052    8.4840   % all_structures.nc, Frame 47
+  -2.7431  -10.1642  -11.0974    8.3543   % all_structures.nc, Frame 48
+  -5.9457  -11.3839  -10.3075    4.3618   % all_structures.nc, Frame 49
+  -2.8136   -9.8948   -8.8353    6.0217   % all_structures.nc, Frame 50
+  -3.3805   -8.6757   -7.7269    4.3464   % all_structures.nc, Frame 51
+  -4.2289   -8.7578   -8.1295    3.9006   % all_structures.nc, Frame 52
+  -4.6059   -6.6685   -6.6071    2.0012   % all_structures.nc, Frame 53
+  -4.9394   -4.3974   -5.0227    0.0833   % all_structures.nc, Frame 54
+  -5.5094   -2.7284   -3.9179   -1.5915   % all_structures.nc, Frame 55
+  -5.4085   -1.0027   -2.4160   -2.9925   % all_structures.nc, Frame 56
+  -5.8592    1.1645   -0.0688   -5.7904   % all_structures.nc, Frame 57
+  -5.9860    2.7865    2.0228   -8.0088   % all_structures.nc, Frame 58
+  -5.8590    4.4316    4.2135  -10.0725   % all_structures.nc, Frame 59
+  -5.5553    3.5885    3.7854   -9.3408   % all_structures.nc, Frame 60
+  -5.2638    1.8441    2.1937   -7.4575   % all_structures.nc, Frame 61
+  -5.2887   -0.2277   -0.0308   -5.2579   % all_structures.nc, Frame 62
+  -5.7362   -2.4408   -2.6590   -3.0772   % all_structures.nc, Frame 63
+  -6.1400   -4.0975   -4.8613   -1.2787   % all_structures.nc, Frame 64
+  -3.5267   -5.7589   -6.9922    3.4656   % all_structures.nc, Frame 65
+  -6.4264   -7.5749   -8.9883    2.5618   % all_structures.nc, Frame 66
+  -6.6205   -9.0270  -10.2165    3.5960   % all_structures.nc, Frame 67
+  -6.4968  -10.2669  -10.8922    4.3954   % all_structures.nc, Frame 68
+  -1.9163  -11.4217  -11.3603    9.4441   % all_structures.nc, Frame 69
+  -1.5979  -12.3317  -11.7033   10.1054   % all_structures.nc, Frame 70
+  -2.2764  -12.7417  -11.7928    9.5164   % all_structures.nc, Frame 71
+  -2.5388  -12.4023  -11.3428    8.8040   % all_structures.nc, Frame 72
+  -5.1853  -12.8250   -9.1925    4.0073   % all_structures.nc, Frame 73
+  -3.1288  -11.3617   -7.7460    4.6172   % all_structures.nc, Frame 74
+  -4.0416  -11.1101   -7.6051    3.5635   % all_structures.nc, Frame 75
+  -5.2999   -9.2095   -6.0249    0.7250   % all_structures.nc, Frame 76
+  -6.3179   -6.2820   -3.6644   -2.6535   % all_structures.nc, Frame 77
+  -3.8105   -4.2587   -2.3279   -1.4827   % all_structures.nc, Frame 78
+  -6.7400   -2.9201   -1.5534   -5.1866   % all_structures.nc, Frame 79
+  -6.6115   -1.9725   -0.8296   -5.7819   % all_structures.nc, Frame 80
+  -6.3306    0.2427    1.5656   -7.8961   % all_structures.nc, Frame 81
+  -6.1979    1.0440    2.8364   -9.0343   % all_structures.nc, Frame 82
+  -5.9239    0.4653    2.8033   -8.7272   % all_structures.nc, Frame 83
+  -5.4920   -1.2852    1.4679   -6.9598   % all_structures.nc, Frame 84
+  -4.4227   -3.0834   -0.1775   -4.2451   % all_structures.nc, Frame 85
+  -4.6345   -4.6775   -1.9244   -2.7102   % all_structures.nc, Frame 86
+  -4.8017   -6.1553   -3.8173   -0.9844   % all_structures.nc, Frame 87
+  -5.3371   -7.4088   -5.6164    0.2792   % all_structures.nc, Frame 88
+  -2.0427   -8.7390   -7.4161    5.3734   % all_structures.nc, Frame 89
+  -5.7851  -10.1880   -9.0451    3.2600   % all_structures.nc, Frame 90
+  -6.2512  -11.7617  -10.3950    4.1438   % all_structures.nc, Frame 91
+  -6.0202  -13.3914  -11.4606    5.4404   % all_structures.nc, Frame 92
+  -1.3391  -14.6922  -12.0746   10.7355   % all_structures.nc, Frame 93
+  -2.3297  -15.2020  -12.0174    9.6877   % all_structures.nc, Frame 94
+  -2.7150  -14.9186  -11.4135    8.6985   % all_structures.nc, Frame 95
+  -2.8142  -14.1298  -10.5141    7.6999   % all_structures.nc, Frame 96
+  -3.1646  -13.1093   -7.4205    4.2559   % all_structures.nc, Frame 97
+  -1.4246  -12.1420   -6.4701    5.0455   % all_structures.nc, Frame 98
+   1.2375  -10.6340   -5.0727    6.3102   % all_structures.nc, Frame 99
+   4.2249   -7.5191   -2.2783    6.5032   % all_structures.nc, Frame 100
+   7.6127   -4.8072   -0.1333    7.7460   % all_structures.nc, Frame 101
+  -2.9533   -3.2379    0.7492   -3.7026   % all_structures.nc, Frame 102
+   9.1044   -3.6769   -0.2539    9.3583   % all_structures.nc, Frame 103
+   6.7517   -1.7476    1.4515    5.3003   % all_structures.nc, Frame 104
+   3.5402   -1.1121    2.2670    1.2732   % all_structures.nc, Frame 105
+   0.4724   -1.6154    2.2332   -1.7608   % all_structures.nc, Frame 106
+  -1.9677   -2.9625    1.4317   -3.3995   % all_structures.nc, Frame 107
+  -3.5640   -4.6816    0.1276   -3.6916   % all_structures.nc, Frame 108
+  -4.1552   -5.9462   -0.9841   -3.1710   % all_structures.nc, Frame 109
+  -3.9996   -6.8814   -2.0720   -1.9275   % all_structures.nc, Frame 110
+  -3.6103   -7.8735   -3.4793   -0.1310   % all_structures.nc, Frame 111
+  -3.5718   -8.8827   -5.0340    1.4622   % all_structures.nc, Frame 112
+  -2.8800   -9.8986   -6.5195    3.6395   % all_structures.nc, Frame 113
+  -3.6308  -11.2081   -8.0090    4.3783   % all_structures.nc, Frame 114
+  -3.5596  -13.0846   -9.6617    6.1020   % all_structures.nc, Frame 115
+  -3.3914  -15.0719  -11.0848    7.6933   % all_structures.nc, Frame 116
+  -3.2364  -16.4162  -11.7424    8.5060   % all_structures.nc, Frame 117
+  -4.4596  -16.4458  -11.2050    6.7455   % all_structures.nc, Frame 118
+  -4.8256  -15.6766  -10.1152    5.2896   % all_structures.nc, Frame 119
+  -3.6183  -14.4526   -8.7806    5.1623   % all_structures.nc, Frame 120
+  -4.9168  -11.4067   -5.2094    0.2926   % all_structures.nc, Frame 121
+  -4.7948  -10.0285   -3.8480   -0.9468   % all_structures.nc, Frame 122
+  -6.1862   -7.2836   -1.2137   -4.9724   % all_structures.nc, Frame 123
+  -7.5846   -4.1994    1.5499   -9.1345   % all_structures.nc, Frame 124
+  -8.5615   -1.7434    3.4391  -12.0006   % all_structures.nc, Frame 125
+  -3.1789   -0.8146    3.6811   -6.8600   % all_structures.nc, Frame 126
+  -8.6414   -2.6312    1.3003   -9.9418   % all_structures.nc, Frame 127
+  -8.3881   -0.9782    2.7295  -11.1176   % all_structures.nc, Frame 128
+  -7.6259   -1.5778    2.3099   -9.9358   % all_structures.nc, Frame 129
+  -7.0742   -2.6743    1.6829   -8.7571   % all_structures.nc, Frame 130
+  -6.5546   -4.1025    0.8003   -7.3550   % all_structures.nc, Frame 131
+  -5.2191   -5.4717   -0.1539   -5.0652   % all_structures.nc, Frame 132
+  -5.2392   -6.1602   -0.6896   -4.5497   % all_structures.nc, Frame 133
+  -4.6988   -6.6085   -1.2905   -3.4082   % all_structures.nc, Frame 134
+  -4.7774   -7.3060   -2.4032   -2.3742   % all_structures.nc, Frame 135
+  -5.4342   -8.1466   -3.7894   -1.6448   % all_structures.nc, Frame 136
+  -2.6094   -8.9830   -5.0953    2.4860   % all_structures.nc, Frame 137
+  -6.1675  -10.0300   -6.3223    0.1548   % all_structures.nc, Frame 138
+  -6.5035  -11.8158   -7.8842    1.3808   % all_structures.nc, Frame 139
+  -6.0668  -13.9454   -9.4497    3.3829   % all_structures.nc, Frame 140
+  -3.5870  -15.3899  -10.2075    6.6205   % all_structures.nc, Frame 141
+  -3.8955  -15.2581   -9.5088    5.6133   % all_structures.nc, Frame 142
+  -3.8436  -14.2406   -8.1707    4.3272   % all_structures.nc, Frame 143
+  -3.9235  -12.8126   -6.6320    2.7085   % all_structures.nc, Frame 144
+  -5.0685   -7.9204   -3.1766   -1.8919   % all_structures.nc, Frame 145
+  -7.3804   -5.8729   -1.1460   -6.2345   % all_structures.nc, Frame 146
+  -8.8901   -3.0152    1.6011  -10.4911   % all_structures.nc, Frame 147
+ -10.1315   -0.0284    4.2674  -14.3989   % all_structures.nc, Frame 148
+ -10.9273    1.9650    5.6938  -16.6211   % all_structures.nc, Frame 149
+  -4.8945    1.6903    4.7324   -9.6268   % all_structures.nc, Frame 150
+ -11.0315    0.9763    3.4543  -14.4857   % all_structures.nc, Frame 151
+ -10.4150    0.3130    2.5671  -12.9822   % all_structures.nc, Frame 152
+  -9.3875   -0.7456    1.6885  -11.0761   % all_structures.nc, Frame 153
+  -8.2120   -1.9799    0.9238   -9.1358   % all_structures.nc, Frame 154
+  -7.6489   -3.2742    0.1750   -7.8239   % all_structures.nc, Frame 155
+  -6.7145   -4.3759   -0.5117   -6.2029   % all_structures.nc, Frame 156
+  -5.8958   -4.7369   -0.7198   -5.1760   % all_structures.nc, Frame 157
+  -5.2294   -4.8621   -0.9977   -4.2317   % all_structures.nc, Frame 158
+  -5.2993   -5.3443   -1.8951   -3.4043   % all_structures.nc, Frame 159
+  -6.0561   -5.9926   -3.0890   -2.9671   % all_structures.nc, Frame 160
+  -5.9838   -6.6709   -4.2368   -1.7470   % all_structures.nc, Frame 161
+  -6.9331   -7.0484   -4.7943   -2.1388   % all_structures.nc, Frame 162
+  -7.1883   -8.1719   -5.6939   -1.4943   % all_structures.nc, Frame 163
+  -6.5282  -10.1479   -7.1058    0.5776   % all_structures.nc, Frame 164
+  -6.3501  -11.7059   -7.9771    1.6269   % all_structures.nc, Frame 165
+  -6.1454  -11.4180   -7.1222    0.9769   % all_structures.nc, Frame 166
+  -5.9513  -10.2113   -5.5949   -0.3564   % all_structures.nc, Frame 167
+  -6.4317   -9.0198   -4.2928   -2.1388   % all_structures.nc, Frame 168
+  -6.9116   -3.9039   -1.9616   -4.9500   % all_structures.nc, Frame 169
+  -9.9157   -1.6765    0.2490  -10.1647   % all_structures.nc, Frame 170
+ -11.0647    1.2216    3.0364  -14.1011   % all_structures.nc, Frame 171
+ -11.9397    3.9407    5.4351  -17.3748   % all_structures.nc, Frame 172
+ -12.5549    4.8876    5.8151  -18.3700   % all_structures.nc, Frame 173
+  -8.1981    3.5496    3.7903  -11.9884   % all_structures.nc, Frame 174
+ -12.7167    2.9443    2.6208  -15.3375   % all_structures.nc, Frame 175
+ -12.0954    1.8061    1.2587  -13.3542   % all_structures.nc, Frame 176
+ -11.0362    0.5407    0.1734  -11.2095   % all_structures.nc, Frame 177
+  -9.9710   -0.6722   -0.5699   -9.4011   % all_structures.nc, Frame 178
+  -8.9166   -1.8051   -1.1573   -7.7593   % all_structures.nc, Frame 179
+  -7.8029   -2.7900   -1.7271   -6.0758   % all_structures.nc, Frame 180
+  -6.7169   -2.9859   -1.7702   -4.9467   % all_structures.nc, Frame 181
+  -5.8227   -2.8660   -1.8031   -4.0196   % all_structures.nc, Frame 182
+  -5.8458   -3.1950   -2.5472   -3.2986   % all_structures.nc, Frame 183
+  -6.9659   -3.6331   -3.5309   -3.4350   % all_structures.nc, Frame 184
+  -8.8717   -3.9872   -4.3545   -4.5173   % all_structures.nc, Frame 185
+  -7.8255   -4.0781   -4.6254   -3.2001   % all_structures.nc, Frame 186
+  -7.9284   -4.2108   -4.5342   -3.3942   % all_structures.nc, Frame 187
+  -7.0530   -5.2215   -4.9808   -2.0722   % all_structures.nc, Frame 188
+  -8.8738   -6.5408   -5.6134   -3.2604   % all_structures.nc, Frame 189
+  -8.3503   -6.5517   -5.0574   -3.2929   % all_structures.nc, Frame 190
+  -8.4240   -5.9097   -4.0948   -4.3292   % all_structures.nc, Frame 191
+  -8.9184   -5.2109   -3.2854   -5.6330   % all_structures.nc, Frame 192
+  -9.2545   -0.5658   -1.3905   -7.8640   % all_structures.nc, Frame 193
+ -11.2640    1.9431    1.1015  -12.3655   % all_structures.nc, Frame 194
+ -12.1943    4.8728    3.9205  -16.1147   % all_structures.nc, Frame 195
+ -13.0009    7.0290    5.7563  -18.7571   % all_structures.nc, Frame 196
+ -13.5072    5.5125    3.6728  -17.1800   % all_structures.nc, Frame 197
+ -10.2618    4.7950    2.2686  -12.5303   % all_structures.nc, Frame 198
+ -13.1303    3.7160    0.6254  -13.7556   % all_structures.nc, Frame 199
+ -13.0256    2.3230   -0.9914  -12.0341   % all_structures.nc, Frame 200
+ -12.0768    0.9190   -2.2155   -9.8613   % all_structures.nc, Frame 201
+ -11.0021   -0.1891   -2.8541   -8.1481   % all_structures.nc, Frame 202
+  -9.8237   -0.3551   -2.4744   -7.3493   % all_structures.nc, Frame 203
+  -8.0965   -2.1056   -3.8099   -4.2865   % all_structures.nc, Frame 204
+  -7.3233   -2.0757   -3.6272   -3.6961   % all_structures.nc, Frame 205
+  -6.5946   -1.8762   -3.5804   -3.0141   % all_structures.nc, Frame 206
+  -6.8966   -1.9165   -4.0358   -2.8608   % all_structures.nc, Frame 207
+  -7.7039   -2.1034   -4.7683   -2.9356   % all_structures.nc, Frame 208
+ -10.6612   -2.0644   -5.1988   -5.4624   % all_structures.nc, Frame 209
+  -8.3029   -1.8924   -5.2068   -3.0961   % all_structures.nc, Frame 210
+  -8.1384   -1.7659   -4.8565   -3.2819   % all_structures.nc, Frame 211
+  -7.7442   -2.0398   -4.5663   -3.1780   % all_structures.nc, Frame 212
+ -10.4682   -2.8213   -4.6610   -5.8072   % all_structures.nc, Frame 213
+ -10.1029   -3.4137   -4.6865   -5.4164   % all_structures.nc, Frame 214
+ -10.0073   -3.0126   -3.9648   -6.0426   % all_structures.nc, Frame 215
+ -10.4322   -2.1877   -3.0293   -7.4029   % all_structures.nc, Frame 216
+ -10.4029    1.3543   -0.9283   -9.4746   % all_structures.nc, Frame 217
+ -11.7420    4.2855    1.9860  -13.7280   % all_structures.nc, Frame 218
+ -12.2693    7.2919    4.8817  -17.1510   % all_structures.nc, Frame 219
+ -13.1332    6.1832    3.4526  -16.5858   % all_structures.nc, Frame 220
+ -13.5498    4.5914    1.2938  -14.8436   % all_structures.nc, Frame 221
+ -11.1652    3.5864   -0.3979  -10.7673   % all_structures.nc, Frame 222
+ -12.6199    2.4014   -2.1471  -10.4728   % all_structures.nc, Frame 223
+ -13.0972    0.8614   -3.9109   -9.1863   % all_structures.nc, Frame 224
+ -12.1642   -0.1796   -4.7719   -7.3923   % all_structures.nc, Frame 225
+ -11.0464   -1.1562   -5.2789   -5.7674   % all_structures.nc, Frame 226
+  -9.7914   -2.2946   -5.8717   -3.9197   % all_structures.nc, Frame 227
+  -8.4430   -3.2285   -6.3906   -2.0523   % all_structures.nc, Frame 228
+  -7.2690   -3.1912   -6.2006   -1.0685   % all_structures.nc, Frame 229
+  -6.8242   -2.6854   -5.8474   -0.9768   % all_structures.nc, Frame 230
+  -7.2089   -2.1597   -5.7369   -1.4720   % all_structures.nc, Frame 231
+  -7.7213   -1.9231   -6.0459   -1.6754   % all_structures.nc, Frame 232
+ -11.3591   -1.5796   -6.1719   -5.1872   % all_structures.nc, Frame 233
+  -7.9103   -0.3020   -5.0743   -2.8360   % all_structures.nc, Frame 234
+  -7.4575   -0.9328   -5.4812   -1.9763   % all_structures.nc, Frame 235
+  -9.1237   -0.9660   -4.9503   -4.1734   % all_structures.nc, Frame 236
+ -11.0689   -1.4298   -4.7273   -6.3416   % all_structures.nc, Frame 237
+ -10.7443   -1.9118   -4.6425   -6.1019   % all_structures.nc, Frame 238
+ -10.6879   -1.9402   -4.3503   -6.3375   % all_structures.nc, Frame 239
+ -11.0686   -0.7713   -3.0707   -7.9979   % all_structures.nc, Frame 240
+ -10.9283    1.6134   -0.5183  -10.4100   % all_structures.nc, Frame 241
+ -11.9184    5.0373    2.8888  -14.8072   % all_structures.nc, Frame 242
+ -12.4633    5.0679    2.8087  -15.2720   % all_structures.nc, Frame 243
+ -12.9533    2.7508    0.1711  -13.1243   % all_structures.nc, Frame 244
+ -12.8933    1.1019   -2.0447  -10.8486   % all_structures.nc, Frame 245
+ -11.4473    0.0925   -3.7409   -7.7064   % all_structures.nc, Frame 246
+ -13.1432   -0.7908   -5.1883   -7.9550   % all_structures.nc, Frame 247
+ -12.5098   -1.2119   -5.8332   -6.6766   % all_structures.nc, Frame 248
+ -11.4079   -2.4749   -6.9162   -4.4917   % all_structures.nc, Frame 249
+ -10.1590   -4.0297   -8.0015   -2.1575   % all_structures.nc, Frame 250
+  -8.8707   -5.4349   -8.8611   -0.0096   % all_structures.nc, Frame 251
+  -7.6204   -5.9298   -8.9410    1.3206   % all_structures.nc, Frame 252
+  -6.7735   -5.8441   -8.7024    1.9289   % all_structures.nc, Frame 253
+  -6.6787   -5.0075   -8.0186    1.3398   % all_structures.nc, Frame 254
+  -6.9510   -3.8399   -7.2661    0.3152   % all_structures.nc, Frame 255
+  -7.1439   -3.2027   -7.1745    0.0307   % all_structures.nc, Frame 256
+ -11.4738   -2.7505   -7.1918   -4.2820   % all_structures.nc, Frame 257
+  -6.8653   -2.0281   -6.6495   -0.2158   % all_structures.nc, Frame 258
+  -8.4148   -1.7035   -6.1010   -2.3139   % all_structures.nc, Frame 259
+  -9.8982   -1.7300   -5.5633   -4.3349   % all_structures.nc, Frame 260
+ -11.1794   -2.3369   -5.4835   -5.6959   % all_structures.nc, Frame 261
+ -10.9910   -3.3744   -5.9541   -5.0369   % all_structures.nc, Frame 262
+ -11.1005   -2.6918   -4.9510   -6.1495   % all_structures.nc, Frame 263
+ -11.4376   -1.0573   -3.2058   -8.2318   % all_structures.nc, Frame 264
+ -11.1936    0.7876   -0.4101  -10.7835   % all_structures.nc, Frame 265
+ -12.1756    2.0922    0.8777  -13.0533   % all_structures.nc, Frame 266
+ -11.8540   -0.1212   -1.4464  -10.4076   % all_structures.nc, Frame 267
+ -12.7854   -1.9587   -3.6044   -9.1810   % all_structures.nc, Frame 268
+ -12.9193   -3.1692   -5.3818   -7.5376   % all_structures.nc, Frame 269
+ -11.4736   -3.2918   -6.1911   -5.2825   % all_structures.nc, Frame 270
+ -12.6357   -3.3392   -6.8026   -5.8331   % all_structures.nc, Frame 271
+ -11.7992   -4.2959   -7.9832   -3.8160   % all_structures.nc, Frame 272
+ -10.5143   -6.4474   -9.9547   -0.5596   % all_structures.nc, Frame 273
+  -9.1863   -8.2845  -11.3222    2.1359   % all_structures.nc, Frame 274
+  -7.6452   -9.7354  -12.2276    4.5824   % all_structures.nc, Frame 275
+  -6.9876  -10.2187  -12.2959    5.3083   % all_structures.nc, Frame 276
+  -6.4532   -9.6710  -11.5954    5.1422   % all_structures.nc, Frame 277
+  -6.3866   -8.3398  -10.4169    4.0303   % all_structures.nc, Frame 278
+  -6.5277   -6.1063   -8.5985    2.0708   % all_structures.nc, Frame 279
+  -6.5092   -5.4640   -8.5018    1.9926   % all_structures.nc, Frame 280
+ -11.4122   -4.1717   -7.6791   -3.7331   % all_structures.nc, Frame 281
+  -7.4960   -3.7693   -7.4566   -0.0394   % all_structures.nc, Frame 282
+  -9.1465   -3.5270   -6.9905   -2.1560   % all_structures.nc, Frame 283
+ -10.4258   -3.8009   -6.7002   -3.7256   % all_structures.nc, Frame 284
+ -11.3515   -4.7993   -7.0119   -4.3396   % all_structures.nc, Frame 285
+ -11.5065   -5.4426   -7.0883   -4.4182   % all_structures.nc, Frame 286
+ -11.8437   -4.3891   -5.7142   -6.1294   % all_structures.nc, Frame 287
+ -12.0188   -2.3165   -3.5310   -8.4879   % all_structures.nc, Frame 288
+ -11.3071   -1.1381   -1.8358   -9.4712   % all_structures.nc, Frame 289
+ -12.6301   -3.3871   -4.1016   -8.5285   % all_structures.nc, Frame 290
+ -12.6142   -5.1731   -5.9984   -6.6159   % all_structures.nc, Frame 291
+ -12.7173   -6.4398   -7.5855   -5.1318   % all_structures.nc, Frame 292
+ -12.6817   -6.5121   -8.2248   -4.4570   % all_structures.nc, Frame 293
+ -11.3744   -6.2371   -8.6365   -2.7378   % all_structures.nc, Frame 294
+ -12.2555   -6.9231   -9.8866   -2.3689   % all_structures.nc, Frame 295
+ -11.3266   -8.4856  -11.6729    0.3463   % all_structures.nc, Frame 296
+ -10.0122  -10.4459  -13.4532    3.4410   % all_structures.nc, Frame 297
+  -8.2439  -11.9992  -14.5371    6.2932   % all_structures.nc, Frame 298
+  -7.5735  -13.3441  -15.3363    7.7628   % all_structures.nc, Frame 299
+  -6.6639  -13.9721  -15.5493    8.8854   % all_structures.nc, Frame 300
+  -6.1229  -13.2314  -14.6558    8.5328   % all_structures.nc, Frame 301
+  -5.9754  -11.6408  -13.2179    7.2425   % all_structures.nc, Frame 302
+  -6.0372   -9.7227  -11.7150    5.6778   % all_structures.nc, Frame 303
+  -6.4406   -7.9838  -10.5216    4.0810   % all_structures.nc, Frame 304
+ -11.5254   -6.6133   -9.6207   -1.9047   % all_structures.nc, Frame 305
+  -8.1865   -5.7591   -8.9465    0.7599   % all_structures.nc, Frame 306
+  -9.7875   -5.4740   -8.4375   -1.3500   % all_structures.nc, Frame 307
+ -10.8345   -6.8297   -9.2290   -1.6054   % all_structures.nc, Frame 308
+ -12.1231   -8.0044   -9.7171   -2.4061   % all_structures.nc, Frame 309
+ -12.2360   -7.5313   -8.6770   -3.5590   % all_structures.nc, Frame 310
+ -13.0754   -6.0644   -6.8896   -6.1858   % all_structures.nc, Frame 311
+ -12.9744   -3.6281   -4.3427   -8.6318   % all_structures.nc, Frame 312
+ -11.2191   -5.5634   -6.7611   -4.4581   % all_structures.nc, Frame 313
+ -13.2930   -7.5404   -8.7549   -4.5381   % all_structures.nc, Frame 314
+ -12.8815   -8.9691  -10.2943   -2.5872   % all_structures.nc, Frame 315
+ -12.7312   -9.8268  -11.4725   -1.2587   % all_structures.nc, Frame 316
+ -12.5587   -9.2095  -11.4221   -1.1365   % all_structures.nc, Frame 317
+ -11.2812   -9.2143  -12.1136    0.8324   % all_structures.nc, Frame 318
+ -12.0704  -10.0625  -13.5260    1.4556   % all_structures.nc, Frame 319
+ -11.1359  -11.6273  -15.3146    4.1787   % all_structures.nc, Frame 320
+  -9.7994  -13.4780  -16.9853    7.1859   % all_structures.nc, Frame 321
+  -8.3842  -15.0983  -18.1361    9.7519   % all_structures.nc, Frame 322
+  -7.0898  -16.1243  -18.6165   11.5268   % all_structures.nc, Frame 323
+  -6.0216  -16.3805  -18.4577   12.4361   % all_structures.nc, Frame 324
+  -5.3722  -15.3105  -17.2349   11.8626   % all_structures.nc, Frame 325
+  -5.1979  -13.7029  -15.7800   10.5822   % all_structures.nc, Frame 326
+  -4.9887  -11.6849  -14.1771    9.1884   % all_structures.nc, Frame 327
+  -6.8382   -9.7351  -12.7729    5.9347   % all_structures.nc, Frame 328
+ -12.0372   -7.4236  -10.9309   -1.1063   % all_structures.nc, Frame 329
+  -8.8902   -7.4570  -11.1443    2.2541   % all_structures.nc, Frame 330
+ -10.3996   -8.1661  -11.6296    1.2300   % all_structures.nc, Frame 331
+ -11.1194   -9.2039  -12.1032    0.9839   % all_structures.nc, Frame 332
+ -13.0141   -9.5228  -11.7354   -1.2787   % all_structures.nc, Frame 333
+ -13.6831   -8.6993  -10.3450   -3.3381   % all_structures.nc, Frame 334
+ -14.0213   -6.8999   -8.2250   -5.7962   % all_structures.nc, Frame 335
+ -13.8387   -3.1702   -4.3847   -9.4539   % all_structures.nc, Frame 336
+ -10.6591   -8.5489  -10.6806    0.0215   % all_structures.nc, Frame 337
+ -13.3979  -10.2642  -12.4127   -0.9852   % all_structures.nc, Frame 338
+ -12.9987  -11.3593  -13.6185    0.6198   % all_structures.nc, Frame 339
+ -12.7575  -11.8512  -14.4309    1.6734   % all_structures.nc, Frame 340
+ -12.5249  -11.1697  -14.3163    1.7914   % all_structures.nc, Frame 341
+ -11.0313  -11.2963  -15.1296    4.0983   % all_structures.nc, Frame 342
+ -11.9694  -12.0907  -16.4882    4.5188   % all_structures.nc, Frame 343
+ -10.8775  -13.4994  -18.1207    7.2432   % all_structures.nc, Frame 344
+  -9.2322  -15.0892  -19.5305   10.2983   % all_structures.nc, Frame 345
+  -7.3627  -16.3296  -20.3014   12.9387   % all_structures.nc, Frame 346
+  -5.6201  -16.9451  -20.3713   14.7513   % all_structures.nc, Frame 347
+  -4.2828  -17.6429  -20.6540   16.3712   % all_structures.nc, Frame 348
+  -3.6371  -15.7264  -18.5848   14.9477   % all_structures.nc, Frame 349
+  -3.7056  -13.9326  -16.9437   13.2381   % all_structures.nc, Frame 350
+  -4.5985  -11.9505  -15.3767   10.7783   % all_structures.nc, Frame 351
+  -7.2003  -10.1614  -14.1332    6.9328   % all_structures.nc, Frame 352
+ -11.7801   -8.8848  -13.3261    1.5460   % all_structures.nc, Frame 353
+  -9.4855   -8.5634  -13.1847    3.6993   % all_structures.nc, Frame 354
+ -10.7338   -9.4211  -13.8186    3.0849   % all_structures.nc, Frame 355
+ -10.9056   -9.3769  -13.2103    2.3047   % all_structures.nc, Frame 356
+ -12.6478   -9.5180  -12.6646    0.0168   % all_structures.nc, Frame 357
+ -13.2082   -8.5171  -11.0968   -2.1114   % all_structures.nc, Frame 358
+ -13.6199   -4.1382   -6.3973   -7.2226   % all_structures.nc, Frame 359
+ -13.7119   -6.2771   -8.4256   -5.2863   % all_structures.nc, Frame 360
+  -4.8025  -10.5532  -12.8359    8.0334   % all_structures.nc, Frame 361
+   0.6425  -11.9782  -14.2777   14.9202   % all_structures.nc, Frame 362
+   3.6004  -12.7851  -15.1953   18.7957   % all_structures.nc, Frame 363
+   5.8547  -13.0683  -15.7990   21.6536   % all_structures.nc, Frame 364
+   4.9683  -12.6700  -15.9676   20.9359   % all_structures.nc, Frame 365
+  -4.6236  -12.6519  -16.6362   12.0127   % all_structures.nc, Frame 366
+   2.8350  -13.1726  -17.7211   20.5561   % all_structures.nc, Frame 367
+   0.1985  -14.2810  -19.0533   19.2518   % all_structures.nc, Frame 368
+  -2.4774  -15.4426  -20.0349   17.5574   % all_structures.nc, Frame 369
+  -4.6635  -16.2435  -20.3663   15.7028   % all_structures.nc, Frame 370
+  -6.0565  -16.9107  -20.4878   14.4314   % all_structures.nc, Frame 371
+  -6.4831  -16.2226  -19.3848   12.9016   % all_structures.nc, Frame 372
+  -6.0575  -14.8725  -17.8819   11.8244   % all_structures.nc, Frame 373
+  -5.4675  -13.0405  -16.2026   10.7351   % all_structures.nc, Frame 374
+  -5.2632  -11.2548  -14.8320    9.5687   % all_structures.nc, Frame 375
+  -5.2792   -9.8165  -13.9392    8.6601   % all_structures.nc, Frame 376
+  -4.6953   -9.0167  -13.6089    8.9136   % all_structures.nc, Frame 377
+  -5.2563   -9.0593  -13.8316    8.5753   % all_structures.nc, Frame 378
+  -5.1656   -8.7053  -13.2538    8.0882   % all_structures.nc, Frame 379
+  -5.0102   -8.6384  -12.6227    7.6125   % all_structures.nc, Frame 380
+  -5.6533   -8.5669  -11.8644    6.2111   % all_structures.nc, Frame 381
+  -6.3342   -7.6031  -10.3338    3.9995   % all_structures.nc, Frame 382
+  -5.0483   -6.1463   -8.5563    3.5081   % all_structures.nc, Frame 383
+  -2.3871   -8.4526  -10.7520    8.3649   % all_structures.nc, Frame 384
+  -9.4046  -12.1415  -12.9663    3.5616   % all_structures.nc, Frame 385
+ -12.3215  -13.2719  -14.1135    1.7920   % all_structures.nc, Frame 386
+ -12.4464  -13.8254  -14.7777    2.3313   % all_structures.nc, Frame 387
+ -12.4325  -14.0995  -15.3723    2.9398   % all_structures.nc, Frame 388
+ -12.1237  -14.3465  -16.1862    4.0624   % all_structures.nc, Frame 389
+  -9.7013  -13.8047  -16.3311    6.6298   % all_structures.nc, Frame 390
+ -11.2407  -13.8552  -16.9458    5.7051   % all_structures.nc, Frame 391
+  -9.5731  -14.5138  -17.8282    8.2551   % all_structures.nc, Frame 392
+  -7.1402  -16.0964  -19.2309   12.0907   % all_structures.nc, Frame 393
+  -4.4323  -15.7890  -18.4539   14.0215   % all_structures.nc, Frame 394
+  -2.1462  -15.7355  -17.8549   15.7087   % all_structures.nc, Frame 395
+  -0.7712  -15.0053  -16.7096   15.9384   % all_structures.nc, Frame 396
+  -0.5741  -13.5444  -15.0959   14.5218   % all_structures.nc, Frame 397
+  -1.4980  -11.8145  -13.5187   12.0207   % all_structures.nc, Frame 398
+  -4.1215  -10.3130  -12.4323    8.3109   % all_structures.nc, Frame 399
+  -7.3379   -9.0816  -11.7465    4.4086   % all_structures.nc, Frame 400
+ -10.1282   -8.5999  -11.7343    1.6061   % all_structures.nc, Frame 401
+  -9.5098   -8.0893  -11.4037    1.8939   % all_structures.nc, Frame 402
+ -10.0738   -7.6139  -10.7045    0.6308   % all_structures.nc, Frame 403
+  -9.5867   -7.5652  -10.0917    0.5050   % all_structures.nc, Frame 404
+ -10.5545   -7.6903   -9.5301   -1.0244   % all_structures.nc, Frame 405
+ -10.3875   -6.1121   -7.3849   -3.0026   % all_structures.nc, Frame 406
+ -11.5666   -7.8799   -8.8322   -2.7345   % all_structures.nc, Frame 407
+ -12.0486  -10.2440  -11.0856   -0.9630   % all_structures.nc, Frame 408
+  -7.2800  -13.5908  -11.6485    4.3684   % all_structures.nc, Frame 409
+ -10.2451  -14.4254  -12.4999    2.2548   % all_structures.nc, Frame 410
+ -10.9736  -14.6627  -12.8479    1.8742   % all_structures.nc, Frame 411
+ -11.0874  -15.1703  -13.6760    2.5886   % all_structures.nc, Frame 412
+ -10.3763  -15.4989  -14.5715    4.1953   % all_structures.nc, Frame 413
+  -7.1891  -15.3696  -15.1289    7.9398   % all_structures.nc, Frame 414
+  -8.7122  -14.7022  -15.0256    6.3134   % all_structures.nc, Frame 415
+  -6.0108  -15.1440  -15.6913    9.6805   % all_structures.nc, Frame 416
+  -2.4934  -15.0861  -15.4534   12.9599   % all_structures.nc, Frame 417
+   0.9504  -15.1426  -15.0403   15.9907   % all_structures.nc, Frame 418
+   3.2571  -14.7543  -14.1065   17.3636   % all_structures.nc, Frame 419
+   4.5963  -13.8480  -12.7852   17.3815   % all_structures.nc, Frame 420
+   2.8656  -12.3602  -11.1445   14.0101   % all_structures.nc, Frame 421
+  -0.1033  -10.6725   -9.6095    9.5063   % all_structures.nc, Frame 422
+  -3.9919   -9.4404   -8.7926    4.8007   % all_structures.nc, Frame 423
+  -7.1164   -8.1591   -8.0568    0.9404   % all_structures.nc, Frame 424
+  -7.1989   -7.3680   -7.7353    0.5364   % all_structures.nc, Frame 425
+  -8.4438   -6.7304   -7.2777   -1.1661   % all_structures.nc, Frame 426
+  -8.0457   -6.3934   -6.7169   -1.3288   % all_structures.nc, Frame 427
+  -7.4736   -6.6642   -6.4235   -1.0501   % all_structures.nc, Frame 428
+  -7.3750   -6.5649   -5.6375   -1.7375   % all_structures.nc, Frame 429
+  -7.8032   -7.2800   -5.7856   -2.0176   % all_structures.nc, Frame 430
+  -8.4908   -9.5240   -7.7091   -0.7817   % all_structures.nc, Frame 431
+  -9.3225  -11.9015   -9.9760    0.6535   % all_structures.nc, Frame 432
+  -4.7819  -14.7778  -10.0340    5.2522   % all_structures.nc, Frame 433
+  -8.0112  -15.0739  -10.3470    2.3357   % all_structures.nc, Frame 434
+  -8.7403  -15.5927  -10.9764    2.2361   % all_structures.nc, Frame 435
+  -8.3181  -16.7465  -12.4507    4.1326   % all_structures.nc, Frame 436
+  -6.7153  -17.6377  -13.9089    7.1936   % all_structures.nc, Frame 437
+  -4.4412  -17.0621  -14.0200    9.5788   % all_structures.nc, Frame 438
+  -3.9660  -15.6893  -13.2113    9.2454   % all_structures.nc, Frame 439
+  -0.1790  -15.0226  -12.7685   12.5895   % all_structures.nc, Frame 440
+   4.0818  -14.7674  -12.3333   16.4151   % all_structures.nc, Frame 441
+   7.5136  -14.5341  -11.6304   19.1441   % all_structures.nc, Frame 442
+   8.8192  -13.9921  -10.5429   19.3620   % all_structures.nc, Frame 443
+   6.2226  -13.0086   -9.1444   15.3669   % all_structures.nc, Frame 444
+   2.7715  -11.4275   -7.4105   10.1820   % all_structures.nc, Frame 445
+  -0.8885   -9.5612   -5.6968    4.8083   % all_structures.nc, Frame 446
+  -4.2397   -7.9226   -4.4734    0.2337   % all_structures.nc, Frame 447
+  -6.2031   -6.6356   -3.7319   -2.4711   % all_structures.nc, Frame 448
+  -4.2428   -5.7097   -3.2756   -0.9672   % all_structures.nc, Frame 449
+  -6.2250   -5.1474   -2.8933   -3.3317   % all_structures.nc, Frame 450
+  -5.5799   -5.1065   -2.6286   -2.9513   % all_structures.nc, Frame 451
+  -5.1668   -7.6405   -4.5984   -0.5684   % all_structures.nc, Frame 452
+  -4.3081   -6.6442   -2.9154   -1.3928   % all_structures.nc, Frame 453
+  -4.7171   -8.3306   -4.0349   -0.6822   % all_structures.nc, Frame 454
+  -5.4540  -10.9331   -6.3168    0.8627   % all_structures.nc, Frame 455
+  -6.6305  -13.3166   -8.5896    1.9591   % all_structures.nc, Frame 456
+  -3.0321  -14.8765   -8.6792    5.6470   % all_structures.nc, Frame 457
+  -6.0719  -15.0841   -8.9035    2.8316   % all_structures.nc, Frame 458
+  -5.7982  -16.5867  -10.5169    4.7187   % all_structures.nc, Frame 459
+  -4.2746  -17.2623  -11.5130    7.2384   % all_structures.nc, Frame 460
+  -1.6526  -18.0954  -12.9130   11.2604   % all_structures.nc, Frame 461
+  -2.6719  -17.5783  -13.0826   10.4107   % all_structures.nc, Frame 462
+   2.0184  -16.1762  -12.2447   14.2630   % all_structures.nc, Frame 463
+   6.4470  -14.8888  -11.1812   17.6282   % all_structures.nc, Frame 464
+  10.7437  -14.1440  -10.2563   21.0000   % all_structures.nc, Frame 465
+   9.7769  -13.7294   -9.3722   19.1491   % all_structures.nc, Frame 466
+   6.5644  -13.1266   -8.2238   14.7882   % all_structures.nc, Frame 467
+   3.4501  -11.9861   -6.6683   10.1184   % all_structures.nc, Frame 468
+   0.4648  -10.0935   -4.6228    5.0876   % all_structures.nc, Frame 469
+  -2.2557   -7.7507   -2.4328    0.1771   % all_structures.nc, Frame 470
+  -4.1320   -5.6472   -0.7444   -3.3876   % all_structures.nc, Frame 471
+  -4.5268   -4.1479    0.2094   -4.7362   % all_structures.nc, Frame 472
+  -2.4255   -3.3468    0.5409   -2.9664   % all_structures.nc, Frame 473
+  -4.0570   -3.1964    0.5112   -4.5683   % all_structures.nc, Frame 474
+  -3.7633   -3.9042    0.0273   -3.7906   % all_structures.nc, Frame 475
+  -3.4252   -6.6909   -2.1952   -1.2299   % all_structures.nc, Frame 476
+  -2.4388   -6.8106   -1.6282   -0.8107   % all_structures.nc, Frame 477
+  -2.7944   -9.1934   -3.4441    0.6497   % all_structures.nc, Frame 478
+  -3.7317  -12.0091   -5.9392    2.2075   % all_structures.nc, Frame 479
+  -5.1918  -14.2794   -8.0989    2.9071   % all_structures.nc, Frame 480
+  -7.0839  -13.5976   -7.9089    0.8249   % all_structures.nc, Frame 481
+   0.7866  -14.2966   -8.6246    9.4112   % all_structures.nc, Frame 482
+   1.6339  -15.2031   -9.6418   11.2757   % all_structures.nc, Frame 483
+   1.0166  -16.0833  -10.8425   11.8591   % all_structures.nc, Frame 484
+  -0.7811  -15.8183  -11.1444   10.3633   % all_structures.nc, Frame 485
+  -6.8037  -15.9902  -12.0031    5.1994   % all_structures.nc, Frame 486
+  -3.0595  -14.8180  -11.3950    8.3355   % all_structures.nc, Frame 487
+  -5.1964  -13.6761  -10.4770    5.2805   % all_structures.nc, Frame 488
+  -6.9578  -12.8274   -9.4482    2.4905   % all_structures.nc, Frame 489
+  -8.1382  -12.2263   -8.3777    0.2394   % all_structures.nc, Frame 490
+  -8.6505  -11.4480   -7.0537   -1.5967   % all_structures.nc, Frame 491
+  -8.5257   -9.9273   -5.1180   -3.4077   % all_structures.nc, Frame 492
+  -8.0841   -7.3516   -2.3895   -5.6945   % all_structures.nc, Frame 493
+  -7.8691   -4.1593    0.6500   -8.5191   % all_structures.nc, Frame 494
+  -7.8964   -1.5395    2.8548  -10.7512   % all_structures.nc, Frame 495
+  -7.8991   -0.1955    3.6532  -11.5523   % all_structures.nc, Frame 496
+  -7.1989   -0.1765    3.2027  -10.4016   % all_structures.nc, Frame 497
+  -7.8457   -1.1254    2.0737   -9.9194   % all_structures.nc, Frame 498
+  -7.7150   -3.8415   -0.4186   -7.2964   % all_structures.nc, Frame 499
+  -7.4464   -5.0502   -1.0631   -6.3834   % all_structures.nc, Frame 500
+  -8.0762   -6.9305   -2.2567   -5.8195   % all_structures.nc, Frame 501
+  -7.3504   -9.7800   -4.5393   -2.8111   % all_structures.nc, Frame 502
+  -4.9014  -12.6445   -7.0832    2.1818   % all_structures.nc, Frame 503
+  -1.8138  -13.7066   -8.0346    6.2208   % all_structures.nc, Frame 504
+  -8.8364  -12.0619   -8.4293   -0.4071   % all_structures.nc, Frame 505
+  -1.2964  -12.6826   -9.0669    7.7705   % all_structures.nc, Frame 506
+  -1.7381  -13.1837   -9.6786    7.9405   % all_structures.nc, Frame 507
+  -2.8774  -13.6637  -10.4791    7.6017   % all_structures.nc, Frame 508
+  -4.6203  -13.6310  -11.0134    6.3931   % all_structures.nc, Frame 509
+  -8.5866  -12.9624  -11.0315    2.4449   % all_structures.nc, Frame 510
+  -6.3321  -12.1634  -10.7967    4.4646   % all_structures.nc, Frame 511
+  -7.6686  -11.4241  -10.2812    2.6127   % all_structures.nc, Frame 512
+  -8.6119  -10.5687   -9.2459    0.6340   % all_structures.nc, Frame 513
+  -9.1142   -9.6517   -7.8593   -1.2548   % all_structures.nc, Frame 514
+  -9.2485   -8.5265   -6.1885   -3.0600   % all_structures.nc, Frame 515
+  -9.2508   -6.3667   -3.6137   -5.6371   % all_structures.nc, Frame 516
+  -9.4135   -2.8322    0.0736   -9.4871   % all_structures.nc, Frame 517
+  -9.8287    1.1747    3.9278  -13.7566   % all_structures.nc, Frame 518
+ -10.1856    3.7977    6.1357  -16.3213   % all_structures.nc, Frame 519
+ -10.2940    4.1724    5.9648  -16.2589   % all_structures.nc, Frame 520
+  -9.1316    2.6374    3.9603  -13.0919   % all_structures.nc, Frame 521
+ -10.2507    0.2712    1.4141  -11.6648   % all_structures.nc, Frame 522
+  -9.9764   -1.8334   -0.4667   -9.5097   % all_structures.nc, Frame 523
+  -9.4333   -3.9322   -2.0014   -7.4320   % all_structures.nc, Frame 524
+  -8.9876   -6.6792   -4.0616   -4.9260   % all_structures.nc, Frame 525
+  -7.3532   -9.8574   -6.6729   -0.6803   % all_structures.nc, Frame 526
+  -4.7962  -11.5225   -8.0174    3.2212   % all_structures.nc, Frame 527
+  -2.3251  -11.4170   -7.8013    5.4762   % all_structures.nc, Frame 528
+  -9.2318  -10.3734   -9.2971    0.0653   % all_structures.nc, Frame 529
+  -2.9834  -10.6380   -9.5784    6.5950   % all_structures.nc, Frame 530
+  -3.5326  -10.7021   -9.7533    6.2207   % all_structures.nc, Frame 531
+  -4.6101  -10.5540   -9.9256    5.3155   % all_structures.nc, Frame 532
+  -5.8937  -10.0595   -9.9981    4.1044   % all_structures.nc, Frame 533
+  -9.1565   -9.5581  -10.1834    1.0270   % all_structures.nc, Frame 534
+  -6.9520   -9.2502  -10.4396    3.4877   % all_structures.nc, Frame 535
+  -7.6881   -8.6411  -10.0545    2.3664   % all_structures.nc, Frame 536
+  -8.1786   -7.4909   -8.7242    0.5457   % all_structures.nc, Frame 537
+  -8.3924   -6.3603   -7.1241   -1.2683   % all_structures.nc, Frame 538
+  -8.4307   -4.8165   -5.0348   -3.3960   % all_structures.nc, Frame 539
+  -8.5943   -1.8595   -1.6626   -6.9316   % all_structures.nc, Frame 540
+  -9.2280    2.4451    2.7947  -12.0227   % all_structures.nc, Frame 541
+ -10.2212    6.7619    6.9589  -17.1801   % all_structures.nc, Frame 542
+ -10.9862    8.7017    8.4835  -19.4697   % all_structures.nc, Frame 543
+ -11.2606    7.0968    6.3331  -17.5937   % all_structures.nc, Frame 544
+  -9.0959    5.5611    4.3278  -13.4237   % all_structures.nc, Frame 545
+ -11.1875    2.1913    0.7779  -11.9654   % all_structures.nc, Frame 546
+ -10.7183   -0.5882   -1.7778   -8.9406   % all_structures.nc, Frame 547
+  -9.9365   -3.3700   -3.9954   -5.9411   % all_structures.nc, Frame 548
+  -8.1742   -6.5581   -6.4968   -1.6775   % all_structures.nc, Frame 549
+  -6.3689   -8.8174   -8.1891    1.8202   % all_structures.nc, Frame 550
+  -4.2919   -8.9158   -7.9669    3.6750   % all_structures.nc, Frame 551
+  -2.8667   -9.6833   -8.6238    5.7570   % all_structures.nc, Frame 552
+  -8.4297   -8.7071   -9.6235    1.1938   % all_structures.nc, Frame 553
+  -3.3052   -8.6212   -9.5544    6.2492   % all_structures.nc, Frame 554
+  -3.8799   -7.9510   -8.9950    5.1150   % all_structures.nc, Frame 555
+  -4.7438   -7.1996   -8.5640    3.8202   % all_structures.nc, Frame 556
+  -5.6301   -6.6864   -8.6177    2.9876   % all_structures.nc, Frame 557
+  -8.1529   -6.6510   -9.2691    1.1162   % all_structures.nc, Frame 558
+  -6.2647   -6.5236   -9.7058    3.4412   % all_structures.nc, Frame 559
+  -6.7072   -5.6196   -9.0256    2.3185   % all_structures.nc, Frame 560
+  -7.0818   -4.3779   -7.6040    0.5222   % all_structures.nc, Frame 561
+  -7.2622   -3.2083   -5.9648   -1.2974   % all_structures.nc, Frame 562
+  -7.2664   -0.9723   -3.1832   -4.0831   % all_structures.nc, Frame 563
+  -7.3013    2.6614    0.8655   -8.1668   % all_structures.nc, Frame 564
+  -7.8284    7.2347    5.5916  -13.4201   % all_structures.nc, Frame 565
+  -9.0251   10.9282    9.1324  -18.1576   % all_structures.nc, Frame 566
+ -10.0706   10.7264    8.5154  -18.5861   % all_structures.nc, Frame 567
+ -10.4326    7.0806    4.3241  -14.7567   % all_structures.nc, Frame 568
+  -7.4995    3.7013    0.4752   -7.9747   % all_structures.nc, Frame 569
+ -10.2967    1.0954   -2.3106   -7.9861   % all_structures.nc, Frame 570
+  -9.6814   -1.2353   -4.4175   -5.2639   % all_structures.nc, Frame 571
+  -8.8880   -4.0514   -6.6695   -2.2185   % all_structures.nc, Frame 572
+  -6.2399   -6.4193   -8.3507    2.1107   % all_structures.nc, Frame 573
+  -4.5807   -6.8453   -8.2097    3.6290   % all_structures.nc, Frame 574
+  -3.1696   -7.5311   -8.5750    5.4053   % all_structures.nc, Frame 575
+  -3.0411   -8.3996   -9.3328    6.2917   % all_structures.nc, Frame 576
+];
+
+% System topology/fit.prmtop
+components0 = [
+%    elec      LJ        bond      angl      dihe
+ -37.7331    4.4129    1.4342   13.6547    9.6976    % all_structures.nc, Frame 1
+ -37.5980    4.8788    1.4578   12.9291   10.7250    % all_structures.nc, Frame 2
+ -37.1345    4.8760    1.5033   11.2415   13.1768    % all_structures.nc, Frame 3
+ -36.0946    4.4375    1.6566    8.9246   15.6906    % all_structures.nc, Frame 4
+ -32.6741    4.0152    2.8486    5.3195   15.7265    % all_structures.nc, Frame 5
+ -30.9147    4.1597    2.0572    3.6250   15.7983    % all_structures.nc, Frame 6
+ -30.0914    4.7584    2.1025    2.6528   16.1394    % all_structures.nc, Frame 7
+ -29.4579    5.0624    2.2108    2.2533   16.7420    % all_structures.nc, Frame 8
+ -28.5546    4.4158    2.4351    2.4950   17.1465    % all_structures.nc, Frame 9
+ -27.4596    3.5563    2.7956    3.2502   17.6028    % all_structures.nc, Frame 10
+ -26.2953    3.1992    3.2906    4.3676   18.2347    % all_structures.nc, Frame 11
+ -25.0284    3.3550    3.8451    5.8513   18.6122    % all_structures.nc, Frame 12
+ -23.4673    3.6682    4.2544    8.1190   17.7843    % all_structures.nc, Frame 13
+ -25.9554    4.2288    3.9363    6.3175   21.1347    % all_structures.nc, Frame 14
+ -27.5986    4.4941    3.4102    5.2302   21.0685    % all_structures.nc, Frame 15
+ -28.9199    4.6254    2.9231    4.3904   20.3022    % all_structures.nc, Frame 16
+ -30.0847    5.0126    2.5467    3.7618   19.6617    % all_structures.nc, Frame 17
+ -31.1103    5.1776    2.2854    3.4234   19.2225    % all_structures.nc, Frame 18
+ -31.9734    4.4601    2.1111    3.5533   18.5833    % all_structures.nc, Frame 19
+ -32.9827    3.3325    1.9763    4.3775   17.9654    % all_structures.nc, Frame 20
+ -35.1834    2.5307    1.7471    6.7688   18.0150    % all_structures.nc, Frame 21
+ -36.7149    2.5515    1.4934    9.4992   16.3561    % all_structures.nc, Frame 22
+ -37.3734    3.0359    1.3891   11.7459   13.3634    % all_structures.nc, Frame 23
+ -37.6611    3.7235    1.3985   13.2296   10.7253    % all_structures.nc, Frame 24
+ -37.4244    4.1651    1.3859   12.5795    9.8961    % all_structures.nc, Frame 25
+ -37.0137    4.4440    1.4209   11.2219   11.6541    % all_structures.nc, Frame 26
+ -36.0434    4.3640    1.5448    9.1284   14.1342    % all_structures.nc, Frame 27
+ -33.8675    4.0625    1.8269    6.3553   15.3142    % all_structures.nc, Frame 28
+ -30.4969    4.1851    2.0856    3.4583   14.4718    % all_structures.nc, Frame 29
+ -29.3966    4.6165    2.1845    2.7048   15.1390    % all_structures.nc, Frame 30
+ -28.6242    4.6272    2.3041    2.5303   16.0024    % all_structures.nc, Frame 31
+ -27.5763    3.9080    2.4916    2.8145   16.5546    % all_structures.nc, Frame 32
+ -26.3136    2.9954    2.7663    3.6609   16.8264    % all_structures.nc, Frame 33
+ -24.9895    2.4686    3.1291    4.9778   17.0169    % all_structures.nc, Frame 34
+ -23.5860    2.3562    3.5160    6.8400   16.7496    % all_structures.nc, Frame 35
+ -23.6766    2.8162    4.3931    6.6944   16.9313    % all_structures.nc, Frame 36
+ -26.3257    4.7456    4.1995    5.1639   19.0759    % all_structures.nc, Frame 37
+ -28.2572    5.5111    3.5530    4.3480   19.7712    % all_structures.nc, Frame 38
+ -29.6620    5.6114    2.9659    3.7526   19.2955    % all_structures.nc, Frame 39
+ -30.7652    5.8324    2.5185    3.3114   18.6610    % all_structures.nc, Frame 40
+ -31.6517    5.8376    2.2262    3.0819   18.3073    % all_structures.nc, Frame 41
+ -32.4505    4.8419    2.0601    3.2300   18.1582    % all_structures.nc, Frame 42
+ -33.4741    3.5083    1.9538    3.9747   18.0117    % all_structures.nc, Frame 43
+ -35.2157    2.6152    1.8072    5.6167   18.0248    % all_structures.nc, Frame 44
+ -36.5928    2.3983    1.5911    7.8072   16.8248    % all_structures.nc, Frame 45
+ -37.1937    2.6226    1.4398   10.0349   14.1345    % all_structures.nc, Frame 46
+ -37.4453    3.0782    1.3970   11.8358   11.2730    % all_structures.nc, Frame 47
+ -37.5134    3.6272    1.3990   12.7313    9.5917    % all_structures.nc, Frame 48
+ -36.6573    3.6993    1.3770    9.5914   10.6057    % all_structures.nc, Frame 49
+ -35.8080    3.9283    1.4670    8.1023   12.4156    % all_structures.nc, Frame 50
+ -34.0672    3.9280    1.6920    6.0100   13.7615    % all_structures.nc, Frame 51
+ -30.5049    4.0315    1.9989    3.0164   12.7004    % all_structures.nc, Frame 52
+ -29.1064    4.3731    2.1682    2.2251   13.6715    % all_structures.nc, Frame 53
+ -28.1332    4.1867    2.3448    2.2970   14.9074    % all_structures.nc, Frame 54
+ -26.8655    3.3627    2.5319    2.7402   15.5023    % all_structures.nc, Frame 55
+ -25.3699    2.5264    2.7348    3.6853   15.4207    % all_structures.nc, Frame 56
+ -23.8089    2.0000    2.9530    5.1717   14.8487    % all_structures.nc, Frame 57
+ -21.6021    1.4143    3.5889    5.9002   13.4852    % all_structures.nc, Frame 58
+ -23.8535    2.3296    4.2163    5.4995   16.2397    % all_structures.nc, Frame 59
+ -26.1768    4.2816    4.1200    4.5590   16.8046    % all_structures.nc, Frame 60
+ -28.2650    5.8166    3.5980    3.7422   16.9523    % all_structures.nc, Frame 61
+ -30.0192    6.1528    3.0216    3.2945   17.3226    % all_structures.nc, Frame 62
+ -31.2769    6.0909    2.5363    2.9931   17.2159    % all_structures.nc, Frame 63
+ -32.2018    6.0007    2.1976    2.7980   17.1081    % all_structures.nc, Frame 64
+ -32.9539    5.1478    2.0046    2.7760   17.2666    % all_structures.nc, Frame 65
+ -33.8539    3.7258    1.9176    3.0716   17.5640    % all_structures.nc, Frame 66
+ -35.1660    2.7383    1.8493    3.8318   17.7197    % all_structures.nc, Frame 67
+ -36.3087    2.3652    1.7042    5.0967   16.8756    % all_structures.nc, Frame 68
+ -36.8826    2.3724    1.5364    6.8404   14.7117    % all_structures.nc, Frame 69
+ -37.0968    2.5976    1.4337    8.6653   12.0685    % all_structures.nc, Frame 70
+ -37.1387    2.9437    1.3949    9.8969   10.1615    % all_structures.nc, Frame 71
+ -37.0330    3.3368    1.3713   10.2244    9.6983    % all_structures.nc, Frame 72
+ -35.3513    3.1910    1.4161    6.3527   11.5665    % all_structures.nc, Frame 73
+ -33.9762    3.4414    1.5738    5.1628   12.4364    % all_structures.nc, Frame 74
+ -30.9580    3.6402    1.8486    2.8754   11.4836    % all_structures.nc, Frame 75
+ -29.2260    3.9579    2.0612    1.8073   12.1901    % all_structures.nc, Frame 76
+ -28.1171    3.7708    2.2982    1.8589   13.9071    % all_structures.nc, Frame 77
+ -26.6101    2.9837    2.5137    2.1779   14.6760    % all_structures.nc, Frame 78
+ -24.7688    2.2138    2.6826    2.7451   14.2072    % all_structures.nc, Frame 79
+ -22.2215    1.5323    2.9265    3.1151   12.6751    % all_structures.nc, Frame 80
+ -22.3046    1.4124    3.3622    3.8623   13.9105    % all_structures.nc, Frame 81
+ -23.6407    1.9144    3.6620    4.0482   15.0601    % all_structures.nc, Frame 82
+ -25.5969    3.2276    3.6979    3.7626   15.3741    % all_structures.nc, Frame 83
+ -27.5219    4.6608    3.4001    3.2531   14.9227    % all_structures.nc, Frame 84
+ -29.3534    5.4012    2.9815    2.9461   14.9414    % all_structures.nc, Frame 85
+ -30.8997    5.3754    2.5634    2.8606   15.4229    % all_structures.nc, Frame 86
+ -32.0208    5.1320    2.2106    2.7911   15.7318    % all_structures.nc, Frame 87
+ -32.8746    4.6845    1.9728    2.7424   16.0661    % all_structures.nc, Frame 88
+ -33.6828    3.7949    1.8420    2.7385   16.5684    % all_structures.nc, Frame 89
+ -34.6918    2.8515    1.7896    2.8389   17.0238    % all_structures.nc, Frame 90
+ -35.7243    2.3425    1.7239    3.1165   16.7797    % all_structures.nc, Frame 91
+ -36.3658    2.2074    1.5914    3.8199   15.3557    % all_structures.nc, Frame 92
+ -36.5969    2.2596    1.4611    5.0173   13.1667    % all_structures.nc, Frame 93
+ -36.6002    2.4225    1.3872    6.2052   11.3834    % all_structures.nc, Frame 94
+ -36.4744    2.6444    1.3513    6.9092   10.6508    % all_structures.nc, Frame 95
+ -36.1025    2.9038    1.3514    6.9669   10.7507    % all_structures.nc, Frame 96
+ -33.8203    2.8185    1.4761    4.3156   12.1008    % all_structures.nc, Frame 97
+ -31.6610    3.1441    1.7105    3.0876   11.5768    % all_structures.nc, Frame 98
+ -29.6758    3.5399    1.9753    1.9562   11.5705    % all_structures.nc, Frame 99
+ -28.5704    3.4541    2.2333    1.8803   13.4836    % all_structures.nc, Frame 100
+ -27.1437    2.8918    2.4749    2.0596   14.9102    % all_structures.nc, Frame 101
+ -25.2996    2.2586    2.6428    2.1903   14.9700    % all_structures.nc, Frame 102
+ -23.0575    1.7507    2.6477    2.1660   12.8162    % all_structures.nc, Frame 103
+ -22.6774    2.2082    2.9146    2.5656   13.2414    % all_structures.nc, Frame 104
+ -23.3469    1.8838    3.0580    2.9170   14.3760    % all_structures.nc, Frame 105
+ -24.6968    2.4651    3.1157    3.0007   14.4998    % all_structures.nc, Frame 106
+ -26.3391    3.3399    3.0199    2.9008   14.1158    % all_structures.nc, Frame 107
+ -28.0039    4.1083    2.7908    2.7230   13.7001    % all_structures.nc, Frame 108
+ -29.6497    4.4248    2.5185    2.7289   14.0313    % all_structures.nc, Frame 109
+ -31.0347    4.3599    2.2416    2.8531   14.6988    % all_structures.nc, Frame 110
+ -32.0180    4.0636    2.0038    2.9405   15.1366    % all_structures.nc, Frame 111
+ -32.7739    3.5974    1.8185    2.9707   15.5046    % all_structures.nc, Frame 112
+ -33.5615    3.0018    1.7081    2.9549   15.9980    % all_structures.nc, Frame 113
+ -34.5264    2.4612    1.6447    2.8624   16.3500    % all_structures.nc, Frame 114
+ -35.3737    2.1659    1.5625    2.6934   15.8673    % all_structures.nc, Frame 115
+ -35.8313    2.0864    1.4444    2.8353   14.3933    % all_structures.nc, Frame 116
+ -35.9204    2.1268    1.3416    3.4512   12.5845    % all_structures.nc, Frame 117
+ -35.8294    2.2545    1.2953    4.1377   11.6961    % all_structures.nc, Frame 118
+ -35.5410    2.3977    1.2929    4.6184   11.5554    % all_structures.nc, Frame 119
+ -34.9603    2.5762    1.3328    4.8039   11.7947    % all_structures.nc, Frame 120
+ -31.9573    2.8284    1.6519    3.2636   12.8067    % all_structures.nc, Frame 121
+ -30.1263    3.3444    1.9346    2.5941   12.2246    % all_structures.nc, Frame 122
+ -29.0429    3.5215    2.1951    2.4546   13.5880    % all_structures.nc, Frame 123
+ -27.9035    3.2163    2.4434    2.5748   15.4697    % all_structures.nc, Frame 124
+ -26.3590    2.7277    2.6535    2.6490   16.5854    % all_structures.nc, Frame 125
+ -24.5011    2.3146    2.7130    2.5024   16.1565    % all_structures.nc, Frame 126
+ -22.8685    2.1533    2.4682    2.2590   13.3569    % all_structures.nc, Frame 127
+ -23.2987    2.2303    2.6141    2.5766   14.8995    % all_structures.nc, Frame 128
+ -24.0068    2.3799    2.6196    2.6925   14.7371    % all_structures.nc, Frame 129
+ -25.1482    2.7571    2.5915    2.7672   14.3581    % all_structures.nc, Frame 130
+ -26.5560    3.2795    2.5133    2.7695   13.8913    % all_structures.nc, Frame 131
+ -28.0853    3.7793    2.3804    2.7379   13.7161    % all_structures.nc, Frame 132
+ -29.6463    4.0742    2.2245    2.8835   14.3039    % all_structures.nc, Frame 133
+ -30.9044    4.1001    2.0418    3.1319   15.0221    % all_structures.nc, Frame 134
+ -31.7209    3.8719    1.8685    3.3305   15.3439    % all_structures.nc, Frame 135
+ -32.2625    3.4585    1.7318    3.4342   15.4914    % all_structures.nc, Frame 136
+ -32.8164    2.9789    1.6278    3.4380   15.7887    % all_structures.nc, Frame 137
+ -33.6226    2.5371    1.5466    3.3216   16.1874    % all_structures.nc, Frame 138
+ -34.4530    2.2433    1.4628    2.9651   15.9660    % all_structures.nc, Frame 139
+ -34.9090    2.1131    1.3547    2.6806   14.8153    % all_structures.nc, Frame 140
+ -34.9889    2.0983    1.2778    2.7942   13.4287    % all_structures.nc, Frame 141
+ -34.8480    2.1965    1.2681    3.1216   13.0037    % all_structures.nc, Frame 142
+ -34.4177    2.3029    1.3202    3.4551   13.0988    % all_structures.nc, Frame 143
+ -33.5328    2.4792    1.4404    3.5923   13.2083    % all_structures.nc, Frame 144
+ -30.2279    3.3659    1.9021    3.2579   13.7817    % all_structures.nc, Frame 145
+ -29.2611    3.8115    2.1355    3.1759   14.2652    % all_structures.nc, Frame 146
+ -28.3873    3.8400    2.3757    3.2469   15.9095    % all_structures.nc, Frame 147
+ -27.2411    3.5363    2.6210    3.3612   17.6942    % all_structures.nc, Frame 148
+ -25.7082    3.1374    2.7718    3.3101   18.4538    % all_structures.nc, Frame 149
+ -23.9688    2.7986    2.6583    2.9191   17.2831    % all_structures.nc, Frame 150
+ -23.5930    2.7441    2.4186    2.9581   16.4484    % all_structures.nc, Frame 151
+ -23.8122    2.6850    2.3539    2.9379   16.1484    % all_structures.nc, Frame 152
+ -24.4385    2.7845    2.3001    2.9711   15.6373    % all_structures.nc, Frame 153
+ -25.4408    3.0435    2.2651    3.0439   15.1085    % all_structures.nc, Frame 154
+ -26.7484    3.4669    2.2245    3.0831   14.6996    % all_structures.nc, Frame 155
+ -28.2236    3.9552    2.1544    3.1163   14.6217    % all_structures.nc, Frame 156
+ -29.7365    4.2971    2.0521    3.3484   15.3020    % all_structures.nc, Frame 157
+ -30.8799    4.3423    1.9151    3.6875   16.0730    % all_structures.nc, Frame 158
+ -31.5002    4.1344    1.7774    3.9464   16.2977    % all_structures.nc, Frame 159
+ -31.7852    3.7539    1.6730    4.1012   16.2645    % all_structures.nc, Frame 160
+ -31.9912    3.2945    1.6074    4.1010   16.3174    % all_structures.nc, Frame 161
+ -32.4443    2.8335    1.5717    3.9317   17.0590    % all_structures.nc, Frame 162
+ -33.2202    2.4584    1.5505    3.5741   17.4653    % all_structures.nc, Frame 163
+ -33.7195    2.2382    1.4784    3.0568   16.7981    % all_structures.nc, Frame 164
+ -33.7467    2.1565    1.4003    2.8279   15.6561    % all_structures.nc, Frame 165
+ -33.5134    2.2830    1.4081    2.9374   15.4670    % all_structures.nc, Frame 166
+ -32.8424    2.4710    1.5021    3.2112   15.4469    % all_structures.nc, Frame 167
+ -31.6409    2.8082    1.6720    3.3851   14.7558    % all_structures.nc, Frame 168
+ -29.1859    3.9958    2.0584    3.7792   15.4486    % all_structures.nc, Frame 169
+ -28.5375    4.3314    2.2646    3.8168   16.4480    % all_structures.nc, Frame 170
+ -27.7242    4.3101    2.5122    3.9188   18.2047    % all_structures.nc, Frame 171
+ -26.5874    4.0181    2.7513    4.0015   19.7573    % all_structures.nc, Frame 172
+ -25.0637    3.6389    2.7915    3.7708   19.7500    % all_structures.nc, Frame 173
+ -24.1730    3.3317    2.4508    3.6640   18.2761    % all_structures.nc, Frame 174
+ -24.0496    3.1039    2.3153    3.5300   18.0447    % all_structures.nc, Frame 175
+ -24.2581    3.0300    2.2018    3.4113   17.4210    % all_structures.nc, Frame 176
+ -24.8590    3.0878    2.1328    3.4136   16.7656    % all_structures.nc, Frame 177
+ -25.8816    3.3310    2.0995    3.4863   16.2927    % all_structures.nc, Frame 178
+ -27.2437    3.7613    2.0831    3.5714   16.0229    % all_structures.nc, Frame 179
+ -28.7024    4.3112    2.0338    3.6480   15.9195    % all_structures.nc, Frame 180
+ -30.0963    4.7271    1.9470    3.9281   16.5081    % all_structures.nc, Frame 181
+ -31.0327    4.7674    1.8142    4.3052   17.2799    % all_structures.nc, Frame 182
+ -31.4070    4.5166    1.6895    4.5537   17.4522    % all_structures.nc, Frame 183
+ -31.4615    4.0968    1.6074    4.7182   17.4060    % all_structures.nc, Frame 184
+ -31.4048    3.6032    1.5786    4.7729   17.4629    % all_structures.nc, Frame 185
+ -31.4505    3.1191    1.5995    4.6012   18.0526    % all_structures.nc, Frame 186
+ -31.8333    2.7293    1.6664    4.2173   19.0095    % all_structures.nc, Frame 187
+ -32.1734    2.4764    1.6731    3.7384   19.0641    % all_structures.nc, Frame 188
+ -32.0836    2.3718    1.6221    3.3888   18.1600    % all_structures.nc, Frame 189
+ -31.7092    2.5642    1.6253    3.4009   17.5671    % all_structures.nc, Frame 190
+ -30.9058    2.9128    1.7304    3.5951   16.7579    % all_structures.nc, Frame 191
+ -29.9295    3.4238    1.8883    3.7584   15.6481    % all_structures.nc, Frame 192
+ -28.5565    4.5602    2.1836    4.2680   16.9789    % all_structures.nc, Frame 193
+ -27.9830    4.8686    2.4013    4.3603   18.2960    % all_structures.nc, Frame 194
+ -27.1743    4.8256    2.6661    4.4907   20.0646    % all_structures.nc, Frame 195
+ -26.0081    4.5225    2.8744    4.4859   21.1543    % all_structures.nc, Frame 196
+ -25.0881    4.1915    2.6507    4.1338   19.6246    % all_structures.nc, Frame 197
+ -24.7155    3.6254    2.4427    4.0320   19.4105    % all_structures.nc, Frame 198
+ -24.5668    3.3559    2.2556    3.8205   18.8509    % all_structures.nc, Frame 199
+ -24.8191    3.2783    2.1207    3.6367   18.1065    % all_structures.nc, Frame 200
+ -25.5747    3.3447    2.0424    3.5902   17.5164    % all_structures.nc, Frame 201
+ -26.8556    3.6045    2.0224    3.6891   17.3504    % all_structures.nc, Frame 202
+ -28.6018    4.6911    2.7282    3.8301   16.9973    % all_structures.nc, Frame 203
+ -29.6062    4.7215    1.9530    3.8729   16.9532    % all_structures.nc, Frame 204
+ -30.8452    5.8574    1.8976    4.0574   16.9570    % all_structures.nc, Frame 205
+ -31.2830    5.3124    1.7287    4.5525   17.8132    % all_structures.nc, Frame 206
+ -31.4078    4.9780    1.6122    4.8411   18.0600    % all_structures.nc, Frame 207
+ -31.2699    4.4598    1.5493    5.0256   18.1318    % all_structures.nc, Frame 208
+ -31.0284    3.8827    1.5475    5.1223   18.4116    % all_structures.nc, Frame 209
+ -30.8395    3.3602    1.5998    5.0603   18.9268    % all_structures.nc, Frame 210
+ -30.8136    2.9498    1.7211    4.7239   19.6529    % all_structures.nc, Frame 211
+ -30.8228    2.7490    1.8113    4.2508   19.9719    % all_structures.nc, Frame 212
+ -30.5532    2.6868    1.8302    3.9682   19.2467    % all_structures.nc, Frame 213
+ -30.0992    2.8879    1.8181    3.9614   18.0181    % all_structures.nc, Frame 214
+ -29.5549    3.3838    1.9108    4.1038   17.1440    % all_structures.nc, Frame 215
+ -29.0347    3.9993    2.0289    4.2058   16.6130    % all_structures.nc, Frame 216
+ -28.1675    5.1230    2.3253    4.4195   17.6541    % all_structures.nc, Frame 217
+ -27.6193    5.4706    2.5699    4.6108   19.2534    % all_structures.nc, Frame 218
+ -26.8003    5.4366    2.8547    4.7968   21.0040    % all_structures.nc, Frame 219
+ -26.4467    5.4991    2.9398    3.9310   20.2600    % all_structures.nc, Frame 220
+ -25.8729    4.5433    2.6342    3.7720   19.5148    % all_structures.nc, Frame 221
+ -25.3716    3.8636    2.3859    3.7177   18.9908    % all_structures.nc, Frame 222
+ -25.2699    3.5583    2.1938    3.5259   18.3932    % all_structures.nc, Frame 223
+ -25.8396    3.4977    2.0573    3.2941   17.8519    % all_structures.nc, Frame 224
+ -27.1874    3.5967    2.0239    3.3688   18.0183    % all_structures.nc, Frame 225
+ -28.4421    3.8530    1.9902    3.5764   17.8664    % all_structures.nc, Frame 226
+ -29.5736    4.3737    1.9284    3.5963   17.3807    % all_structures.nc, Frame 227
+ -30.4489    5.1028    1.8455    3.5018   16.7703    % all_structures.nc, Frame 228
+ -31.0900    5.8728    1.7702    3.5497   16.7061    % all_structures.nc, Frame 229
+ -31.4921    6.0354    1.6420    4.1265   17.0029    % all_structures.nc, Frame 230
+ -31.4411    5.5689    1.5463    4.5996   17.5667    % all_structures.nc, Frame 231
+ -31.1640    4.8840    1.4996    4.8978   17.9595    % all_structures.nc, Frame 232
+ -30.8118    4.2133    1.5190    5.0214   18.4785    % all_structures.nc, Frame 233
+ -30.7468    4.0296    2.2814    5.0403   19.0935    % all_structures.nc, Frame 234
+ -30.2307    3.2004    1.7536    4.6999   19.6440    % all_structures.nc, Frame 235
+ -29.9878    3.0193    1.9000    4.3064   19.7961    % all_structures.nc, Frame 236
+ -29.6006    3.0313    1.9655    4.0632   19.1109    % all_structures.nc, Frame 237
+ -29.4726    3.7782    1.9810    4.1177   17.6838    % all_structures.nc, Frame 238
+ -28.8957    3.8764    2.0234    4.1062   16.9494    % all_structures.nc, Frame 239
+ -28.5607    4.5457    2.1438    4.2456   16.8543    % all_structures.nc, Frame 240
+ -27.9507    5.6174    2.4795    4.0731   17.3941    % all_structures.nc, Frame 241
+ -27.4244    6.0353    2.7694    4.4234   19.2336    % all_structures.nc, Frame 242
+ -27.5604    6.4642    3.0607    3.5212   19.5821    % all_structures.nc, Frame 243
+ -27.2503    5.6456    2.7641    3.0442   18.5471    % all_structures.nc, Frame 244
+ -26.7482    4.6962    2.4854    2.8854   17.7831    % all_structures.nc, Frame 245
+ -26.3677    4.0185    2.2643    2.8423   17.3350    % all_structures.nc, Frame 246
+ -26.8881    3.7374    2.1419    2.7395   17.4785    % all_structures.nc, Frame 247
+ -27.8946    3.5892    2.1087    3.0097   17.9750    % all_structures.nc, Frame 248
+ -28.7457    3.5725    1.9970    3.1513   17.5501    % all_structures.nc, Frame 249
+ -29.5581    3.8010    1.8748    3.1097   16.7430    % all_structures.nc, Frame 250
+ -30.3169    4.3534    1.7678    2.9196   15.8413    % all_structures.nc, Frame 251
+ -31.1780    5.7874    1.7016    2.7094   15.0498    % all_structures.nc, Frame 252
+ -31.3449    6.2231    1.6271    2.6425   15.0080    % all_structures.nc, Frame 253
+ -31.5565    6.7830    1.5378    3.1204   15.1078    % all_structures.nc, Frame 254
+ -31.4652    6.3253    1.4776    3.7954   16.0269    % all_structures.nc, Frame 255
+ -31.1436    5.4195    1.4664    4.2680   16.7871    % all_structures.nc, Frame 256
+ -30.7730    5.0448    1.2491    4.4638   17.2649    % all_structures.nc, Frame 257
+ -30.2804    3.8904    1.6297    4.3703   18.3618    % all_structures.nc, Frame 258
+ -29.8940    3.4399    1.7954    4.0803   18.8750    % all_structures.nc, Frame 259
+ -29.5053    3.2762    1.9598    3.6970   18.8424    % all_structures.nc, Frame 260
+ -29.0748    3.3210    2.0280    3.4430   17.9460    % all_structures.nc, Frame 261
+ -28.7863    3.6453    1.9972    3.3201   16.4493    % all_structures.nc, Frame 262
+ -28.5601    4.3093    2.0958    3.4674   15.9957    % all_structures.nc, Frame 263
+ -28.3014    5.0060    2.2529    3.7397   16.2455    % all_structures.nc, Frame 264
+ -27.9219    5.8472    2.6396    3.4308   16.7919    % all_structures.nc, Frame 265
+ -28.1733    6.0751    2.9646    3.2043   18.0215    % all_structures.nc, Frame 266
+ -28.1713    5.8544    2.7353    2.5958   16.8646    % all_structures.nc, Frame 267
+ -27.9787    5.1414    2.5105    2.2598   16.1083    % all_structures.nc, Frame 268
+ -27.7753    4.3176    2.3267    2.1760   15.7858    % all_structures.nc, Frame 269
+ -27.9071    3.6479    2.2739    2.4221   16.2715    % all_structures.nc, Frame 270
+ -28.3623    3.3116    2.1915    2.6256   16.8944    % all_structures.nc, Frame 271
+ -29.1387    3.6080    2.0221    2.6986   16.5142    % all_structures.nc, Frame 272
+ -29.4820    3.0759    1.8298    2.5032   15.6257    % all_structures.nc, Frame 273
+ -30.0628    3.3031    1.6793    2.2821   14.5140    % all_structures.nc, Frame 274
+ -30.5932    3.8284    1.5703    2.0298   13.4293    % all_structures.nc, Frame 275
+ -31.0526    4.7115    1.5093    1.8192   12.7939    % all_structures.nc, Frame 276
+ -31.3933    5.8183    1.4771    1.7629   12.6639    % all_structures.nc, Frame 277
+ -31.5542    6.6699    1.4355    2.0964   13.0126    % all_structures.nc, Frame 278
+ -31.6534    6.7411    1.8202    2.7724   14.2134    % all_structures.nc, Frame 279
+ -31.1896    5.8331    1.4511    3.2659   15.1755    % all_structures.nc, Frame 280
+ -30.6704    4.9226    1.5075    3.5364   16.5321    % all_structures.nc, Frame 281
+ -30.2301    4.0851    1.6787    3.4857   17.2113    % all_structures.nc, Frame 282
+ -29.7374    3.5757    1.8437    3.1507   17.6402    % all_structures.nc, Frame 283
+ -29.2485    3.3825    1.9912    2.7396   17.3342    % all_structures.nc, Frame 284
+ -28.8034    3.4050    2.0260    2.4563   16.1168    % all_structures.nc, Frame 285
+ -28.6300    3.7870    2.0288    2.3353   15.0362    % all_structures.nc, Frame 286
+ -28.4634    4.4877    2.1668    2.5618   14.8580    % all_structures.nc, Frame 287
+ -28.2503    5.2155    2.3699    2.9526   15.3958    % all_structures.nc, Frame 288
+ -28.4975    4.7932    2.8324    2.9734   16.7605    % all_structures.nc, Frame 289
+ -28.7215    5.1225    2.6185    2.3392   15.2542    % all_structures.nc, Frame 290
+ -28.7463    4.9108    2.4304    1.9114   14.3205    % all_structures.nc, Frame 291
+ -28.6553    4.2660    2.2785    1.7375   13.9335    % all_structures.nc, Frame 292
+ -28.8706    4.0338    2.2463    1.9022   14.1763    % all_structures.nc, Frame 293
+ -28.8140    3.0171    2.2002    2.0804   15.2791    % all_structures.nc, Frame 294
+ -29.0847    2.6847    2.0297    2.0973   15.3499    % all_structures.nc, Frame 295
+ -29.4526    2.4960    1.8219    1.9806   14.6686    % all_structures.nc, Frame 296
+ -29.8739    2.4818    1.6361    1.7683   13.5418    % all_structures.nc, Frame 297
+ -30.5463    3.2049    1.5023    1.6046   12.2351    % all_structures.nc, Frame 298
+ -30.9729    3.6820    1.4135    1.4072   11.1261    % all_structures.nc, Frame 299
+ -31.1247    3.9152    1.3746    1.2334   10.6295    % all_structures.nc, Frame 300
+ -31.4495    4.8989    1.3675    1.2266   10.7251    % all_structures.nc, Frame 301
+ -31.6261    5.7185    1.3637    1.4396   11.4635    % all_structures.nc, Frame 302
+ -31.6124    5.9602    1.3876    1.8838   12.6581    % all_structures.nc, Frame 303
+ -31.3277    5.5318    1.4736    2.3282   14.0104    % all_structures.nc, Frame 304
+ -30.8654    4.7673    1.5987    2.6303   15.2557    % all_structures.nc, Frame 305
+ -30.3053    4.0030    1.7416    2.6278   16.1738    % all_structures.nc, Frame 306
+ -29.8710    3.6800    1.9052    2.3499   16.4619    % all_structures.nc, Frame 307
+ -29.3760    3.5960    1.9357    1.8191   15.1956    % all_structures.nc, Frame 308
+ -28.7437    3.0825    1.9343    1.4938   14.2288    % all_structures.nc, Frame 309
+ -28.6593    3.5118    2.0681    1.5393   14.0088    % all_structures.nc, Frame 310
+ -28.5658    4.1945    2.2632    1.8394   14.2042    % all_structures.nc, Frame 311
+ -28.3841    4.8938    2.5071    2.3571   14.9979    % all_structures.nc, Frame 312
+ -29.0287    4.1847    2.5447    2.2990   14.4369    % all_structures.nc, Frame 313
+ -29.2411    4.4290    2.3565    1.8492   13.0659    % all_structures.nc, Frame 314
+ -29.2859    4.1955    2.2010    1.5539   12.3664    % all_structures.nc, Frame 315
+ -29.2432    3.5955    2.0947    1.4495   12.2766    % all_structures.nc, Frame 316
+ -29.3114    3.0102    2.1321    1.6142   13.3453    % all_structures.nc, Frame 317
+ -29.4320    2.5662    2.0392    1.6683   13.9440    % all_structures.nc, Frame 318
+ -29.5816    2.2706    1.8536    1.6217   13.7732    % all_structures.nc, Frame 319
+ -29.8164    2.1140    1.6485    1.4912   12.9354    % all_structures.nc, Frame 320
+ -30.1296    2.1140    1.4783    1.3130   11.7464    % all_structures.nc, Frame 321
+ -30.4867    2.2966    1.3667    1.1562   10.5689    % all_structures.nc, Frame 322
+ -30.8831    2.6900    1.3138    1.0646    9.6904    % all_structures.nc, Frame 323
+ -31.7164    3.8683    1.7412    0.9697    8.7568    % all_structures.nc, Frame 324
+ -31.6889    4.0925    1.3345    1.0219    9.9296    % all_structures.nc, Frame 325
+ -31.9257    4.6754    1.3832    1.1768   10.9873    % all_structures.nc, Frame 326
+ -31.8974    4.8174    1.4522    1.5541   12.3888    % all_structures.nc, Frame 327
+ -31.5873    4.5531    1.5619    1.9547   13.7825    % all_structures.nc, Frame 328
+ -31.5217    4.6896    2.0676    2.2805   15.0604    % all_structures.nc, Frame 329
+ -30.4138    3.4262    1.8152    2.1462   15.5692    % all_structures.nc, Frame 330
+ -29.6300    2.8723    1.8538    1.6964   15.0414    % all_structures.nc, Frame 331
+ -28.7120    2.3719    1.8585    1.4117   13.8661    % all_structures.nc, Frame 332
+ -28.7459    2.4876    1.9713    1.1896   13.5746    % all_structures.nc, Frame 333
+ -28.8011    2.9223    2.1610    1.2196   13.7988    % all_structures.nc, Frame 334
+ -28.7588    3.5106    2.4017    1.6113   14.3353    % all_structures.nc, Frame 335
+ -28.6340    3.6167    2.7557    2.7998   16.2916    % all_structures.nc, Frame 336
+ -29.4967    3.9995    2.3304    1.9351   12.6827    % all_structures.nc, Frame 337
+ -29.7073    4.1836    2.1657    1.6173   11.4764    % all_structures.nc, Frame 338
+ -29.7797    3.9457    2.0425    1.4031   11.0291    % all_structures.nc, Frame 339
+ -29.7662    3.3879    1.9764    1.3288   11.2220    % all_structures.nc, Frame 340
+ -29.8957    2.9119    2.0010    1.3991   12.4140    % all_structures.nc, Frame 341
+ -29.9880    2.5021    1.8986    1.4149   12.8760    % all_structures.nc, Frame 342
+ -30.0423    2.2321    1.7230    1.3621   12.6344    % all_structures.nc, Frame 343
+ -30.1633    2.0879    1.5361    1.2636   11.7764    % all_structures.nc, Frame 344
+ -30.5705    2.4661    1.2270    1.2207   10.5675    % all_structures.nc, Frame 345
+ -30.7354    2.2431    1.3184    1.0563    9.7879    % all_structures.nc, Frame 346
+ -31.1616    2.5869    1.3010    0.9928    9.3359    % all_structures.nc, Frame 347
+ -31.6369    3.2288    0.8933    0.9441    8.9278    % all_structures.nc, Frame 348
+ -32.0929    3.6683    1.4217    1.0023   10.2742    % all_structures.nc, Frame 349
+ -32.3303    4.0131    1.5054    1.3382   11.5409    % all_structures.nc, Frame 350
+ -32.2216    3.9755    1.5937    1.8234   12.8785    % all_structures.nc, Frame 351
+ -31.7858    3.6747    1.7047    2.1878   14.0572    % all_structures.nc, Frame 352
+ -31.1224    3.2280    1.8156    2.3013   14.8928    % all_structures.nc, Frame 353
+ -30.2741    2.7354    1.8762    2.0547   15.0444    % all_structures.nc, Frame 354
+ -29.0288    2.2114    1.8419    1.6856   13.8686    % all_structures.nc, Frame 355
+ -28.6294    2.0063    1.9487    1.5458   13.7518    % all_structures.nc, Frame 356
+ -28.7598    2.1281    2.0822    1.2839   13.7477    % all_structures.nc, Frame 357
+ -28.8862    2.5123    2.3059    1.3199   14.2310    % all_structures.nc, Frame 358
+ -28.5780    2.9473    2.7042    2.5460   16.2424    % all_structures.nc, Frame 359
+ -29.1235    3.5138    2.5291    2.2949   14.5087    % all_structures.nc, Frame 360
+ -29.9180    3.9603    2.1573    1.7269   11.5203    % all_structures.nc, Frame 361
+ -30.1457    4.1324    2.0182    1.4989   10.5180    % all_structures.nc, Frame 362
+ -30.2746    3.9213    1.9180    1.3256   10.3246    % all_structures.nc, Frame 363
+ -30.3496    3.4291    1.8674    1.2436   10.7413    % all_structures.nc, Frame 364
+ -30.5580    2.9896    1.8568    1.2595   11.7820    % all_structures.nc, Frame 365
+ -30.6579    2.6191    1.7715    1.2802   12.3352    % all_structures.nc, Frame 366
+ -30.6074    2.3793    1.6331    1.2335   12.1890    % all_structures.nc, Frame 367
+ -30.6058    2.2440    1.4823    1.1560   11.4425    % all_structures.nc, Frame 368
+ -30.7753    2.2359    1.3800    1.0871   10.6297    % all_structures.nc, Frame 369
+ -31.0931    2.3878    1.3442    1.0156   10.1019    % all_structures.nc, Frame 370
+ -31.7020    3.0784    1.2678    0.9454    9.4997    % all_structures.nc, Frame 371
+ -32.0234    3.1607    1.4749    0.9186   10.2465    % all_structures.nc, Frame 372
+ -32.4228    3.6666    1.5875    1.1217   11.1745    % all_structures.nc, Frame 373
+ -32.5357    3.9131    1.6888    1.5887   12.3045    % all_structures.nc, Frame 374
+ -32.2203    3.7777    1.7679    2.1100   13.3100    % all_structures.nc, Frame 375
+ -31.5455    3.4302    1.8457    2.3581   14.0951    % all_structures.nc, Frame 376
+ -30.6313    2.9962    1.8988    2.2604   14.4591    % all_structures.nc, Frame 377
+ -29.4424    2.5427    1.8941    1.9344   14.0119    % all_structures.nc, Frame 378
+ -28.6229    2.2005    1.9687    1.8112   13.9371    % all_structures.nc, Frame 379
+ -28.4768    2.0508    2.0823    1.6263   14.0790    % all_structures.nc, Frame 380
+ -28.5934    2.1602    2.2319    1.4074   14.2270    % all_structures.nc, Frame 381
+ -28.7180    2.4925    2.4464    1.4764   14.6996    % all_structures.nc, Frame 382
+ -29.0312    3.0186    2.5272    2.1701   15.1691    % all_structures.nc, Frame 383
+ -29.5526    3.5238    2.3356    1.9734   13.2671    % all_structures.nc, Frame 384
+ -30.3177    3.7446    2.0065    1.6102   10.8148    % all_structures.nc, Frame 385
+ -30.5919    3.9242    1.8859    1.4462   10.0637    % all_structures.nc, Frame 386
+ -30.8939    3.7796    1.7910    1.2899   10.2079    % all_structures.nc, Frame 387
+ -31.3066    3.4088    1.7034    1.1766   10.9182    % all_structures.nc, Frame 388
+ -31.5129    2.9119    1.6397    1.1456   11.4692    % all_structures.nc, Frame 389
+ -31.5924    2.6266    1.6285    1.2011   12.3314    % all_structures.nc, Frame 390
+ -31.3807    2.4631    1.5581    1.1413   12.3630    % all_structures.nc, Frame 391
+ -31.2025    2.3600    1.4648    1.0526   11.8114    % all_structures.nc, Frame 392
+ -30.9924    2.0588    0.9565    0.9670   10.9136    % all_structures.nc, Frame 393
+ -31.5314    2.4838    1.4400    0.9343   10.8842    % all_structures.nc, Frame 394
+ -31.9149    2.7946    1.5265    0.9289   10.9294    % all_structures.nc, Frame 395
+ -32.2994    3.2783    1.6549    1.0181   11.3428    % all_structures.nc, Frame 396
+ -32.5025    3.8142    1.7927    1.2501   12.1011    % all_structures.nc, Frame 397
+ -32.3362    4.1016    1.8912    1.6445   12.8844    % all_structures.nc, Frame 398
+ -31.7125    3.9882    1.9349    2.0406   13.4358    % all_structures.nc, Frame 399
+ -30.9467    4.1007    1.8051    2.2426   13.7167    % all_structures.nc, Frame 400
+ -29.7002    3.1549    1.9819    2.0579   13.9057    % all_structures.nc, Frame 401
+ -28.7936    2.7001    2.0244    1.9344   14.0454    % all_structures.nc, Frame 402
+ -28.3564    2.3599    2.1145    1.8170   14.4511    % all_structures.nc, Frame 403
+ -28.2509    2.2072    2.2240    1.6327   14.6217    % all_structures.nc, Frame 404
+ -28.2765    2.2943    2.3380    1.4488   14.5051    % all_structures.nc, Frame 405
+ -28.7294    2.5560    2.5025    1.8856   15.6731    % all_structures.nc, Frame 406
+ -29.4393    2.8927    2.3597    1.8894   14.4176    % all_structures.nc, Frame 407
+ -29.9506    3.3394    2.1677    1.7645   12.4350    % all_structures.nc, Frame 408
+ -30.7425    3.3086    1.8774    1.5615   10.4041    % all_structures.nc, Frame 409
+ -31.1926    3.4960    1.7575    1.4600   10.0538    % all_structures.nc, Frame 410
+ -32.0067    3.4680    1.6383    1.3120   10.9256    % all_structures.nc, Frame 411
+ -32.7186    3.2028    1.5222    1.1502   11.6732    % all_structures.nc, Frame 412
+ -33.3425    3.2683    1.8218    1.1520   11.6015    % all_structures.nc, Frame 413
+ -32.8487    2.4571    1.4571    1.1110   12.4540    % all_structures.nc, Frame 414
+ -32.4337    2.3547    1.4638    1.0820   12.8309    % all_structures.nc, Frame 415
+ -32.0189    2.2509    1.5160    0.8932   12.2148    % all_structures.nc, Frame 416
+ -31.8818    2.2904    1.4897    0.8866   12.1291    % all_structures.nc, Frame 417
+ -32.0142    2.4122    1.5648    0.9231   11.9715    % all_structures.nc, Frame 418
+ -32.2511    2.7225    1.6861    1.0160   12.0723    % all_structures.nc, Frame 419
+ -32.4324    3.2205    1.8403    1.1632   12.3604    % all_structures.nc, Frame 420
+ -32.3585    3.8000    1.9902    1.3679   12.8402    % all_structures.nc, Frame 421
+ -31.9038    4.1621    2.0780    1.6620   13.3292    % all_structures.nc, Frame 422
+ -30.8952    4.2277    1.8667    1.9035   13.4569    % all_structures.nc, Frame 423
+ -30.0881    3.7179    2.1302    2.1073   13.9735    % all_structures.nc, Frame 424
+ -29.1421    3.1997    2.1632    2.0738   14.3374    % all_structures.nc, Frame 425
+ -28.4416    2.7059    2.2177    1.9757   14.8119    % all_structures.nc, Frame 426
+ -28.0707    2.3374    2.2928    1.8381   15.2089    % all_structures.nc, Frame 427
+ -27.9634    2.1637    2.3701    1.6348   15.1306    % all_structures.nc, Frame 428
+ -28.1008    2.1317    2.4379    1.5728   15.3935    % all_structures.nc, Frame 429
+ -29.1079    2.2652    2.4014    1.7018   15.4596    % all_structures.nc, Frame 430
+ -29.8400    2.5638    2.2183    1.6789   13.8551    % all_structures.nc, Frame 431
+ -30.3532    2.9540    2.0290    1.6249   11.8438    % all_structures.nc, Frame 432
+ -31.3316    2.8389    1.7543    1.6478   10.3127    % all_structures.nc, Frame 433
+ -32.4423    3.1274    1.5996    1.6843   10.9570    % all_structures.nc, Frame 434
+ -33.6752    3.3008    1.4543    1.5066   11.8207    % all_structures.nc, Frame 435
+ -34.2667    3.1657    1.3473    1.2145   11.7927    % all_structures.nc, Frame 436
+ -34.3244    2.7808    1.2877    1.0347   11.5834    % all_structures.nc, Frame 437
+ -34.1654    2.3989    1.3100    1.0016   12.3928    % all_structures.nc, Frame 438
+ -33.6662    2.2186    1.3548    1.0551   13.3484    % all_structures.nc, Frame 439
+ -33.0336    2.1403    1.4479    0.9249   13.4979    % all_structures.nc, Frame 440
+ -32.6239    2.1127    1.5559    0.8750   13.3129    % all_structures.nc, Frame 441
+ -32.4906    2.1979    1.6780    0.9734   13.1072    % all_structures.nc, Frame 442
+ -32.4912    2.4868    1.8290    1.1254   13.0579    % all_structures.nc, Frame 443
+ -32.4198    2.9869    2.0034    1.2939   13.1270    % all_structures.nc, Frame 444
+ -32.1095    3.5943    2.1673    1.4940   13.4264    % all_structures.nc, Frame 445
+ -31.5050    4.0085    2.2825    1.7760   13.8768    % all_structures.nc, Frame 446
+ -30.6330    3.9949    2.3476    2.0953   14.2725    % all_structures.nc, Frame 447
+ -29.6431    3.5838    2.4050    2.2555   14.7632    % all_structures.nc, Frame 448
+ -28.7103    2.9910    2.4582    2.2383   15.3131    % all_structures.nc, Frame 449
+ -27.9931    2.4345    2.5023    2.1158   15.7931    % all_structures.nc, Frame 450
+ -27.6126    2.0434    2.5383    1.9360   15.9883    % all_structures.nc, Frame 451
+ -27.4176    2.2214    2.3940    1.5786   13.5832    % all_structures.nc, Frame 452
+ -28.4016    1.8184    2.4473    1.5601   15.9316    % all_structures.nc, Frame 453
+ -29.5081    1.9743    2.3135    1.5680   15.3216    % all_structures.nc, Frame 454
+ -30.2789    2.2558    2.1064    1.5454   13.4382    % all_structures.nc, Frame 455
+ -30.8077    2.5662    1.9140    1.5729   11.4380    % all_structures.nc, Frame 456
+ -32.5477    2.6544    1.6088    2.2634   11.1446    % all_structures.nc, Frame 457
+ -34.2065    3.2338    1.4503    2.4454   11.9929    % all_structures.nc, Frame 458
+ -35.1120    3.4927    1.3949    2.0724   11.5653    % all_structures.nc, Frame 459
+ -35.4609    3.4730    1.3123    1.7039   11.7093    % all_structures.nc, Frame 460
+ -35.4197    3.0635    1.2985    1.3097   11.6525    % all_structures.nc, Frame 461
+ -35.2340    2.5700    1.3310    1.0374   12.7173    % all_structures.nc, Frame 462
+ -34.7863    2.2289    1.4030    0.9480   14.0302    % all_structures.nc, Frame 463
+ -34.0896    2.0719    1.4922    0.9789   14.6578    % all_structures.nc, Frame 464
+ -33.3951    2.0381    1.6062    1.0144   14.5924    % all_structures.nc, Frame 465
+ -32.9154    2.1170    1.7500    1.1035   14.2156    % all_structures.nc, Frame 466
+ -32.6200    2.3945    1.9287    1.2604   13.9098    % all_structures.nc, Frame 467
+ -32.3194    2.9027    2.1413    1.4684   13.8210    % all_structures.nc, Frame 468
+ -31.8511    3.5499    2.3635    1.7302   14.1142    % all_structures.nc, Frame 469
+ -31.1639    4.0622    2.5638    2.0754   14.7118    % all_structures.nc, Frame 470
+ -30.2409    4.0989    2.7219    2.4420   15.3309    % all_structures.nc, Frame 471
+ -29.1664    3.5358    2.8439    2.6477   15.9911    % all_structures.nc, Frame 472
+ -28.0898    2.7131    2.8967    2.6301   16.5031    % all_structures.nc, Frame 473
+ -27.2621    2.0334    2.8822    2.4598   16.6903    % all_structures.nc, Frame 474
+ -26.8998    1.6182    2.8017    2.1768   16.3988    % all_structures.nc, Frame 475
+ -27.0877    1.4915    2.4477    1.6639   14.7937    % all_structures.nc, Frame 476
+ -28.7804    1.7083    2.4159    1.5912   16.2544    % all_structures.nc, Frame 477
+ -29.9494    1.9209    2.2132    1.5086   15.1133    % all_structures.nc, Frame 478
+ -30.7379    2.1734    1.9924    1.5219   13.0411    % all_structures.nc, Frame 479
+ -31.3483    2.3454    1.7854    1.7650   11.1731    % all_structures.nc, Frame 480
+ -34.4479    3.0024    1.4935    3.7780   12.5764    % all_structures.nc, Frame 481
+ -35.6455    3.6963    1.4029    3.8950   12.3548    % all_structures.nc, Frame 482
+ -36.2545    4.0477    1.3724    3.6140   12.0173    % all_structures.nc, Frame 483
+ -36.3983    3.9450    1.3885    3.0674   11.9140    % all_structures.nc, Frame 484
+ -36.5660    4.1090    1.9035    2.4011   12.3340    % all_structures.nc, Frame 485
+ -36.0027    2.8961    1.4775    1.7527   13.8862    % all_structures.nc, Frame 486
+ -35.4734    2.4615    1.5414    1.3436   15.3090    % all_structures.nc, Frame 487
+ -34.6848    2.2907    1.5946    1.2302   15.8933    % all_structures.nc, Frame 488
+ -33.8102    2.3736    1.6690    1.2388   15.7015    % all_structures.nc, Frame 489
+ -33.0916    2.5832    1.8062    1.3053   15.1706    % all_structures.nc, Frame 490
+ -32.5669    2.8820    2.0209    1.4811   14.7350    % all_structures.nc, Frame 491
+ -32.0848    3.4165    2.3077    1.7751   14.6583    % all_structures.nc, Frame 492
+ -31.4758    4.2098    2.6431    2.1538   15.1175    % all_structures.nc, Frame 493
+ -30.6662    4.9105    2.9816    2.6112   16.0037    % all_structures.nc, Frame 494
+ -29.6022    4.8084    3.2740    3.0954   16.8849    % all_structures.nc, Frame 495
+ -28.3385    3.7255    3.4409    3.4056   17.5710    % all_structures.nc, Frame 496
+ -27.0323    2.4732    3.3998    3.4049   17.5780    % all_structures.nc, Frame 497
+ -26.2031    1.7244    3.2090    3.1303   17.0141    % all_structures.nc, Frame 498
+ -26.0420    1.4095    2.8085    2.4190   15.5635    % all_structures.nc, Frame 499
+ -27.8402    1.7767    2.5178    1.9575   16.5380    % all_structures.nc, Frame 500
+ -29.3782    2.0476    2.3226    1.6691   16.4084    % all_structures.nc, Frame 501
+ -30.4751    2.2827    2.0819    1.5327   14.7979    % all_structures.nc, Frame 502
+ -31.2291    2.2937    1.8458    1.8005   12.6446    % all_structures.nc, Frame 503
+ -32.4328    2.3476    1.6628    2.7918   11.9240    % all_structures.nc, Frame 504
+ -36.0209    3.5500    1.4433    6.0328   12.9329    % all_structures.nc, Frame 505
+ -36.8010    4.2791    1.4154    6.3526   12.0713    % all_structures.nc, Frame 506
+ -37.1059    4.5933    1.4531    6.0994   11.7764    % all_structures.nc, Frame 507
+ -37.0430    4.3929    1.5193    5.3331   12.1339    % all_structures.nc, Frame 508
+ -36.7962    3.8430    1.5887    4.2198   13.5138    % all_structures.nc, Frame 509
+ -36.3333    3.2097    1.6618    3.0418   15.4575    % all_structures.nc, Frame 510
+ -35.5083    2.7805    1.7112    2.1740   16.6791    % all_structures.nc, Frame 511
+ -34.4225    2.7955    1.7197    1.6488   16.8345    % all_structures.nc, Frame 512
+ -33.4267    3.2665    1.7596    1.4327   16.3990    % all_structures.nc, Frame 513
+ -32.6696    3.7640    1.9067    1.4694   15.8778    % all_structures.nc, Frame 514
+ -32.0354    4.0155    2.1766    1.7228   15.5941    % all_structures.nc, Frame 515
+ -31.3975    4.4847    2.5698    2.1655   15.8108    % all_structures.nc, Frame 516
+ -30.6079    5.3377    3.0550    2.7480   16.6350    % all_structures.nc, Frame 517
+ -29.6028    5.8870    3.5568    3.4698   17.8638    % all_structures.nc, Frame 518
+ -28.3441    5.1234    3.9458    4.2321   18.8406    % all_structures.nc, Frame 519
+ -26.8451    3.3864    3.9960    4.7106   18.9246    % all_structures.nc, Frame 520
+ -25.4307    2.6335    3.0770    4.7506   17.6071    % all_structures.nc, Frame 521
+ -25.2737    1.7547    3.1800    3.9817   16.6284    % all_structures.nc, Frame 522
+ -27.4780    2.2248    2.6878    3.1108   17.6212    % all_structures.nc, Frame 523
+ -29.0545    2.5856    2.4478    2.3205   17.7684    % all_structures.nc, Frame 524
+ -30.2490    2.8969    2.1947    1.8805   16.5976    % all_structures.nc, Frame 525
+ -31.1017    2.7036    1.9505    1.9590   14.6311    % all_structures.nc, Frame 526
+ -32.3285    2.3706    1.7601    3.1526   13.5228    % all_structures.nc, Frame 527
+ -34.6498    2.7626    1.5537    5.1298   13.7867    % all_structures.nc, Frame 528
+ -37.2076    4.1187    1.4180    9.2769   12.0204    % all_structures.nc, Frame 529
+ -37.5822    4.8671    1.4705    9.6036   11.0032    % all_structures.nc, Frame 530
+ -37.5992    5.1103    1.5536    9.0479   11.1852    % all_structures.nc, Frame 531
+ -37.3623    4.7775    1.6332    7.7485   12.6492    % all_structures.nc, Frame 532
+ -36.8938    4.1063    1.7232    6.0144   14.9904    % all_structures.nc, Frame 533
+ -36.0063    3.4343    1.8171    4.3364   16.8604    % all_structures.nc, Frame 534
+ -34.4994    3.1736    1.8442    2.9324   17.2991    % all_structures.nc, Frame 535
+ -33.0878    3.6463    1.8361    1.9583   17.0059    % all_structures.nc, Frame 536
+ -32.2148    4.5499    1.9008    1.5764   16.6969    % all_structures.nc, Frame 537
+ -31.5013    4.9002    2.0936    1.6591   16.4881    % all_structures.nc, Frame 538
+ -30.7655    4.7288    2.4548    2.0819   16.6834    % all_structures.nc, Frame 539
+ -29.9560    4.9788    2.9830    2.7635   17.3713    % all_structures.nc, Frame 540
+ -28.9885    5.6236    3.6169    3.6872   18.5059    % all_structures.nc, Frame 541
+ -27.8768    5.6388    4.2522    4.8427   19.9051    % all_structures.nc, Frame 542
+ -26.5205    4.2908    4.5619    5.9226   20.4468    % all_structures.nc, Frame 543
+ -24.6102    2.7004    3.9926    6.6568   18.3573    % all_structures.nc, Frame 544
+ -26.4643    2.9619    3.2031    5.8800   19.9804    % all_structures.nc, Frame 545
+ -27.9158    2.9529    2.8652    4.4807   19.8082    % all_structures.nc, Frame 546
+ -29.3025    3.3757    2.5579    3.3489   19.4318    % all_structures.nc, Frame 547
+ -30.3915    3.7485    2.2928    2.6433   18.3369    % all_structures.nc, Frame 548
+ -31.1760    3.3991    2.0674    2.4920   16.6594    % all_structures.nc, Frame 549
+ -32.3629    2.6630    1.8730    3.5230   15.4865    % all_structures.nc, Frame 550
+ -34.8917    2.6061    1.6150    6.2461   15.5087    % all_structures.nc, Frame 551
+ -36.3714    3.2344    1.4536    8.1051   13.8950    % all_structures.nc, Frame 552
+ -37.7571    4.4798    1.4192   12.5877   10.5633    % all_structures.nc, Frame 553
+ -37.8109    5.1200    1.5008   12.3963   10.1726    % all_structures.nc, Frame 554
+ -37.6237    5.2601    1.5608   11.2648   11.5870    % all_structures.nc, Frame 555
+ -37.1328    4.8304    1.6374    9.3626   14.1028    % all_structures.nc, Frame 556
+ -36.1216    4.1361    1.7726    7.1532   16.3733    % all_structures.nc, Frame 557
+ -33.8892    3.6543    1.9029    4.8571   16.8240    % all_structures.nc, Frame 558
+ -31.9544    3.9449    1.9403    3.0111   16.5346    % all_structures.nc, Frame 559
+ -31.1939    4.7734    1.9866    2.0641   16.7502    % all_structures.nc, Frame 560
+ -30.5296    5.2551    2.1239    1.8427   16.9299    % all_structures.nc, Frame 561
+ -29.7043    4.7386    2.4044    2.1720   17.1809    % all_structures.nc, Frame 562
+ -28.7785    4.2461    2.8669    2.8723   17.8208    % all_structures.nc, Frame 563
+ -27.7816    4.3863    3.4819    3.8452   18.7297    % all_structures.nc, Frame 564
+ -26.7116    4.7435    4.1919    5.1576   19.8533    % all_structures.nc, Frame 565
+ -25.4429    4.3810    4.7090    6.6946   20.5866    % all_structures.nc, Frame 566
+ -25.5185    3.7424    3.7607    7.2448   21.4971    % all_structures.nc, Frame 567
+ -26.9972    3.6712    3.3315    5.8871   21.1880    % all_structures.nc, Frame 568
+ -28.3401    3.7189    2.9281    4.7986   20.5959    % all_structures.nc, Frame 569
+ -29.6311    4.1631    2.5828    3.8862   20.0944    % all_structures.nc, Frame 570
+ -30.7432    4.5097    2.3209    3.3190   19.3582    % all_structures.nc, Frame 571
+ -31.5286    4.0255    2.1249    3.2250   18.1019    % all_structures.nc, Frame 572
+ -32.5727    3.0454    1.9580    4.0314   17.1185    % all_structures.nc, Frame 573
+ -35.0889    2.5248    1.6804    6.8911   17.1473    % all_structures.nc, Frame 574
+ -36.6638    2.8624    1.4442    9.6056   15.2207    % all_structures.nc, Frame 575
+ -37.4042    3.6102    1.3813   11.4911   12.5220    % all_structures.nc, Frame 576
+];
+figure; hold on;
+plot(data0(:,1), data0(:,2), 'k.');
+plot(data0(:,1), data0(:,3), 'r.');
+legend('Original', 'Fitted');
+xlabel('Target energy');
+ylabel('Model energy');
+title('Model results for topology/fit.prmtop');
+n = input('Ready?');
+

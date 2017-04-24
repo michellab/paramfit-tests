@@ -1,0 +1,158 @@
+<++>-----------------------------------------------------------------------<++>
+<++> mdgx: A molecular dynamics engine in the AMBER suite of programs      <++>
+<++>                                                                       <++>
+<++> Written by David S. Cerutti, Case Group (2009)                        <++>
+<++>-----------------------------------------------------------------------<++>
+
+Run on Wed Mar  1 16:07:16 2017
+<++>-----------------------------------------------------------------------<++>
+
+INPUT LINE TEXT:
+
+mdgx -O -i fit_input.in 
+
+
+INPUT FILE TEXT:
+
+&files
+  -parm   /home/steboss/Software/amber16/dat/leap/parm/parm99.dat
+  -fmod   /home/steboss/Software/amber16/dat/leap/parm/frcmod.ff99SB
+  -d      carbofluid.dat
+  -o      fit.out
+&end
+
+&param
+  System    topology/fit.prmtop  all_structures.nc  quantum_energy.dat
+  ParmOutput frcmod
+  eunits    hartree,
+  accrep    report.m
+  verbose   1,
+
+
+  % Torsion fitting input
+  fith       C  N  CT C
+  fith       N  CT C  N
+  hrst       0.0002,
+&end
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(1.) Energies of each system, according to the fitted parameters.  Units on 
+     errors are kcal/mol.  The original model's energies are compared to 
+     target energies after applying an offset to make the average of each set 
+     of energies for any given system equal (see Section 3).
+
+                      RMS Error         Correlation    Fitted   Fitted   Model
+      System        Orig    Fitted    Orig    Fitted   Terms    Energy   Diff.
+ ----------------  -------  -------  -------  -------  ------  -------  -------
+ topology/fit.prm   8.5495   7.9622  -0.3403  -0.1626       8     3.27    3.114
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(2.) Parameter sampling.  Bonds and angles are binned over 18 intervals based 
+     on deviations, positive or negative, from the ideal bond length.  Each 
+     interval represents 0.028 Angstrom or 0.023 radian deviation for bonds or 
+     angles, respectively.  Dihedrals and impropers are binned at 10-degree 
+     intervals, ranging from zero to 180 (the range of the arccosine 
+     function).
+
+ Sampling histogram key:  (zero)   . : = e o U O 0 @ X ( > ten)
+
+ Torsion term sampling:
+                              Bins in Radians 
+  Term  Amber Types   Count  -PI     +0      PI   Fitted  Original
+  ----  -----------  ------- ------------------  -------- --------
+  DIHE  N  CT C  N       576 XXXXXXXXXXXXXXXXXX     -0.22     0.45
+  DIHE  N  CT C  N       576 XXXXXXXXXXXXXXXXXX      0.63     1.58
+  DIHE  C  N  CT C       576 XXXXXXXXXXXXXXXXXX     -2.69     0.27
+  DIHE  C  N  CT C       576 XXXXXXXXXXXXXXXXXX      1.85     0.00
+  DIHE  C  N  CT C       576 XXXXXXXXXXXXXXXXXX      0.55     0.00
+  DIHE  C  N  CT C       576 XXXXXXXXXXXXXXXXXX     -1.91     0.42
+  DIHE  N  CT C  N       576 XXXXXXXXXXXXXXXXXX     -0.09     0.00
+  DIHE  N  CT C  N       576 XXXXXXXXXXXXXXXXXX      0.86     0.55
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(3.) Warnings concerning parameter sampling and the fitted values of new 
+     parameters.
+
+  - All parameters pass basic sanity checks.
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(4.) Energy adjustment constants.  These constants are included to bring the 
+     overall energy of quantum mechanical and molecular mechanical 
+     calculations into general agreement so that the fitted parameters can 
+     address the energy differences between multiple states of each system. 
+     Gross differences between quantum and molecular mechanics are first 
+     eliminated by subtracting off the average energy of all states for each 
+     system; these parameters are then included to "mop up."
+
+      System      Adjustment
+ ---------------- ----------
+ topology/fit.prm     4.2844    
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(5.) Fitting matrix analysis.  This is a check against features of the fitting 
+     set that might create a poorly conditioned matrix.
+
+ - No columns with zero data detected
+ - No correlated columns detected
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(6.) Energy contributions of each fitted parameter.  All parameters that 
+     contribute to each system are printed, this time with respect to the 
+     amount of energy that they contribute to the molecular mechanical 
+     system.
+
+ System: topology/fit.prmtop
+                      Energy    Std. Dev.
+   DIHE C  N  CT C     -2.6903     1.9023
+   DIHE C  N  CT C     -1.9105     1.3509
+   DIHE C  N  CT C      1.8517     1.3094
+   DIHE N  CT C  N      0.8605     0.6085
+   DIHE N  CT C  N      0.6288     0.4446
+   DIHE C  N  CT C      0.5545     0.3921
+   DIHE N  CT C  N     -0.2238     0.1583
+   DIHE N  CT C  N     -0.0853     0.0603
+
+
+<++>-----------------------------------------------------------------------<++>
+
+<++>-----------------------------------------------------------------------<++>
+
+(7.) Context of each parameter.  Instances of each parameter found in the 
+     fitting conformations are enumerated below.
+
+ [ Parameter ] [ Atom types ]                   Sampling Histogram
+  Residue (Atom Names)                   Count  MIN     +0     MAX  Warnings
+ --------------------------------------- -----  ------------------  --------
+ DIHE C  N  CT C 
+  ACE (C   ) ALA (N    CA   C   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE C  N  CT C 
+  ACE (C   ) ALA (N    CA   C   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE C  N  CT C 
+  ACE (C   ) ALA (N    CA   C   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE C  N  CT C 
+  ACE (C   ) ALA (N    CA   C   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE N  CT C  N 
+  ALA (N    CA   C   ) NME (N   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE N  CT C  N 
+  ALA (N    CA   C   ) NME (N   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE N  CT C  N 
+  ALA (N    CA   C   ) NME (N   )          576  XXXXXXXXXXXXXXXXXX
+ DIHE N  CT C  N 
+  ALA (N    CA   C   ) NME (N   )          576  XXXXXXXXXXXXXXXXXX
+<++>-----------------------------------------------------------------------<++>
+
